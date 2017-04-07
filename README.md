@@ -1,10 +1,10 @@
-下载地址：http://www.onlinedown.net/soft/106578.htm
-官方网址：http://www.loamen.com 
-博客网址：http://www.cnblogs.com/mops/articles/2377951.html
+下载地址：<a href="http://www.onlinedown.net/soft/106578.htm" target="_blank">http://www.onlinedown.net/soft/106578.htm</a> <br/>
+官方网址：<a href="http://www.loamen.com" target="_blank">http://www.loamen.com</a> <br/>
+博客网址：<a href="http://www.cnblogs.com/mops/articles/2377951.html" target="_blank">http://www.cnblogs.com/mops/articles/2377951.html</a>
 
 软件描述
 
-	龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。 
+    龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。 
 
 主要功能
 
@@ -20,3 +20,7 @@
 	10.简单直观的操作状态显示：程序主界面的状态栏图标提示使用代理和自动切换状态提示。
 	11.可以自动保存和载入上次可用代理列表，方便用户操作。
 	12.内置浏览器，可使用Ctrl+T一键采集网页中代理内容。
+
+功能截图
+
+![龙门代理公布器](http://pic002.cnblogs.com/images/2010/110188/2010121415203353.jpg)
