@@ -1,6 +1,7 @@
 下载地址：<a href="http://www.onlinedown.net/soft/106578.htm" target="_blank">http://www.onlinedown.net/soft/106578.htm</a> <br/>
 官方网址：<a href="http://www.loamen.com" target="_blank">http://www.loamen.com</a> <br/>
-博客网址：<a href="http://www.cnblogs.com/mops/articles/2377951.html" target="_blank">http://www.cnblogs.com/mops/articles/2377951.html</a>
+博客网址：<a href="http://www.cnblogs.com/mops/articles/2377951.html" target="_blank">http://www.cnblogs.com/mops/articles/2377951.html</a> <br/>
+QQ群：42549743
 
 软件描述
 
