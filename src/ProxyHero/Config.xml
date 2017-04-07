@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ProxyHeroEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Domain>http://www.loamen.com/soft/proxyhero/</Domain>
+  <CommercialUrl>http://weibo.com/loamen</CommercialUrl>
+  <EnglishCommercialUrl>http://en.loamen.com/</EnglishCommercialUrl>
+  <StatisticsUrl>http://www.loamen.com/mini/</StatisticsUrl>
+  <EnglishStatisticsUrl>http://en.loamen.com/mini/</EnglishStatisticsUrl>
+  <ProxySiteLists>proxysitelists.txt</ProxySiteLists>
+  <EnableCommercialPage>0</EnableCommercialPage>
+  <RegQKey>www.loamen.com</RegQKey>
+  <Version>1.4.0</Version>
+  <UpdatedEnableUse>1</UpdatedEnableUse>
+  <EnableDeductPoints>0</EnableDeductPoints>
+  <CloudTestHours>1</CloudTestHours>
+  <LoadRssInterval>2</LoadRssInterval>
+  <BbsDomain>bbs.loamen.com</BbsDomain>
+  <UpdateUrl>http://bbs.loamen.com/thread-1-1-1.html</UpdateUrl>
+  <About>
+    龙门中文官方网站： http://www.loamen.com
+    LPH English Homepage: http://en.loamen.com
+    Email: loamen.com@gmail.com
+
+    ------------------------------------------
+    WeifenLuo.WinFormsUI.Docking.dll is Copyright(c)2007 Weifen Luo(email:weifenluo@yahoo.com), http://sourceforge.net/projects/dockpanelsuite/ (Open Source - The MIT License)
+  </About>
+</ProxyHeroEntity>

@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B6D99F0-9DF6-4CCE-82F4-CFAE6B06A07E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProxyHero</RootNamespace>
+    <AssemblyName>ProxyHero</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <StartupObject>ProxyHero.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BizServices\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\OptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\OptionForm.Designer.cs">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\Panels\GeneralPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Option\Panels\GeneralPanel.Designer.cs">
+      <DependentUpon>GeneralPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\Panels\LanguagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Option\Panels\LanguagePanel.Designer.cs">
+      <DependentUpon>LanguagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\Panels\SystemTestPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Option\Panels\SystemTestPanel.Designer.cs">
+      <DependentUpon>SystemTestPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\Panels\TestPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Option\Panels\TestPanel.Designer.cs">
+      <DependentUpon>TestPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Option\Panels\UserAgentPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Option\Panels\UserAgentPanel.Designer.cs">
+      <DependentUpon>UserAgentPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Threading\Worker.cs" />
+    <Compile Include="Threading\WorkThread.cs" />
+    <Content Include="Config.xml" />
+    <Content Include="Resources\Browser\favorites.png" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\page.png" />
+    <Content Include="Resources\page2.png" />
+    <Content Include="笔记.txt" />
+    <Compile Include="Common\AutoSwitchingHelper.cs" />
+    <Compile Include="Common\ConsoleEx.cs" />
+    <Compile Include="Common\CookiesHelper.cs" />
+    <Compile Include="Common\ImagesHelper.cs" />
+    <Compile Include="Common\ListViewHelper.cs" />
+    <Compile Include="Common\LoadingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\LoadingControl.Designer.cs">
+      <DependentUpon>LoadingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\LogHelper.cs" />
+    <Compile Include="Common\MsgBox.cs" />
+    <Compile Include="Common\ProxyHelper.cs" />
+    <Compile Include="Common\TxtHelper.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Entity\PluginSetting.cs" />
+    <Compile Include="Entity\Setting.cs" />
+    <Compile Include="Entity\ProxyHeroEntity.cs" />
+    <Compile Include="Entity\UserBbsEntity.cs" />
+    <Compile Include="Entity\UserEntity.cs" />
+    <Compile Include="Entity\ViewSetting.cs" />
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CheckForUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CheckForUpdateForm.Designer.cs">
+      <DependentUpon>CheckForUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExceptionForm.designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageInformation\LanguageLoader.cs" />
+    <Compile Include="LanguageInformation\Language.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CloudProxyData.cs" />
+    <Compile Include="Model\JsonResult.cs" />
+    <Compile Include="Model\ListItem.cs" />
+    <Compile Include="Model\OauthKey.cs" />
+    <Compile Include="Model\ProxyData.cs" />
+    <Compile Include="Model\ProxyItems.cs" />
+    <Compile Include="Model\Token.cs" />
+    <Compile Include="Net\ApiHelper.cs" />
+    <Compile Include="Net\CloudHelper.cs" />
+    <Compile Include="Net\DateType.cs" />
+    <Compile Include="Net\SnsHelper.cs" />
+    <Compile Include="Net\UpdateHelper.cs" />
+    <Compile Include="Option\ProxySettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Option\ProxySettingForm.Designer.cs">
+      <DependentUpon>ProxySettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin\PluginEngine.cs" />
+    <Compile Include="Plugin\PluginManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugin\PluginManageForm.Designer.cs">
+      <DependentUpon>PluginManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugin\PluginManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\LoadingControl.resx">
+      <DependentUpon>LoadingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CheckForUpdateForm.resx">
+      <DependentUpon>CheckForUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\OptionForm.resx">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\Panels\GeneralPanel.resx">
+      <DependentUpon>GeneralPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\Panels\LanguagePanel.resx">
+      <DependentUpon>LanguagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\Panels\SystemTestPanel.resx">
+      <DependentUpon>SystemTestPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\Panels\TestPanel.resx">
+      <DependentUpon>TestPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\Panels\UserAgentPanel.resx">
+      <DependentUpon>UserAgentPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Option\ProxySettingForm.resx">
+      <DependentUpon>ProxySettingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plugin\PluginManageForm.resx">
+      <DependentUpon>PluginManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\IEBrowserForm.resx">
+      <DependentUpon>IEBrowserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\InfomationForm.resx">
+      <DependentUpon>InfomationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\ProxyForm.resx">
+      <DependentUpon>ProxyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Proxy\Downloader.cs" />
+    <Compile Include="Proxy\DownloadThread.cs" />
+    <Compile Include="Proxy\Tester.cs" />
+    <Compile Include="Proxy\TestThread.cs" />
+    <Compile Include="TabPages\IEBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\IEBrowserForm.designer.cs">
+      <DependentUpon>IEBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\InfomationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\InfomationForm.Designer.cs">
+      <DependentUpon>InfomationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\ProxyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\ProxyForm.Designer.cs">
+      <DependentUpon>ProxyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Loamen.Common\Loamen.Common.csproj">
+      <Project>{B9A07EEF-8E64-44F5-AA43-0F903F45B0C1}</Project>
+      <Name>Loamen.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loamen.Net\Loamen.Net.csproj">
+      <Project>{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}</Project>
+      <Name>Loamen.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loamen.PluginFramework\Loamen.PluginFramework.csproj">
+      <Project>{4DF87041-D54F-4B24-9193-46866D5EE2F9}</Project>
+      <Name>Loamen.PluginFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loamen.WinControls\Loamen.WinControls.csproj">
+      <Project>{8B5F5880-0F5C-4E2F-9B46-E4DC537A32D9}</Project>
+      <Name>Loamen.WinControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
+      <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stopread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <Content Include="incon2.ico" />
+    <Content Include="Readme.txt" />
+    <Content Include="Resources\aboutlogo.jpg" />
+    <Content Include="Resources\add_16.png" />
+    <None Include="Resources\app.png" />
+    <Content Include="Resources\astart.png" />
+    <Content Include="Resources\astop.png" />
+    <Content Include="Resources\aunuse.png" />
+    <Content Include="Resources\aused.png" />
+    <Content Include="Resources\Browser\clock.png" />
+    <Content Include="Resources\Browser\clock1.png" />
+    <Content Include="Resources\Browser\go.png" />
+    <Content Include="Resources\Browser\go_home.png" />
+    <Content Include="Resources\Browser\lock1.png" />
+    <Content Include="Resources\Browser\lock2.png" />
+    <Content Include="Resources\Browser\play_prev.png" />
+    <Content Include="Resources\Browser\play_stop.png" />
+    <Content Include="Resources\Browser\play__next.png" />
+    <Content Include="Resources\Browser\reload.png" />
+    <Content Include="Resources\Browser\tools.png" />
+    <Content Include="Resources\Browser\window_add.png" />
+    <Content Include="Resources\check-in_16x16.gif" />
+    <Content Include="Resources\check-out_16x16.gif" />
+    <Content Include="Resources\checkednot.png" />
+    <Content Include="Resources\checkedok.png" />
+    <Content Include="Resources\clear_16x16.png" />
+    <Content Include="Resources\cloud.png" />
+    <Content Include="Resources\cloudno.png" />
+    <Content Include="Resources\database_form_16x16.gif" />
+    <Content Include="Resources\delete_16x16.gif" />
+    <Content Include="Resources\loading.gif" />
+    <Content Include="Resources\logo.jpg" />
+    <Content Include="Resources\Menu\copy.gif" />
+    <Content Include="Resources\Menu\delete.gif" />
+    <Content Include="Resources\Menu\j.gif" />
+    <Content Include="Resources\Menu\loading.gif" />
+    <Content Include="Resources\Menu\pa.gif" />
+    <Content Include="Resources\run.gif" />
+    <Content Include="Resources\save_16x16.png" />
+    <Content Include="Resources\search.png" />
+    <Content Include="Resources\SqlExe.gif" />
+    <Content Include="Resources\stop.png" />
+    <Content Include="Resources\task_16x16.gif" />
+    <Content Include="Resources\tj_16x16.png" />
+    <Content Include="Resources\toolbar\delete.png" />
+    <Content Include="Resources\toolbar\donate.png" />
+    <Content Include="Resources\toolbar\exit.png" />
+    <Content Include="Resources\toolbar\export.png" />
+    <Content Include="Resources\toolbar\find.png" />
+    <Content Include="Resources\toolbar\help.png" />
+    <Content Include="Resources\toolbar\home.png" />
+    <Content Include="Resources\toolbar\import.png" />
+    <Content Include="Resources\toolbar\newIE.png" />
+    <Content Include="Resources\toolbar\read.png" />
+    <Content Include="Resources\toolbar\setting.png" />
+    <Content Include="Resources\toolbar\stop.png" />
+    <Content Include="Resources\toolbar\stopread.png" />
+    <Content Include="Resources\toolbar\test.png" />
+    <Content Include="Resources\toolbar\timer1.png" />
+    <Content Include="Resources\toolbar\timer2.png" />
+    <Content Include="Resources\toolbar\user.png" />
+    <Content Include="Resources\unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

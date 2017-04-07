@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.WinControls", "Loamen.WinControls\Loamen.WinControls.csproj", "{8B5F5880-0F5C-4E2F-9B46-E4DC537A32D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyHero", "ProxyHero\ProxyHero.csproj", "{9B6D99F0-9DF6-4CCE-82F4-CFAE6B06A07E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.Common", "Loamen.Common\Loamen.Common.csproj", "{B9A07EEF-8E64-44F5-AA43-0F903F45B0C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.Net", "Loamen.Net\Loamen.Net.csproj", "{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsUI", "WinFormsUI\WinFormsUI.csproj", "{C75532C4-765B-418E-B09B-46D36B2ABDB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.PluginFramework", "Loamen.PluginFramework\Loamen.PluginFramework.csproj", "{4DF87041-D54F-4B24-9193-46866D5EE2F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{66522063-3C0C-429C-9454-C7D41BE4547D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.PH.Plugin.Anonymity", "Plugins\Loamen.PH.Plugin.Anonymity\Loamen.PH.Plugin.Anonymity.csproj", "{72DDDDB5-F28B-48D6-B96F-F4BDC437D636}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.PH.Plugin.DownloadProxy", "Plugins\Loamen.PH.Plugin.DownloadProxy\Loamen.PH.Plugin.DownloadProxy.csproj", "{D364BB5C-6FF7-46BD-8389-96AFEC614FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.PH.Plugin.IpSeeker", "Plugins\Loamen.PH.Plugin.IpSeeker\Loamen.PH.Plugin.IpSeeker.csproj", "{29B97053-A23E-4E34-A329-52CE202E89E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.PH.Plugin.Security", "Plugins\Loamen.PH.Plugin.Security\Loamen.PH.Plugin.Security.csproj", "{503B638F-3146-40EF-B8DC-DE598E5C80EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.PH.Plugin.Refresh", "Plugins\Loamen.PH.Plugin.Refresh\Loamen.PH.Plugin.Refresh.csproj", "{88528339-5F27-460E-A984-4E55A224EB72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B5F5880-0F5C-4E2F-9B46-E4DC537A32D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5F5880-0F5C-4E2F-9B46-E4DC537A32D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5F5880-0F5C-4E2F-9B46-E4DC537A32D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5F5880-0F5C-4E2F-9B46-E4DC537A32D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B6D99F0-9DF6-4CCE-82F4-CFAE6B06A07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6D99F0-9DF6-4CCE-82F4-CFAE6B06A07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6D99F0-9DF6-4CCE-82F4-CFAE6B06A07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6D99F0-9DF6-4CCE-82F4-CFAE6B06A07E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A07EEF-8E64-44F5-AA43-0F903F45B0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A07EEF-8E64-44F5-AA43-0F903F45B0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A07EEF-8E64-44F5-AA43-0F903F45B0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A07EEF-8E64-44F5-AA43-0F903F45B0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF87041-D54F-4B24-9193-46866D5EE2F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF87041-D54F-4B24-9193-46866D5EE2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF87041-D54F-4B24-9193-46866D5EE2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF87041-D54F-4B24-9193-46866D5EE2F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72DDDDB5-F28B-48D6-B96F-F4BDC437D636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72DDDDB5-F28B-48D6-B96F-F4BDC437D636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72DDDDB5-F28B-48D6-B96F-F4BDC437D636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72DDDDB5-F28B-48D6-B96F-F4BDC437D636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D364BB5C-6FF7-46BD-8389-96AFEC614FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D364BB5C-6FF7-46BD-8389-96AFEC614FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D364BB5C-6FF7-46BD-8389-96AFEC614FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D364BB5C-6FF7-46BD-8389-96AFEC614FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29B97053-A23E-4E34-A329-52CE202E89E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B97053-A23E-4E34-A329-52CE202E89E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B97053-A23E-4E34-A329-52CE202E89E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B97053-A23E-4E34-A329-52CE202E89E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{503B638F-3146-40EF-B8DC-DE598E5C80EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{503B638F-3146-40EF-B8DC-DE598E5C80EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{503B638F-3146-40EF-B8DC-DE598E5C80EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{503B638F-3146-40EF-B8DC-DE598E5C80EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88528339-5F27-460E-A984-4E55A224EB72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88528339-5F27-460E-A984-4E55A224EB72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88528339-5F27-460E-A984-4E55A224EB72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88528339-5F27-460E-A984-4E55A224EB72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72DDDDB5-F28B-48D6-B96F-F4BDC437D636} = {66522063-3C0C-429C-9454-C7D41BE4547D}
+		{D364BB5C-6FF7-46BD-8389-96AFEC614FFC} = {66522063-3C0C-429C-9454-C7D41BE4547D}
+		{29B97053-A23E-4E34-A329-52CE202E89E2} = {66522063-3C0C-429C-9454-C7D41BE4547D}
+		{503B638F-3146-40EF-B8DC-DE598E5C80EC} = {66522063-3C0C-429C-9454-C7D41BE4547D}
+		{88528339-5F27-460E-A984-4E55A224EB72} = {66522063-3C0C-429C-9454-C7D41BE4547D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal
