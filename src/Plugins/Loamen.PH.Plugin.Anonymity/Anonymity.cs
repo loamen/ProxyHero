@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Loamen.PluginFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -9,7 +10,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using Loamen.PluginFramework;
 using WeifenLuo.WinFormsUI.Docking;
 using ThreadState = System.Threading.ThreadState;
 

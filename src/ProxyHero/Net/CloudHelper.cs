@@ -41,9 +41,15 @@ namespace ProxyHero.Net
                         CloudProxyData.CloudProxyList = (from row in proxies
                                                          select row).Distinct().ToList();
                     }
+
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
 
-                return true;
+               
             }
             catch (Exception ex)
             {

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.WinControls", "Loamen.WinControls\Loamen.WinControls.csproj", "{8B5F5880-0F5C-4E2F-9B46-E4DC537A32D9}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.Common", "Loamen.Common\Loamen.Common.csproj", "{B9A07EEF-8E64-44F5-AA43-0F903F45B0C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.Net", "Loamen.Net\Loamen.Net.csproj", "{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsUI", "WinFormsUI\WinFormsUI.csproj", "{C75532C4-765B-418E-B09B-46D36B2ABDB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loamen.PluginFramework", "Loamen.PluginFramework\Loamen.PluginFramework.csproj", "{4DF87041-D54F-4B24-9193-46866D5EE2F9}"
 EndProject
@@ -49,9 +47,6 @@ Global
 		{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB2D4938-D345-46E7-8B8E-9E4D4C92E4D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C75532C4-765B-418E-B09B-46D36B2ABDB1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DF87041-D54F-4B24-9193-46866D5EE2F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DF87041-D54F-4B24-9193-46866D5EE2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DF87041-D54F-4B24-9193-46866D5EE2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -89,5 +84,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {29994B95-8B54-4485-98E7-28A052476A0E}
 	EndGlobalSection
 EndGlobal
