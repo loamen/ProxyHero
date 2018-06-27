@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Www.LoaMen.Com")]
 [assembly: AssemblyProduct("Loamen Proxy Hero")]
-[assembly: AssemblyCopyright("© LoaMen.Com 2009-2017")]
+[assembly: AssemblyCopyright("© LoaMen.Com 2009-2018")]
 [assembly: AssemblyTrademark("Www.LoaMen.Com")]
 [assembly: AssemblyCulture("")]
 
@@ -36,5 +36,5 @@ using System.Runtime.InteropServices;
 // 方法是按如下所示使用“*”:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.7.17.1024")]
+[assembly: AssemblyVersion("1.7.18.1024")]
 [assembly: AssemblyFileVersion("1.7.0")]
