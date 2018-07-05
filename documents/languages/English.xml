@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Language xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
+  <LanguageName>English</LanguageName>  
+  <LanguageFileAuthor>This is translated by google</LanguageFileAuthor>  
+  <LanguageFileVersion>V 1.0</LanguageFileVersion>  
+  <LanguageFileForLPHVersion>V 1.6.1</LanguageFileForLPHVersion>  
+  <MainPage> 
+    <File>File</File>  
+    <Exit>Exit</Exit>  
+    <View>View</View>  
+    <MenuBar>Menu bar</MenuBar>  
+    <ToolBar>Toolbar</ToolBar>  
+    <StatusBar>Status bar</StatusBar>  
+    <InfomationWindow>Information Window</InfomationWindow>  
+    <ProxyWindow>Proxy Window</ProxyWindow>  
+    <ResetView>Reset View</ResetView>  
+    <Plugin>Plugins</Plugin>  
+    <PluginManage>Plugin Management</PluginManage>  
+    <Tool>Tools</Tool>  
+    <DirectConnection>Disable proxy</DirectConnection>  
+    <OnlineHelp>Help Document</OnlineHelp>  
+    <Forum>Forum</Forum>  
+    <CheckUpdate>Updates</CheckUpdate>  
+    <Donate>Donate</Donate>  
+    <About>About</About>  
+    <NewTab>New Tab</NewTab>  
+    <CloseTab>Close the label</CloseTab>  
+    <CloseAllTabs>Close all tags</CloseAllTabs>  
+    <Options>Options</Options>  
+    <Homepage>Official website homepage</Homepage>  
+    <Help>Help</Help>  
+    <ShowLPH>Shows the main interface</ShowLPH>  
+    <AutomaticSwitching>Turn on automatic switching proxy</AutomaticSwitching>  
+    <Debug>Allows debugging information</Debug> 
+  </MainPage>  
+  <ProxyPage> 
+    <ResetAllSetting>Initialize all settings</ResetAllSetting>  
+    <Option>Option</Option>  
+    <DownloadProxy>Download proxy data</DownloadProxy>  
+    <TestAll>Verify all</TestAll>  
+    <StopTest>Stop verification</StopTest>  
+    <ImportProxy>Import Agent</ImportProxy>  
+    <ExportProxy>Export Proxy</ExportProxy>  
+    <Delete>Delete</Delete>  
+    <Cut>Cut</Cut>  
+    <DeleteDeadProxy>Delete invalid data</DeleteDeadProxy>  
+    <DeleteSeleted>Delete selected</DeleteSeleted>  
+    <Country>Region</Country>  
+    <Port>Port</Port>  
+    <Anonymity>Anonymity</Anonymity>  
+    <Search>Search</Search>  
+    <Copy>Copy</Copy>  
+    <Paste>Paste</Paste>  
+    <Test>Verify</Test>  
+    <SwitchTo>Use this proxy</SwitchTo>  
+    <DoNotUseProxy>prohibits the use of a proxy</DoNotUseProxy>  
+    <BuiltinBrowser>built-in browser</BuiltinBrowser>  
+    <Clear>Clear</Clear> 
+  </ProxyPage>  
+  <OptionPage> 
+    <CzIpDbFileName>pure IP database address</CzIpDbFileName>  
+    <BasicOptions>Basic Settings</BasicOptions>  
+    <TestOptions>Verify Configuration</TestOptions>  
+    <LanguageOptions>Language</LanguageOptions>  
+    <SystemCheck>System Detection</SystemCheck>  
+    <CloudServer>Cloud Server</CloudServer>  
+    <AutoSwitchingInterval>Automatically switch agent interval</AutoSwitchingInterval>  
+    <AutoSwitchingProxyMaxDelay>Automatic agent maximum delay is less than</AutoSwitchingProxyMaxDelay>  
+    <ExportTxtFormat>Export TXT file format</ExportTxtFormat>  
+    <OK>OK</OK>  
+    <Cancel>Cancel</Cancel>  
+    <Apply>App</Apply>  
+    <BuiltinBrowserScriptErrorsSuppressed>Prevents display of built-in browser script errors</BuiltinBrowserScriptErrorsSuppressed>  
+    <LanguageFile>language file path</LanguageFile>  
+    <LanguageName>language name</LanguageName>  
+    <LanguageFileAuthor>language file author</LanguageFileAuthor>  
+    <LanguageFileVersion>language file version</LanguageFileVersion>  
+    <LanguageFileOriginallyIntendedForLPHVersion>is valid for the following versions of this software</LanguageFileOriginallyIntendedForLPHVersion>  
+    <ProgramRestartRequired>requires a reboot to fully take effect</ProgramRestartRequired>  
+    <UseSystemProxySetting>Access the network using the system proxy settings</UseSystemProxySetting>  
+    <DefaultTestWebsite>Default URL</DefaultTestWebsite>  
+    <TestWebsite>Verification URL</TestWebsite>  
+    <TestWebsiteTitle>site title</TestWebsiteTitle>  
+    <TestWebsiteEncode>Page Encoding</TestWebsiteEncode>  
+    <TestTimeout>Verification timeout</TestTimeout>  
+    <TestThreadsCount>Verify the number of threads</TestThreadsCount>  
+    <Country>Verify location</Country>  
+    <Anonymity>Verify Anonymity</Anonymity>  
+    <PleaseSelectOrFill>Please select the default verification URL or fill in below</PleaseSelectOrFill>  
+    <ClickForSystemTesting>Click to perform system detection</ClickForSystemTesting> 
+  </OptionPage>  
+  <InformationPage> 
+    <Delete>Delete</Delete>  
+    <Copy>Copy</Copy>  
+    <Cut>Cut</Cut>  
+    <SwitchTo>Use this proxy</SwitchTo>  
+    <Paste>Paste</Paste>  
+    <Clear>Clear</Clear>  
+    <Testing>Verification</Testing>  
+    <ThreadsInfo>Verify Thread Information</ThreadsInfo> 
+  </InformationPage>  
+  <IeBrowserPage> 
+    <HomePage>Homepage</HomePage>  
+    <Forward>Forward</Forward>  
+    <Back>Back</Back>  
+    <Fresh>Refresh</Fresh>  
+    <LockAndRefresh>locks the current page and automatically refreshes when the proxy switches</LockAndRefresh>  
+    <Go>Go to</Go>  
+    <AddToTestingList>Add current page proxy to validation window (Ctrl+T)</AddToTestingList>  
+    <Setting>Settings</Setting> 
+  </IeBrowserPage>  
+  <PluginManagePage> 
+    <Add>Add</Add>  
+    <Remove>Remove</Remove>  
+    <OK>OK</OK>  
+    <Cancel>Cancel</Cancel>  
+    <DownloadPlugins>Download Plugin</DownloadPlugins>  
+    <Compile>Compile (.cs-&gt;.dll)</Compile> 
+  </PluginManagePage>  
+  <Messages> 
+    <PleaseCheckNetworkSettingsAreCorrect>Please check if the network settings are correct</PleaseCheckNetworkSettingsAreCorrect>  
+    <InitializeComponent>Initialization component</InitializeComponent>  
+    <InitializeDatabase>Initialize Database</InitializeDatabase>  
+    <LoadingLanguages>Loading Languages</LoadingLanguages>  
+    <InitializeDockPanel>Initialize docking form</InitializeDockPanel>  
+    <InitializeFailed>Initialization failed</InitializeFailed>  
+    <CheckUpdate>Detect Updates</CheckUpdate>  
+    <LoadingPlugins>Load Plugin</LoadingPlugins>  
+    <ConnectingCloudEngine>is connecting to the cloud engine</ConnectingCloudEngine>  
+    <ConnectCloudEngineSuccess>Cloud Engine Connection Successfully</ConnectCloudEngineSuccess>  
+    <ConnectCloudEngineFailed>Cloud Engine Connection Failed</ConnectCloudEngineFailed>  
+    <CurrentProxy>Current Proxy</CurrentProxy>  
+    <NotUseProxy>is not currently using a proxy</NotUseProxy>  
+    <AutomaticSwitchingOn>Automatic Switching Agent is turned on</AutomaticSwitchingOn>  
+    <AutomaticSwitchingOff>Automatic Switching Agent is turned off</AutomaticSwitchingOff>  
+    <BuiltinBrowser>built-in browser</BuiltinBrowser>  
+    <Information>Tips</Information>  
+    <Warning>Warning</Warning>  
+    <Exception>Exception</Exception>  
+    <Error>Error</Error>  
+    <StopDownload>Stop downloading</StopDownload>  
+    <Downloading>Downloading</Downloading>  
+    <Stopping>is stopping</Stopping>  
+    <NetworkIsbusyPleaseTryAgainLater>The network is busy, please try again later!</NetworkIsbusyPleaseTryAgainLater>  
+    <NumOfProxiesDownloaded>Total {0} has been acquired</NumOfProxiesDownloaded>  
+    <NumOfProxiesDownloadedByThreads>A total of {0} threads are reading data {1} articles</NumOfProxiesDownloadedByThreads>  
+    <Testing>is verifying</Testing>  
+    <Swithing>Automatic switching</Swithing>  
+    <NumOfProxiesTested>{0}Verification completed</NumOfProxiesTested>  
+    <AllTestingCompleted>All verified]</AllTestingCompleted>  
+    <TestingHaveBeenTerminated>has terminated validation</TestingHaveBeenTerminated>  
+    <ProxyIsAlive>This proxy is valid</ProxyIsAlive>  
+    <ProxyIsDead>This proxy is invalid</ProxyIsDead>  
+    <TimeConsuming>Time-consuming: {0} milliseconds</TimeConsuming>  
+    <AbortingThread>is terminating the read thread</AbortingThread>  
+    <LoamenServer>Official Server</LoamenServer>  
+    <GoogleCloudServer>Google Cloud Server</GoogleCloudServer>  
+    <SinaCloudServer>Sina Cloud Server</SinaCloudServer>  
+    <SelectDefaultTestWebSiteToolTip>Select the default URL to use for verification</SelectDefaultTestWebSiteToolTip>  
+    <TestWebsiteUrlToolTip>is used to verify the URL, such as: http://www.baidu.com. Must add http://</TestWebsiteUrlToolTip>  
+    <TestWebsiteTitleToolTip>Verify any piece of text in the URL For example, Baidu’s: Baidu, you know You can enter "Baidu" or "Baidu" or not.</TestWebsiteTitleToolTip>  
+    <TestWebsiteEncodeToolTip>The encoding format of the webpage, such as: GB2312 or UTF-8</TestWebsiteEncodeToolTip>  
+    <TestAreaToolTip>Verify the proxy geolocation</TestAreaToolTip>  
+    <AutoSwitchProxyMaxDelayToolTip>The proxy speed is automatically deactivated if it is slower than this value.</AutoSwitchProxyMaxDelayToolTip>  
+    <LoamenFormat>publisher format</LoamenFormat>  
+    <StandardFormat>Standard Format</StandardFormat>  
+    <AutoSwitchingProxyListIsEmpty>The available proxy list is empty and cannot automatically switch agents!</AutoSwitchingProxyListIsEmpty>  
+    <SwitchToIEOrBuiltinBrowser>Please confirm whether the proxy is applied to IE or built-in browser? Click "Yes" to apply to Internet Explorer. Click "No" to apply to the built-in browser.</SwitchToIEOrBuiltinBrowser>  
+    <AreYouSureClearThis>Are you sure you want to clear the data in the list?</AreYouSureClearThis>  
+    <InformationWindow>information window</InformationWindow>  
+    <HighAnonymous>High Anonymous Agent</HighAnonymous>  
+    <Anonymous>Ordinary Anonymous Agent</Anonymous>  
+    <Transparent>Transparent Agent</Transparent>  
+    <CopySucess>has been successfully copied</CopySucess>  
+    <CopyFailed>Copy failed, the current system may run other programs (for example: Microsoft Office software) to occupy a lot of pasteboard resources!</CopyFailed>  
+    <Alive>is available</Alive>  
+    <Dead>valid</Dead>  
+    <NotTest>not verified</NotTest>  
+    <Total>Total</Total>  
+    <NumOfThreadsAreTesting>A total of {0} threads are being verified</NumOfThreadsAreTesting>  
+    <PleaseEnterTheUrlYouWantToRefresh>Please enter the URL to be refreshed!</PleaseEnterTheUrlYouWantToRefresh>  
+    <PleaseTurnOnTheAutomaticSwitching>Please turn on the automatic switching agent first!</PleaseTurnOnTheAutomaticSwitching>  
+    <AreYouSureDoThis>Are you sure you want to continue with this item?</AreYouSureDoThis>  
+    <ProxyIsDeadAutoSwithing>The proxy {0} is invalid and automatically switches to the next proxy.</ProxyIsDeadAutoSwithing>  
+    <SpeedDoestConformToTheRequirement>Speed ​​does not meet the requirements</SpeedDoestConformToTheRequirement>  
+    <MinimizedToSaveResources>Minimize to save resources</MinimizedToSaveResources> 
+  </Messages> 
+</Language>

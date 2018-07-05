@@ -123,5 +123,10 @@ namespace ProxyHero.Option
         {
             return localSetting.TestOptionsList.Any(te => te.TestUrl.ToLower() == testEntity.TestUrl.ToLower());
         }
+
+        private void OptionForm_Load(object sender, EventArgs e)
+        {
+            Text = Config.IsChineseLanguage ? "选项" : "Setting";
+        }
     }
 }

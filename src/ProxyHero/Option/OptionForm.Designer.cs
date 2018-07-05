@@ -30,16 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // MainOptionForm
+            // OptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 466);
-            this.Name = "MainOptionForm";
+            this.Name = "OptionForm";
             this.ShowCategoryDescription = true;
             this.ShowCategoryHeader = true;
             this.ShowOptionsPanelPath = true;
-            this.Text = "MainOptionForm";
+            this.Load += new System.EventHandler(this.OptionForm_Load);
             this.ResumeLayout(false);
 
         }

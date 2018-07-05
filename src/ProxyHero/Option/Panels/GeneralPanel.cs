@@ -34,7 +34,7 @@ namespace ProxyHero.Option.Panels
         /// </summary>
         private void LoadLanguage(Language language)
         {
-            Text = CultureInfo.InstalledUICulture.Name.ToLower().Contains("zh-") ? "选项" : "Options";
+            Text = Config.IsChineseLanguage ? "选项" : "Setting";
 
             if (!Config.LanguageFileName.Contains("Simplified Chinese.xml"))
             {

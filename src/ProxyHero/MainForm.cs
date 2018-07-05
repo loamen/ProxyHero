@@ -134,29 +134,29 @@ namespace ProxyHero
         {
             try
             {
-                #region 测试版
+//                #region 测试版
 
-#if DEBUG
-                try
-                {
-                    var apiHelper = new ApiHelper();
-                    DateTime now = apiHelper.GetDate(DateType.SysDate);
-                    if (now > AboutBox.PublishDate.AddMonths(1)) //发布一个月失效
-                    {
-                        SplashScreen.CloseSplashScreen();
-                        MsgBox.ShowErrorMessage("该测试版已失效，请下在最新版！");
-                        OpenIE(Config.ProxyHeroCloudSetting.UpdateUrl);
-                        Exit_Click(Exit, new EventArgs());
-                    }
-                }
-                catch (WebException)
-                {
-                    Config.InitErrorInfo = Config.LocalLanguage.Messages.InitializeFailed + "," +
-                                           Config.LocalLanguage.Messages.PleaseCheckNetworkSettingsAreCorrect;
-                }
-#endif
+//#if DEBUG
+//                try
+//                {
+//                    var apiHelper = new ApiHelper();
+//                    DateTime now = apiHelper.GetDate(DateType.SysDate);
+//                    if (now > AboutBox.PublishDate.AddMonths(1)) //发布一个月失效
+//                    {
+//                        SplashScreen.CloseSplashScreen();
+//                        MsgBox.ShowErrorMessage("该测试版已失效，请下在最新版！");
+//                        OpenIE(Config.ProxyHeroCloudSetting.UpdateUrl);
+//                        Exit_Click(Exit, new EventArgs());
+//                    }
+//                }
+//                catch (WebException)
+//                {
+//                    Config.InitErrorInfo = Config.LocalLanguage.Messages.InitializeFailed + "," +
+//                                           Config.LocalLanguage.Messages.PleaseCheckNetworkSettingsAreCorrect;
+//                }
+//#endif
 
-                #endregion
+//                #endregion
 
                 #region
 
@@ -173,9 +173,10 @@ namespace ProxyHero
                 Config.LanguageFileName = Config.LocalSetting.LanguageFileName;
                 if (System.IO.File.Exists(Config.LanguageFileName))
                 {
-                    Config.LocalLanguage = XmlHelper.XmlDeserialize(
+                    var language = XmlHelper.XmlDeserialize(
                         Config.LanguageFileName,
-                        typeof (Language)) as Language;
+                        typeof(Language)) as Language;
+                    Config.LocalLanguage = language;
                 }
                 LoadLanguage();
 
@@ -488,9 +489,9 @@ namespace ProxyHero
             Text = Config.IsChineseLanguage ? "龙门代理公布器" : "Loamen Proxy Hero";
             Text = Text + @" " + Application.ProductVersion;
 
-#if DEBUG
-            Text += @" RC版" + @"(到期时间：" + AboutBox.PublishDate.AddMonths(1).ToShortDateString() + @")";
-#endif
+//#if DEBUG
+//            Text += @" RC版" + @"(到期时间：" + AboutBox.PublishDate.AddMonths(1).ToShortDateString() + @")";
+//#endif
             notifyIconMain.Text = Text;
         }
 
@@ -1247,7 +1248,7 @@ namespace ProxyHero
 
         private void Languages_Click(object sender, EventArgs e)
         {
-            OpenIE("http://bbs.loamen.com");
+            OpenIE("https://github.com/loamen/ProxyHero/tree/master/documents/languages");
         }
 
         #endregion
