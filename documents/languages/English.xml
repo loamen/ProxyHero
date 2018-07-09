@@ -19,32 +19,32 @@
     <PluginManage>Plugin Management</PluginManage>  
     <Tool>Tools</Tool>  
     <DirectConnection>Disable proxy</DirectConnection>  
-    <OnlineHelp>Help Document</OnlineHelp>  
+    <OnlineHelp>Documents</OnlineHelp>  
     <Forum>Forum</Forum>  
-    <CheckUpdate>Updates</CheckUpdate>  
+    <CheckUpdate>Check for Updates</CheckUpdate>  
     <Donate>Donate</Donate>  
     <About>About</About>  
     <NewTab>New Tab</NewTab>  
     <CloseTab>Close the label</CloseTab>  
-    <CloseAllTabs>Close all tags</CloseAllTabs>  
-    <Options>Options</Options>  
-    <Homepage>Official website homepage</Homepage>  
+    <CloseAllTabs>Close all tabs</CloseAllTabs>  
+    <Options>Settings</Options>  
+    <Homepage>Homepage </Homepage>  
     <Help>Help</Help>  
-    <ShowLPH>Shows the main interface</ShowLPH>  
+    <ShowLPH>Shows the main window</ShowLPH>  
     <AutomaticSwitching>Turn on automatic switching proxy</AutomaticSwitching>  
     <Debug>Allows debugging information</Debug> 
   </MainPage>  
   <ProxyPage> 
     <ResetAllSetting>Initialize all settings</ResetAllSetting>  
-    <Option>Option</Option>  
-    <DownloadProxy>Download proxy data</DownloadProxy>  
-    <TestAll>Verify all</TestAll>  
-    <StopTest>Stop verification</StopTest>  
-    <ImportProxy>Import Agent</ImportProxy>  
+    <Option>Setting</Option>  
+    <DownloadProxy>Download proxy list</DownloadProxy>  
+    <TestAll>Test all</TestAll>  
+    <StopTest>Stop Test</StopTest>  
+    <ImportProxy>Import Proxy</ImportProxy>  
     <ExportProxy>Export Proxy</ExportProxy>  
     <Delete>Delete</Delete>  
     <Cut>Cut</Cut>  
-    <DeleteDeadProxy>Delete invalid data</DeleteDeadProxy>  
+    <DeleteDeadProxy>Delete invalid proxy</DeleteDeadProxy>  
     <DeleteSeleted>Delete selected</DeleteSeleted>  
     <Country>Region</Country>  
     <Port>Port</Port>  
@@ -52,41 +52,41 @@
     <Search>Search</Search>  
     <Copy>Copy</Copy>  
     <Paste>Paste</Paste>  
-    <Test>Verify</Test>  
+    <Test>Test</Test>  
     <SwitchTo>Use this proxy</SwitchTo>  
     <DoNotUseProxy>prohibits the use of a proxy</DoNotUseProxy>  
     <BuiltinBrowser>built-in browser</BuiltinBrowser>  
     <Clear>Clear</Clear> 
   </ProxyPage>  
   <OptionPage> 
-    <CzIpDbFileName>pure IP database address</CzIpDbFileName>  
-    <BasicOptions>Basic Settings</BasicOptions>  
-    <TestOptions>Verify Configuration</TestOptions>  
+    <CzIpDbFileName>IP database</CzIpDbFileName>  
+    <BasicOptions>Basic Options</BasicOptions>  
+    <TestOptions>Test Options</TestOptions>  
     <LanguageOptions>Language</LanguageOptions>  
     <SystemCheck>System Detection</SystemCheck>  
     <CloudServer>Cloud Server</CloudServer>  
-    <AutoSwitchingInterval>Automatically switch agent interval</AutoSwitchingInterval>  
-    <AutoSwitchingProxyMaxDelay>Automatic agent maximum delay is less than</AutoSwitchingProxyMaxDelay>  
+    <AutoSwitchingInterval>Automatic switching proxy interval</AutoSwitchingInterval>  
+    <AutoSwitchingProxyMaxDelay>Automatically proxy maximum delay is less than</AutoSwitchingProxyMaxDelay>  
     <ExportTxtFormat>Export TXT file format</ExportTxtFormat>  
     <OK>OK</OK>  
     <Cancel>Cancel</Cancel>  
-    <Apply>App</Apply>  
+    <Apply>Apply</Apply>  
     <BuiltinBrowserScriptErrorsSuppressed>Prevents display of built-in browser script errors</BuiltinBrowserScriptErrorsSuppressed>  
-    <LanguageFile>language file path</LanguageFile>  
-    <LanguageName>language name</LanguageName>  
-    <LanguageFileAuthor>language file author</LanguageFileAuthor>  
-    <LanguageFileVersion>language file version</LanguageFileVersion>  
+    <LanguageFile>Language file path</LanguageFile>  
+    <LanguageName>Language name</LanguageName>  
+    <LanguageFileAuthor>Language file author</LanguageFileAuthor>  
+    <LanguageFileVersion>Language file version</LanguageFileVersion>  
     <LanguageFileOriginallyIntendedForLPHVersion>is valid for the following versions of this software</LanguageFileOriginallyIntendedForLPHVersion>  
-    <ProgramRestartRequired>requires a reboot to fully take effect</ProgramRestartRequired>  
+    <ProgramRestartRequired>requires restart</ProgramRestartRequired>  
     <UseSystemProxySetting>Access the network using the system proxy settings</UseSystemProxySetting>  
     <DefaultTestWebsite>Default URL</DefaultTestWebsite>  
-    <TestWebsite>Verification URL</TestWebsite>  
-    <TestWebsiteTitle>site title</TestWebsiteTitle>  
-    <TestWebsiteEncode>Page Encoding</TestWebsiteEncode>  
-    <TestTimeout>Verification timeout</TestTimeout>  
-    <TestThreadsCount>Verify the number of threads</TestThreadsCount>  
-    <Country>Verify location</Country>  
-    <Anonymity>Verify Anonymity</Anonymity>  
+    <TestWebsite>Proxyjudge</TestWebsite>  
+    <TestWebsiteTitle>Keyword</TestWebsiteTitle>  
+    <TestWebsiteEncode>Encoding</TestWebsiteEncode>  
+    <TestTimeout>Test timeout</TestTimeout>  
+    <TestThreadsCount>Max threads</TestThreadsCount>  
+    <Country>Test location</Country>  
+    <Anonymity>Test Anonymity</Anonymity>  
     <PleaseSelectOrFill>Please select the default verification URL or fill in below</PleaseSelectOrFill>  
     <ClickForSystemTesting>Click to perform system detection</ClickForSystemTesting> 
   </OptionPage>  
@@ -97,8 +97,8 @@
     <SwitchTo>Use this proxy</SwitchTo>  
     <Paste>Paste</Paste>  
     <Clear>Clear</Clear>  
-    <Testing>Verification</Testing>  
-    <ThreadsInfo>Verify Thread Information</ThreadsInfo> 
+    <Testing>Testing</Testing>  
+    <ThreadsInfo>Test Thread Information</ThreadsInfo> 
   </InformationPage>  
   <IeBrowserPage> 
     <HomePage>Homepage</HomePage>  

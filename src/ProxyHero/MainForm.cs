@@ -398,13 +398,13 @@ namespace ProxyHero
         {
             try
             {
-                Process.Start("iexplore.exe", url);
+                Process.Start(url);
             }
             catch
             {
                 try
                 {
-                    Process.Start(url);
+                    Process.Start("iexplore.exe", url);
                 }
                 catch
                 {
@@ -930,14 +930,7 @@ namespace ProxyHero
         {
             try
             {
-#if DEBUG
-                if (Config.IsChineseLanguage)
-#else
-                if (Config.IsChineseOs)
-#endif
-                    OpenIE("http://www.loamen.com");
-                else
-                    OpenIE("http://en.loamen.com");
+                OpenIE("http://www.loamen.com");
             }
             catch (Exception ex)
             {
@@ -954,9 +947,9 @@ namespace ProxyHero
 #else
                 if (Config.IsChineseOs)
 #endif
-                    OpenNewTab("http://www.cnblogs.com/mops/articles/1905521.html");
+                    OpenIE("http://www.cnblogs.com/mops/articles/1905521.html");
                 else
-                    OpenNewTab("http://bbs.loamen.com");
+                    OpenIE("https://github.com/loamen/ProxyHero/issues");
             }
             catch (Exception ex)
             {

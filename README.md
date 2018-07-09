@@ -1,7 +1,8 @@
-Download£∫<a href="http://www.onlinedown.net/soft/106578.htm" target="_blank">http://www.onlinedown.net/soft/106578.htm</a> <br/>
-Homepage£∫<a href="http://www.loamen.com" target="_blank">http://www.loamen.com</a> <br/>
-Blog£∫<a href="http://www.cnblogs.com/mops/articles/2377951.html" target="_blank">http://www.cnblogs.com/mops/articles/2377951.html</a> <br/>
-QQ Group£∫42549743
+Download:<a href="http://www.onlinedown.net/soft/106578.htm" target="_blank">http://www.onlinedown.net/soft/106578.htm</a> <br/>
+Homepage:<a href="http://www.loamen.com" target="_blank">http://www.loamen.com</a> <br/>
+Blog:<a href="http://www.cnblogs.com/mops/articles/2377951.html" target="_blank">http://www.cnblogs.com/mops/articles/2377951.html</a> <br/>
+Blog:<a href="README.zh-CN.md" target="_blank">÷–ŒƒΩÈ…‹</a> <br/>
+QQ Group:42549743
 
 #ProxyHero
 

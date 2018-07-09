@@ -138,7 +138,7 @@ namespace Loamen.PH.Plugin.Refresh
 
         private void lbInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            application.OpenNewTab("http://bbs.loamen.com/thread-12-1-1.html");
+            application.OpenIE("https://github.com/loamen/ProxyHero/tree/master/src/Plugins");
         }
 
         private void RefreshForm_FormClosing(object sender, FormClosingEventArgs e)
