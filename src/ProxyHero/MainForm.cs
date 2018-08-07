@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using cn.bmob.io;
 using Loamen.Common;
 using Loamen.Net;
 using Loamen.Net.Entity;
@@ -46,6 +47,7 @@ namespace ProxyHero
         private LanguageLoader _languageLoader;
         public Timer TimerAutoChangeIcon;
         public Timer TimerAutoSwitchingProxy;
+        //public SnsHelper snsHelper = new SnsHelper();
 
         private delegate void DelegateSet(string text);
 
@@ -330,6 +332,14 @@ namespace ProxyHero
                                    : Config.ProxyHeroCloudSetting.EnglishCommercialUrl);
 #endif
                 }
+
+                #region
+                if(BmobUser.CurrentUser == null)
+                {
+                    var userForm = new BmobUserForm();
+                    userForm.ShowDialog();
+                }
+                #endregion
 
                 #endregion
             }

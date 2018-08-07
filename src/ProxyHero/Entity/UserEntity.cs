@@ -1,71 +1,48 @@
-﻿namespace ProxyHero.Entity
+﻿using cn.bmob.io;
+
+namespace ProxyHero.Entity
 {
-    public class UserEntity
+    public class UserEntity : BmobUser
     {
-        private UserBbsEntity bbsProperties = new UserBbsEntity();
-        private string email = "";
-        private string nickName = "";
-        private string passWord = "";
-        private string sex = "";
-        private string userName = "";
-
-        /// <summary>
-        ///     用户名
-        /// </summary>
-        public string UserName
-        {
-            get { return userName; }
-            set { userName = value; }
-        }
-
-        /// <summary>
-        ///     密码
-        /// </summary>
-        public string PassWord
-        {
-            get { return passWord; }
-            set { passWord = value; }
-        }
-
-        /// <summary>
-        ///     邮箱
-        /// </summary>
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-
         /// <summary>
         ///     昵称
         /// </summary>
         public string NickName
         {
-            get { return nickName; }
-            set { nickName = value; }
+            get;set;
         }
 
         /// <summary>
         ///     性别
         /// </summary>
-        public string Sex
+        public BmobBoolean Sex
         {
-            get { return sex; }
-            set { sex = value; }
+            get;set;
         }
 
         /// <summary>
-        ///     是否登录
+        ///  微信编号
         /// </summary>
-        public bool IsLogged { get; set; }
+        public string WechatOpenId { get; set; }
 
-        /// <summary>
-        ///     论坛属性
-        /// </summary>
-        public UserBbsEntity BbsProperties
+        //读字段信息
+        public override void readFields(BmobInput input)
         {
-            get { return bbsProperties; }
-            set { bbsProperties = value; }
+            base.readFields(input);
+
+            this.NickName = input.getString("NickName");
+            this.Sex = input.getBoolean("Sex");
+            this.WechatOpenId = input.getString("WechatOpenId");
+        }
+
+        //写字段信息
+        public override void write(BmobOutput output, bool all)
+        {
+            base.write(output, all);
+
+            output.Put("NickName", this.NickName);
+            output.Put("Sex", this.Sex);
+            output.Put("WechatOpenId", this.WechatOpenId);
         }
     }
 }

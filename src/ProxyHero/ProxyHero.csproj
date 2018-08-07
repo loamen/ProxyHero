@@ -66,6 +66,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bmob-Windows, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alan.Bmob.Windows.1.5.3\lib\net40\Bmob-Windows.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.JScript" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -85,6 +88,24 @@
   <ItemGroup>
     <Compile Include="BizServices\MainForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BmobBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BmobBaseForm.Designer.cs">
+      <DependentUpon>BmobBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BmobUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BmobUserForm.Designer.cs">
+      <DependentUpon>BmobUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BmobUserRegForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BmobUserRegForm.Designer.cs">
+      <DependentUpon>BmobUserRegForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Option\OptionForm.cs">
       <SubType>Form</SubType>
@@ -149,7 +170,6 @@
     <Compile Include="Entity\PluginSetting.cs" />
     <Compile Include="Entity\Setting.cs" />
     <Compile Include="Entity\ProxyHeroEntity.cs" />
-    <Compile Include="Entity\UserBbsEntity.cs" />
     <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="Entity\ViewSetting.cs" />
     <Compile Include="AboutBox.cs">
@@ -188,7 +208,6 @@
     <Compile Include="Net\ApiHelper.cs" />
     <Compile Include="Net\CloudHelper.cs" />
     <Compile Include="Net\DateType.cs" />
-    <Compile Include="Net\SnsHelper.cs" />
     <Compile Include="Net\UpdateHelper.cs" />
     <Compile Include="Option\ProxySettingForm.cs">
       <SubType>Form</SubType>
@@ -211,6 +230,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Common\LoadingControl.resx">
       <DependentUpon>LoadingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BmobBaseForm.resx">
+      <DependentUpon>BmobBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BmobUserForm.resx">
+      <DependentUpon>BmobUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BmobUserRegForm.resx">
+      <DependentUpon>BmobUserRegForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CheckForUpdateForm.resx">
       <DependentUpon>CheckForUpdateForm.cs</DependentUpon>

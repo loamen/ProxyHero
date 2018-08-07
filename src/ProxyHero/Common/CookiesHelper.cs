@@ -49,17 +49,17 @@ namespace ProxyHero.Common
             }
         }
 
-        public static void SetIECookie(SnsHelper snsHelper, string url)
-        {
-            var str = new StringBuilder();
+        //public static void SetIECookie(SnsHelper snsHelper, string url)
+        //{
+        //    var str = new StringBuilder();
 
-            string cookieexpires = string.Format(";expires={0}", DateTime.Now.AddDays(1).ToString("r"));
-                //";expires=Sun,22-Feb-2099 00:00:00 GMT";
-            CookieCollection loamenCookies = snsHelper.Cookies.GetCookies(new Uri(url));
-            foreach (Cookie cookie in loamenCookies)
-            {
-                InternetSetCookie(url, cookie.Name, cookie.Value + cookieexpires);
-            }
-        }
+        //    string cookieexpires = string.Format(";expires={0}", DateTime.Now.AddDays(1).ToString("r"));
+        //        //";expires=Sun,22-Feb-2099 00:00:00 GMT";
+        //    CookieCollection loamenCookies = snsHelper.Cookies.GetCookies(new Uri(url));
+        //    foreach (Cookie cookie in loamenCookies)
+        //    {
+        //        InternetSetCookie(url, cookie.Name, cookie.Value + cookieexpires);
+        //    }
+        //}
     }
 }
