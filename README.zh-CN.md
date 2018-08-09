@@ -33,4 +33,4 @@ QQ群：42549743
 捐赠
 ------
 
-![捐赠](documents/images/wepay.png|width=128)
+<img src="documents/images/wepay.png" width="256" height="256" alt="捐赠" />
