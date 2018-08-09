@@ -619,7 +619,7 @@ namespace ProxyHero
 
         private void Donate_Click(object sender, EventArgs e)
         {
-            OpenIE("https://me.alipay.com/donyang");
+            OpenIE("https://github.com/loamen/ProxyHero/blob/master/README.zh-CN.md#捐赠");
         }
 
         /// <summary>
