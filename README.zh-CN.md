@@ -29,4 +29,4 @@ QQ群：42549743
 
 ## 捐赠
 
-![捐赠](documents/imageswepay.png)
+![捐赠](documents/images/wepay.png | width=128)
