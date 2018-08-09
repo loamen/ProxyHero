@@ -4,36 +4,27 @@ using System.Windows.Forms;
 namespace ProxyHero.Entity
 {
     /*
-   <?xml version="1.0" encoding="UTF-8"?>
-    <ProxyHeroEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-      <ApiDomain>http://1.loamen.duapp.com/</ApiDomain>
-      <CommercialUrl>http://weibo.com/loamen</CommercialUrl>
-      <EnglishCommercialUrl>http://en.loamen.com/</EnglishCommercialUrl>
-      <StatisticsUrl>http://www.loamen.com/mini/</StatisticsUrl>
-      <EnglishStatisticsUrl>http://en.loamen.com/mini/</EnglishStatisticsUrl>
-      <ProxySiteLists>proxysitelists.txt</ProxySiteLists>
-      <EnableCommercialPage>0</EnableCommercialPage>
-      <RegQKey>www.loamen.com</RegQKey>
-      <Version>1.5.0</Version>
-      <UpdatedEnableUse>1</UpdatedEnableUse>
-      <EnableDeductPoints>0</EnableDeductPoints>
-      <CloudTestHours>1</CloudTestHours>  
-      <LoadRssInterval>2</LoadRssInterval>
-      <BbsDomain>bbs.loamen.com</BbsDomain>
-      <UpdateUrl>http://bbs.loamen.com/thread-1-1-1.html</UpdateUrl>
-      <About>龙门中文官方网站： http://www.loamen.com
-    LPH English Homepage: http://en.loamen.com
-    Email: loamen.com@gmail.com
-
-    ------------------------------------------
-    WeifenLuo.WinFormsUI.Docking.dll is Copyright(c)2007 Weifen Luo(email:weifenluo@yahoo.com), http://sourceforge.net/projects/dockpanelsuite/ (Open Source - The MIT License)</About>
-    </ProxyHeroEntity>
+<?xml version="1.0" encoding="utf-8"?>
+<ProxyHeroEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Domain>http://www.loamen.com/soft/proxyhero/</Domain>
+  <CommercialUrl>http://weibo.com/loamen</CommercialUrl>
+  <EnglishCommercialUrl>http://www.loamen.com/</EnglishCommercialUrl>
+  <StatisticsUrl>http://www.loamen.com/mini/</StatisticsUrl>
+  <EnglishStatisticsUrl>http://www.loamen.com/mini/</EnglishStatisticsUrl>
+  <EnableCommercialPage>0</EnableCommercialPage>
+  <Version>1.6.2</Version>
+  <UpdatedEnableUse>1</UpdatedEnableUse>
+  <EnableDeductPoints>0</EnableDeductPoints>
+  <CloudTestHours>1</CloudTestHours>
+  <BbsDomain>https://github.com/loamen/ProxyHero/issues</BbsDomain>
+  <UpdateUrl>http://www.loamen.com</UpdateUrl>
+  <About>Loamen Proxy Hero is a professional proxy software to test, use and manage proxy list. </About>
+</ProxyHeroEntity>
     */
 
     public class ProxyHeroEntity
     {
         private string about;
-        private string apiDomain = "";
         private string bbsDomain = "bbs.loamen.com";
         private int cloudTestHours = 12;
         private string commercialUrl = "http://www.loamen.com/";
@@ -42,8 +33,6 @@ namespace ProxyHero.Entity
 
         private string englishCommercialUrl = "http://en.loamen.com/";
         private string englishStatisticsUrl = "http://en.loamen.com/mini/";
-        private int loadRssInterval = 12;
-        private string regQKey = "www.loamen.com";
         private string statisticsUrl = "http://www.loamen.com/mini/";
         private string updateUrl = "http://www.loamen.com";
         private string updatedEnableUse = "1";
@@ -106,15 +95,6 @@ namespace ProxyHero.Entity
         }
 
         /// <summary>
-        ///     论坛注册答案
-        /// </summary>
-        public string RegQKey
-        {
-            get { return regQKey; }
-            set { regQKey = value; }
-        }
-
-        /// <summary>
         ///     服务器最新版本
         /// </summary>
         public string Version
@@ -151,24 +131,6 @@ namespace ProxyHero.Entity
         }
 
         /// <summary>
-        ///     读取RSS时间间隔，小时
-        /// </summary>
-        public int LoadRssInterval
-        {
-            get { return loadRssInterval; }
-            set { loadRssInterval = value; }
-        }
-
-        /// <summary>
-        ///     代理开放API地址，如：http://1.loamen.duapp.com/
-        /// </summary>
-        public string ApiDomain
-        {
-            get { return apiDomain; }
-            set { apiDomain = value; }
-        }
-
-        /// <summary>
         ///     论坛域名
         /// </summary>
         public string BbsDomain
@@ -198,10 +160,7 @@ namespace ProxyHero.Entity
                     var sb = new StringBuilder();
                     sb.Append("龙门中文官方网站：http://www.loamen.com\n");
                     sb.Append("LPH English Homepage: http://en.loamen.com\n");
-                    sb.Append("Email: loamen.com@gmail.com\n");
-                    sb.Append("\n------------------------------------------\n");
-                    sb.Append(
-                        "WeifenLuo.WinFormsUI.Docking.dll is Copyright(c)2007 Weifen Luo(email:weifenluo@yahoo.com), http://sourceforge.net/projects/dockpanelsuite/ (Open Source - The MIT License)");
+                    sb.Append("Email：loamen.com@gmail.com\n");
                     about = sb.ToString();
                 }
                 return about;

@@ -239,11 +239,6 @@ namespace ProxyHero.TabPages
             {
                 MsgBox.ShowExceptionMessage(ex);
             }
-            finally
-            {
-                var thread = new Thread(UpdateCloudProxyList);
-                thread.Start();
-            }
         }
 
         private void DeleteSeleted_Click(object sender, EventArgs e)

@@ -1240,7 +1240,8 @@ namespace ProxyHero
         {
             try
             {
-                OpenNewTab(Config.ProxyHeroCloudSetting.BbsDomain);
+                //OpenNewTab(Config.ProxyHeroCloudSetting.BbsDomain);
+                OpenIE(Config.ProxyHeroCloudSetting.BbsDomain);
             }
             catch (Exception ex)
             {

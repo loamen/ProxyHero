@@ -95,7 +95,9 @@ namespace ProxyHero.Net
             //创建一个BmobQuery查询对象
             BmobQuery query = new BmobQuery();
             //查询playerName的值为bmob的记录
-            query.WhereEqualTo("status", 1);
+            query.WhereEqualTo("isvip", false);
+            query.Limit(count);
+            query.Skip(sinceId);
 
             ProxyItems items = new ProxyItems();
 
@@ -176,11 +178,23 @@ namespace ProxyHero.Net
             {
                 proxyServer = futrue.Result.results.FirstOrDefault();
                 proxyServer.Set(proxy);
+                if(proxyServer.status.Get() == 0)
+                {
+                    proxyServer.failedcount = proxyServer.failedcount.Get() + 1;
+                }
                 if (BmobUser.CurrentUser != null)
                 {
                     proxyServer.user = BmobUser.CurrentUser;
                 }
-                var updateResult = Bmob.UpdateTaskAsync(ProxyServers.TABLE_NAME, proxyServer.objectId, proxyServer);
+
+                if (proxy.failedcount > 5) //失败次数大于5次删除云端
+                {
+                    Bmob.DeleteTaskAsync(ProxyServers.TABLE_NAME, proxyServer.objectId);
+                }
+                else
+                {
+                    var updateResult = Bmob.UpdateTaskAsync(ProxyServers.TABLE_NAME, proxyServer.objectId, proxyServer);
+                }
             }
            
         }

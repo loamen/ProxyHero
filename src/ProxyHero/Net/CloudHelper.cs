@@ -223,13 +223,9 @@ namespace ProxyHero.Net
         {
             #region Config
 
-            string url = UrlType.GetConfig;
+            string url = "http://www.cnblogs.com/mops/articles/2377951.html";
             string[] result = GetConfig(url);
-            if (string.IsNullOrEmpty(result[0]))
-            {
-                url = "http://www.cnblogs.com/mops/articles/2377951.html";
-                result = GetConfig(url);
-            }
+           
             string xmlSetting = result[0];
             string htmlSites = result[1];
 
@@ -262,84 +258,6 @@ namespace ProxyHero.Net
             }
 
             #endregion
-        }
-    }
-
-    internal class UrlType
-    {
-        /// <summary>
-        ///     代理API地址
-        /// </summary>
-        private static string apiProxyUrl = "http://1.loamen.duapp.com/";
-
-        public static string ApiProxyUrl
-        {
-            get
-            {
-                if (!string.IsNullOrEmpty(Config.ProxyHeroCloudSetting.ApiDomain))
-                {
-                    return Config.ProxyHeroCloudSetting.ApiDomain;
-                }
-
-                return apiProxyUrl;
-            }
-        }
-
-        //private static string apiUserUrl = "2.loamen.sinaapp.com/api/loamen_user";
-        /// <summary>
-        ///     获取时间URL
-        /// </summary>
-        public static string GetDate
-        {
-            get { return ApiProxyUrl + "?a=getprcdate&"; }
-        }
-
-        /// <summary>
-        ///     获取代理列表URL
-        /// </summary>
-        public static string GetProxyList
-        {
-            get { return ApiProxyUrl + "?a=getproxylist&"; }
-        }
-
-        /// <summary>
-        ///     获取代理总数URL
-        /// </summary>
-        public static string GetTotalCount
-        {
-            get { return ApiProxyUrl + "?a=gettotalcount&"; }
-        }
-
-        /// <summary>
-        ///     获取TotkenURL
-        /// </summary>
-        public static string GetToken
-        {
-            get { return ApiProxyUrl + "?a=get_token&"; }
-        }
-
-        /// <summary>
-        ///     新增和更新URL
-        /// </summary>
-        public static string AddOrUpdateList
-        {
-            get { return ApiProxyUrl + "?a=addorupdate&"; }
-        }
-
-        /// <summary>
-        ///     新增和更新代理列表URL
-        /// </summary>
-        public static string UpdateList
-        {
-            get { return ApiProxyUrl + "?a=uploadproxylist&"; }
-        }
-
-        /// <summary>
-        ///     获取配置
-        /// </summary>
-        public static string GetConfig
-        {
-            get { return ApiProxyUrl + "?a=getconfig&"; }
         }
     }
 }
