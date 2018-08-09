@@ -148,42 +148,13 @@ namespace ProxyHero.Net
                     string proxy = model.proxy + "";
                     string port = model.port + "";
                     string type = model.type + "";
-                    string response = model.response + "";
-                    string proxyusername = model.proxyusername + "";
-                    string proxypassword = model.proxypassword + "";
-                    string anonymity = HttpUtility.UrlEncode(model.anonymity, Encoding.UTF8);
-                    string country = HttpUtility.UrlEncode(model.country, Encoding.UTF8);
-                    string anonymityen = model.anonymityen + "";
-                    string countryen = model.countryen + "";
-                    string description = HttpUtility.UrlEncode(model.description, Encoding.UTF8);
-                    string testdate = model.testdate + "";
-                    string status = model.status + "";
-                    string userid = model.userid + "";
-                    string username = model.username + "";
-                    string userip = model.userip + "";
-                    string isvip = model.isvip + "";
+                   
 
                     if (!string.IsNullOrEmpty(proxy.Trim()) &&
                         port.Trim() != "0" &&
                         !string.IsNullOrEmpty(port.Trim()))
                     {
-                        sbProxyList.Append(proxy + ",");
-                        sbProxyList.Append(port + ",");
-                        sbProxyList.Append(type + ",");
-                        sbProxyList.Append(response + ",");
-                        sbProxyList.Append(proxyusername + ",");
-                        sbProxyList.Append(proxypassword + ",");
-                        sbProxyList.Append(anonymity + ",");
-                        sbProxyList.Append(country + ",");
-                        sbProxyList.Append(anonymityen + ",");
-                        sbProxyList.Append(countryen + ",");
-                        sbProxyList.Append(description + ",");
-                        sbProxyList.Append(testdate + ",");
-                        sbProxyList.Append(status + ",");
-                        sbProxyList.Append(userid + ",");
-                        sbProxyList.Append(username + ",");
-                        sbProxyList.Append(userip + ",");
-                        sbProxyList.Append(isvip + ";");
+                        Config.MyApiHelper.AddOrUpdate(model);
                     }
                 }
 
@@ -191,30 +162,6 @@ namespace ProxyHero.Net
                 {
                     sbProxyList.Remove(sbProxyList.Length - 1, 1);
                 }
-
-                #region 单个更新
-
-                //foreach (var model in list)
-                //{
-                //    try
-                //    {
-                //        var proxy = new ProxyServer();
-                //        proxy = EntityHelper.Copy<ProxyServer>(model, proxy);
-
-                //        proxy.anonymity = HttpUtility.UrlEncode(proxy.anonymity, Encoding.UTF8);
-                //        proxy.country = HttpUtility.UrlEncode(proxy.country, Encoding.UTF8);
-                //        proxy.description = HttpUtility.UrlEncode(proxy.description, Encoding.UTF8);
-                //        proxy.username = Config.UserName;
-                //        Config.MyApiHelper.AddOrUpdate(proxy);
-                //    }
-                //    catch
-                //    {
-                //    }
-                //}
-
-                #endregion
-
-                Config.MyApiHelper.UpdateList(sbProxyList.ToString());
                 return true;
             }
             catch (Exception ex)
@@ -315,6 +262,84 @@ namespace ProxyHero.Net
             }
 
             #endregion
+        }
+    }
+
+    internal class UrlType
+    {
+        /// <summary>
+        ///     代理API地址
+        /// </summary>
+        private static string apiProxyUrl = "http://1.loamen.duapp.com/";
+
+        public static string ApiProxyUrl
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Config.ProxyHeroCloudSetting.ApiDomain))
+                {
+                    return Config.ProxyHeroCloudSetting.ApiDomain;
+                }
+
+                return apiProxyUrl;
+            }
+        }
+
+        //private static string apiUserUrl = "2.loamen.sinaapp.com/api/loamen_user";
+        /// <summary>
+        ///     获取时间URL
+        /// </summary>
+        public static string GetDate
+        {
+            get { return ApiProxyUrl + "?a=getprcdate&"; }
+        }
+
+        /// <summary>
+        ///     获取代理列表URL
+        /// </summary>
+        public static string GetProxyList
+        {
+            get { return ApiProxyUrl + "?a=getproxylist&"; }
+        }
+
+        /// <summary>
+        ///     获取代理总数URL
+        /// </summary>
+        public static string GetTotalCount
+        {
+            get { return ApiProxyUrl + "?a=gettotalcount&"; }
+        }
+
+        /// <summary>
+        ///     获取TotkenURL
+        /// </summary>
+        public static string GetToken
+        {
+            get { return ApiProxyUrl + "?a=get_token&"; }
+        }
+
+        /// <summary>
+        ///     新增和更新URL
+        /// </summary>
+        public static string AddOrUpdateList
+        {
+            get { return ApiProxyUrl + "?a=addorupdate&"; }
+        }
+
+        /// <summary>
+        ///     新增和更新代理列表URL
+        /// </summary>
+        public static string UpdateList
+        {
+            get { return ApiProxyUrl + "?a=uploadproxylist&"; }
+        }
+
+        /// <summary>
+        ///     获取配置
+        /// </summary>
+        public static string GetConfig
+        {
+            get { return ApiProxyUrl + "?a=getconfig&"; }
         }
     }
 }

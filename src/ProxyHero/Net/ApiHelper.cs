@@ -2,66 +2,29 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using cn.bmob.api;
+using cn.bmob.io;
 using Loamen.Common;
 using Loamen.Net;
 using Loamen.PluginFramework;
+using ProxyHero.Common;
+using ProxyHero.Entity;
 using ProxyHero.Model;
 using ProxyHero.Threading;
 
 namespace ProxyHero.Net
 {
-    public class ApiHelper : HttpHelper
+    public class ApiHelper : BmobBaseForm
     {
+    
+        //接下来要操作的数据的数据
+        private ProxyHero.Entity.ProxyServers gameObject = new ProxyHero.Entity.ProxyServers();
+
         private ProxyItems _proxyItems;
         private Worker _worker;
 
         public ApiHelper()
         {
-            //不是用默认代理
-            IsUseDefaultProxy = false;
-        }
-
-        public ApiHelper(OauthKey oauthKey)
-        {
-            //不是用默认代理
-            IsUseDefaultProxy = false;
-            Config.MyOauthKey = oauthKey;
-
-            #region
-
-            //var postData = string.Format("{0}username={1}&password={2}", UrlType.GetToken, oauthKey.Username, oauthKey.Passwod);
-            //var json = this.GetHtmlNoProxy(postData);
-            //var result = JsonHelper.JsonToModel<JsonResult<Token>>(json);
-            //if (result.data != null)
-            //{
-            //    Config.MyOauthKey.Uid = result.data.uid;
-            //    Config.MyOauthKey.TokenKey = result.data.token;
-            //}
-
-            #endregion
-        }
-
-        /// <summary>
-        ///     获取时间
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public DateTime GetDate(DateType type)
-        {
-            string json = GetHtml(UrlType.GetDate);
-            try
-            {
-                var result = JsonHelper.JsonToModel<JsonResult<string>>(json);
-                if (result.err_code == 0)
-                {
-                    return Convert.ToDateTime(result.data);
-                }
-            }
-            catch
-            {
-            }
-
-            return DateTime.Now;
         }
 
         /// <summary>
@@ -129,19 +92,33 @@ namespace ProxyHero.Net
         /// <returns></returns>
         private ProxyItems DownloadProxyList(int sinceId, int count)
         {
-            string postData = string.Format("{0}token={1}&since_id={2}&count={3}", UrlType.GetProxyList,
-                                            Config.MyOauthKey.TokenKey, sinceId, count);
+            //创建一个BmobQuery查询对象
+            BmobQuery query = new BmobQuery();
+            //查询playerName的值为bmob的记录
+            query.WhereEqualTo("status", 1);
 
-            string json = GetHtml(postData);
-            if (!json.Contains("\"data\":false"))
+            ProxyItems items = new ProxyItems();
+
+            var future = Bmob.FindTaskAsync<ProxyServers>(ProxyServers.TABLE_NAME, query);
+
+            //对返回结果进行处理
+            var list = future.Result.results;
+            if (list != null && list.Count > 0)
             {
-                var result = JsonHelper.JsonToModel<JsonResult<ProxyItems>>(json);
-                if (result.err_code == 0 && result.data != null)
+                items.items = new List<ProxyServer>();
+                foreach (var model in list)
                 {
-                    return result.data;
+                    var proxy = model.Get();
+                    items.items.Add(proxy);
                 }
             }
-            return null;
+            else
+            {
+                items = null;
+            }
+
+
+            return items;
         }
 
         /// <summary>
@@ -150,24 +127,23 @@ namespace ProxyHero.Net
         /// <returns></returns>
         public int GetTotalCount()
         {
-            var postData = string.Format("{0}token={1}", UrlType.GetTotalCount, Config.MyOauthKey.TokenKey);
+            //创建一个BmobQuery查询对象
+            BmobQuery query = new BmobQuery();
+            //查询playerName的值为bmob的记录
+            query.WhereEqualTo("status", 1);
+
+            BmobInt count = 0;
 
             try
             {
-                var json = GetHtml(postData);
-                if (!json.Contains("\"data\":false"))
-                {
-                    var result = JsonHelper.JsonToModel<JsonResult<int>>(json);
-                    if (result.err_code == 0)
-                    {
-                        return result.data;
-                    }
-                }
+                query.Count();
+                var future = Bmob.FindTaskAsync<ProxyServers>(ProxyServers.TABLE_NAME, query);
+                count = future.Result.count;
             }
             catch
             {
             }
-            return 0;
+            return count.Get();
         }
 
         /// <summary>
@@ -175,40 +151,40 @@ namespace ProxyHero.Net
         /// </summary>
         /// <param name="proxy"></param>
         /// <returns></returns>
-        public string AddOrUpdate(ProxyServer proxy)
+        public void AddOrUpdate(ProxyServer proxy)
         {
-            string postData =
-                string.Format(
-                    "{0}proxy={1}&port={2}&type={3}&response={4}&proxyusername={5}&proxypassword={6}&anonymity={7}&country={8}&anonymityen={9}&countryen={10}&description={11}&testdate={12}&status={13}&userid={14}&username={15}&userip={16}&isvip={17}&token={18}",
-                    UrlType.AddOrUpdateList, proxy.proxy, proxy.port, proxy.type, proxy.response, proxy.proxyusername,
-                    proxy.proxypassword, proxy.anonymity, proxy.country, proxy.anonymityen, proxy.countryen,
-                    proxy.description, proxy.testdate, proxy.status, proxy.userid, proxy.username, proxy.userip,
-                    proxy.isvip, Config.MyOauthKey.TokenKey);
+            var result = string.Empty;
 
-            string json = GetHtml(postData);
-            var result = JsonHelper.JsonToModel<JsonResult<string>>(json);
-            return result.data;
+            //创建一个BmobQuery查询对象
+            BmobQuery query = new BmobQuery();
+            //查询playerName的值为bmob的记录
+            query.WhereEqualTo("proxy", proxy.proxy).And().WhereEqualTo("port", proxy.port);
+
+            var futrue = Bmob.FindTaskAsync<ProxyServers>(ProxyServers.TABLE_NAME, query);
+            ProxyServers proxyServer;
+            if (futrue.Result == null || futrue.Result.results == null || futrue.Result.results.Count == 0)
+            {
+                proxyServer = new ProxyServers();
+                proxyServer.Set(proxy);
+                if (BmobUser.CurrentUser != null)
+                {
+                    proxyServer.user = BmobUser.CurrentUser;
+                }
+                var createResult = Bmob.CreateTaskAsync(proxyServer);
+            }
+            else
+            {
+                proxyServer = futrue.Result.results.FirstOrDefault();
+                proxyServer.Set(proxy);
+                if (BmobUser.CurrentUser != null)
+                {
+                    proxyServer.user = BmobUser.CurrentUser;
+                }
+                var updateResult = Bmob.UpdateTaskAsync(ProxyServers.TABLE_NAME, proxyServer.objectId, proxyServer);
+            }
+           
         }
 
-        /// <summary>
-        ///     新增或插入数据列表
-        /// </summary>
-        /// <param name="proxyList"></param>
-        /// <returns></returns>
-        public string UpdateList(string proxyList)
-        {
-            var postData = string.Format("proxyList={0}&token={1}", proxyList, Config.MyOauthKey.TokenKey);
-            try
-            {
-                var json = GetHtml(UrlType.UpdateList, postData);
-                var result = JsonHelper.JsonToModel<JsonResult<string>>(json);
-                return result.data;
-            }
-            catch
-            {
-            }
-            return string.Empty;
-        }
 
         #region 工作
 
@@ -289,83 +265,5 @@ namespace ProxyHero.Net
         }
 
         #endregion
-    }
-
-    internal class UrlType
-    {
-        /// <summary>
-        ///     代理API地址
-        /// </summary>
-        private static string apiProxyUrl = "http://1.loamen.duapp.com/";
-
-        public static string ApiProxyUrl
-        {
-            get
-            {
-                if (!string.IsNullOrEmpty(Config.ProxyHeroCloudSetting.ApiDomain))
-                {
-                    return Config.ProxyHeroCloudSetting.ApiDomain;
-                }
-
-                return apiProxyUrl;
-            }
-        }
-
-        //private static string apiUserUrl = "2.loamen.sinaapp.com/api/loamen_user";
-        /// <summary>
-        ///     获取时间URL
-        /// </summary>
-        public static string GetDate
-        {
-            get { return ApiProxyUrl + "?a=getprcdate&"; }
-        }
-
-        /// <summary>
-        ///     获取代理列表URL
-        /// </summary>
-        public static string GetProxyList
-        {
-            get { return ApiProxyUrl + "?a=getproxylist&"; }
-        }
-
-        /// <summary>
-        ///     获取代理总数URL
-        /// </summary>
-        public static string GetTotalCount
-        {
-            get { return ApiProxyUrl + "?a=gettotalcount&"; }
-        }
-
-        /// <summary>
-        ///     获取TotkenURL
-        /// </summary>
-        public static string GetToken
-        {
-            get { return ApiProxyUrl + "?a=get_token&"; }
-        }
-
-        /// <summary>
-        ///     新增和更新URL
-        /// </summary>
-        public static string AddOrUpdateList
-        {
-            get { return ApiProxyUrl + "?a=addorupdate&"; }
-        }
-
-        /// <summary>
-        ///     新增和更新代理列表URL
-        /// </summary>
-        public static string UpdateList
-        {
-            get { return ApiProxyUrl + "?a=uploadproxylist&"; }
-        }
-
-        /// <summary>
-        ///     获取配置
-        /// </summary>
-        public static string GetConfig
-        {
-            get { return ApiProxyUrl + "?a=getconfig&"; }
-        }
     }
 }

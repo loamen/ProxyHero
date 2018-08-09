@@ -89,6 +89,7 @@
     <Compile Include="BizServices\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Entity\ProxyServers.cs" />
     <Compile Include="Forms\BmobBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,11 +202,12 @@
     <Compile Include="Model\CloudProxyData.cs" />
     <Compile Include="Model\JsonResult.cs" />
     <Compile Include="Model\ListItem.cs" />
-    <Compile Include="Model\OauthKey.cs" />
     <Compile Include="Model\ProxyData.cs" />
     <Compile Include="Model\ProxyItems.cs" />
     <Compile Include="Model\Token.cs" />
-    <Compile Include="Net\ApiHelper.cs" />
+    <Compile Include="Net\ApiHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Net\CloudHelper.cs" />
     <Compile Include="Net\DateType.cs" />
     <Compile Include="Net\UpdateHelper.cs" />

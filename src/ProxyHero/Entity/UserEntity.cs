@@ -20,6 +20,8 @@ namespace ProxyHero.Entity
             get;set;
         }
 
+        public string avatar { get; set; }
+
         /// <summary>
         ///  微信编号
         /// </summary>
@@ -33,6 +35,7 @@ namespace ProxyHero.Entity
             this.NickName = input.getString("NickName");
             this.Sex = input.getBoolean("Sex");
             this.WechatOpenId = input.getString("WechatOpenId");
+            this.avatar = input.getString("avatar");
         }
 
         //写字段信息
@@ -43,6 +46,7 @@ namespace ProxyHero.Entity
             output.Put("NickName", this.NickName);
             output.Put("Sex", this.Sex);
             output.Put("WechatOpenId", this.WechatOpenId);
+            output.Put("avatar", this.avatar);
         }
     }
 }

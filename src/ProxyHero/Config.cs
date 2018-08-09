@@ -336,43 +336,6 @@ namespace ProxyHero
             }
         }
 
-        ///// <summary>
-        ///// 初始化数据库
-        ///// </summary>
-        //public static void InitDatabase()
-        //{
-        //    //SqliteHelper.DbFileName = Config.DbFileName;
-        //    //SqliteHelper.Password = "Loamen.Com";
-        //    //if (!SqliteHelper.TabExists("Proxy"))
-        //    //{
-        //    //    StringBuilder sb = new StringBuilder();
-        //    //    sb.Append("CREATE TABLE Proxy(");
-        //    //    sb.Append(" Id INTEGER PRIMARY KEY autoincrement,"); //自增列
-        //    //    sb.Append(" Proxy nvarchar(50),");
-        //    //    sb.Append(" Port int,");
-        //    //    sb.Append(" Type nvarchar(10) default('HTTP'),");
-        //    //    sb.Append(" Response float,");
-        //    //    sb.Append(" Country nvarchar(50),");
-        //    //    sb.Append(" Added DATETIME DEFAULT(datetime('now','localtime')),");
-        //    //    sb.Append(" TestDate DATETIME,"); //验证日期
-        //    //    sb.Append(" Anonymity nvarchar(50),");
-        //    //    sb.Append(" Description ntext,");
-        //    //    sb.Append(" Status int,");//状态0:dead,1:alive,2:not test
-        //    //    sb.Append(" IsAlive int,");//是否是可用代理列表:1是,0不是
-        //    //    sb.Append(" UseId nvarchar(50),");
-        //    //    sb.Append(" Username nvarchar(50),");
-        //    //    sb.Append(" UseIp nvarchar(50)");
-        //    //    sb.Append(" );");
-
-        //    //    SqliteHelper.ExecuteSql(sb.ToString());
-        //    //}
-        //}
-
-        /// <summary>
-        ///     认证信息
-        /// </summary>
-        public static OauthKey MyOauthKey { get; set; }
-
         /// <summary>
         ///     云引擎连接器
         /// </summary>
@@ -382,11 +345,7 @@ namespace ProxyHero
             {
                 if (null == _myApiHelper)
                 {
-                    if (MyOauthKey == null)
-                        MyOauthKey = new OauthKey();
-                    MyOauthKey.Username = "loamen";
-                    MyOauthKey.Passwod = "yd4abcd";
-                    _myApiHelper = new ApiHelper(MyOauthKey);
+                    _myApiHelper = new ApiHelper();
                 }
                 return _myApiHelper;
             }

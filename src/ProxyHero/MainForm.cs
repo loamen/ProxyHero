@@ -136,7 +136,7 @@ namespace ProxyHero
         {
             try
             {
-//                #region 测试版
+                #region 测试版
 
 //#if DEBUG
 //                try
@@ -158,7 +158,7 @@ namespace ProxyHero
 //                }
 //#endif
 
-//                #endregion
+                #endregion
 
                 #region
 
@@ -167,7 +167,6 @@ namespace ProxyHero
                 TimerAutoChangeIcon = new Timer();
 
                 //SplashScreen.UpdateStatusText(Config.LocalLanguage.Messages.InitializeDatabase);
-                //Config.InitDatabase();
 
                 _deserializeDockContent = GetContentFromPersistString;
 
@@ -333,12 +332,12 @@ namespace ProxyHero
 #endif
                 }
 
-                #region
-                if(BmobUser.CurrentUser == null)
-                {
-                    var userForm = new BmobUserForm();
-                    userForm.ShowDialog();
-                }
+                #region 用户登录
+                //if (BmobUser.CurrentUser == null)
+                //{
+                //    var userForm = new BmobUserForm();
+                //    userForm.ShowDialog();
+                //}
                 #endregion
 
                 #endregion

@@ -32,7 +32,7 @@ namespace ProxyHero
             }
             catch
             {
-                MessageBox.Show("登录失败，原因：" + future.Exception.InnerException.ToString());
+                result.Text = "登录失败，原因：" + future.Exception.InnerException.ToString();
             }
         }
 
@@ -47,7 +47,7 @@ namespace ProxyHero
         {
             if(BmobUser.CurrentUser == null)
             {
-                e.Cancel = true;
+               // e.Cancel = true;
             }
         }
     }

@@ -41,9 +41,9 @@ namespace ProxyHero
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(username.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(password.Text.Trim()))
             {
-                MessageBox.Show("请填写帐号！");
+                MessageBox.Show("请填写密码！");
                 return;
             }
 
@@ -53,16 +53,20 @@ namespace ProxyHero
             user.password = password.Text.Trim();
             user.NickName = txtNickName.Text.Trim();
             user.WechatOpenId = string.Empty;
+            user.avatar = "https://pic.cnblogs.com/face/110188/20170406195314.png";
 
             user.Sex = new BmobBoolean(false);
             var future = Bmob.CreateTaskAsync<UserEntity>(user);
             try
             {
                 FinishedCallback(future.Result, result);
+                var form = new BmobUserForm();
+                form.Show();
+                this.Close();
             }
             catch
             {
-                MessageBox.Show("注册失败，原因：" + future.Exception.InnerException.ToString());
+                result.Text = "注册失败，原因：" + future.Exception.InnerException.ToString();
             }
         }
     }

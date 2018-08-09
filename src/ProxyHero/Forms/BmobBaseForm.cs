@@ -25,7 +25,7 @@ namespace ProxyHero
             bmob = new BmobWindows();
 
             //初始化ApplicationId，这个ApplicationId需要更改为你自己的ApplicationId（ http://www.bmob.cn 上注册登录之后，创建应用可获取到ApplicationId）
-            Bmob.initialize("f5ef930ae5004372897f97afe3f000c3", "e931031a272606bd43ab9d870f6fea55");
+            Bmob.initialize("5fcf8cca1113b5136fca2007de03892d", "");
 
             //注册调试工具
             BmobDebug.Register(msg => { Debug.WriteLine(msg); });
