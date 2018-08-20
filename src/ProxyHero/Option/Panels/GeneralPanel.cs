@@ -34,12 +34,14 @@ namespace ProxyHero.Option.Panels
         /// </summary>
         private void LoadLanguage(Language language)
         {
-            Text = Config.IsChineseLanguage ? "选项" : "Setting";
+            Text = Config.IsChineseLanguage ? "选项" : "Settings";
 
             if (!Config.LanguageFileName.Contains("Simplified Chinese.xml"))
             {
                 object model = language.OptionPage;
                 _languageLoader.Load(model, typeof(GeneralPanel), this);
+                this.CategoryPath = Config.LocalLanguage.OptionPage.GeneralPanelCategoryPath;
+                this.DisplayName = Config.LocalLanguage.OptionPage.GeneralPanelDisplayName;
             }
         }
 

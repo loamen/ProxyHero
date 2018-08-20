@@ -29,6 +29,7 @@ namespace ProxyHero.Entity
         private int _testTimeOut = 5;
         private string _userAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)";
         private string _userName = string.Empty;
+        public int Id { get; set;}
 
         /// <summary>
         ///     读取RSS间隔

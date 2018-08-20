@@ -69,13 +69,13 @@
             this.groupBox2.Controls.Add(this.nudTestOutTime);
             this.groupBox2.Location = new System.Drawing.Point(7, 236);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(389, 144);
+            this.groupBox2.Size = new System.Drawing.Size(389, 182);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
             // btnBrowseCzIpDb
             // 
-            this.btnBrowseCzIpDb.Location = new System.Drawing.Point(206, 107);
+            this.btnBrowseCzIpDb.Location = new System.Drawing.Point(206, 143);
             this.btnBrowseCzIpDb.Name = "btnBrowseCzIpDb";
             this.btnBrowseCzIpDb.Size = new System.Drawing.Size(55, 23);
             this.btnBrowseCzIpDb.TabIndex = 17;
@@ -86,7 +86,7 @@
             // txtCzIpDbFileName
             // 
             this.txtCzIpDbFileName.BackColor = System.Drawing.Color.White;
-            this.txtCzIpDbFileName.Location = new System.Drawing.Point(11, 108);
+            this.txtCzIpDbFileName.Location = new System.Drawing.Point(11, 144);
             this.txtCzIpDbFileName.Name = "txtCzIpDbFileName";
             this.txtCzIpDbFileName.ReadOnly = true;
             this.txtCzIpDbFileName.Size = new System.Drawing.Size(193, 21);
@@ -95,7 +95,7 @@
             // CzIpDbFileName
             // 
             this.CzIpDbFileName.AutoSize = true;
-            this.CzIpDbFileName.Location = new System.Drawing.Point(10, 80);
+            this.CzIpDbFileName.Location = new System.Drawing.Point(11, 116);
             this.CzIpDbFileName.Name = "CzIpDbFileName";
             this.CzIpDbFileName.Size = new System.Drawing.Size(113, 12);
             this.CzIpDbFileName.TabIndex = 15;
@@ -104,7 +104,7 @@
             // Country
             // 
             this.Country.AutoSize = true;
-            this.Country.Location = new System.Drawing.Point(10, 48);
+            this.Country.Location = new System.Drawing.Point(11, 84);
             this.Country.Name = "Country";
             this.Country.Size = new System.Drawing.Size(96, 16);
             this.Country.TabIndex = 13;
@@ -114,7 +114,7 @@
             // TestThreadsCount
             // 
             this.TestThreadsCount.AutoSize = true;
-            this.TestThreadsCount.Location = new System.Drawing.Point(184, 20);
+            this.TestThreadsCount.Location = new System.Drawing.Point(11, 51);
             this.TestThreadsCount.Name = "TestThreadsCount";
             this.TestThreadsCount.Size = new System.Drawing.Size(77, 12);
             this.TestThreadsCount.TabIndex = 11;
@@ -122,7 +122,7 @@
             // 
             // nudThreadsCount
             // 
-            this.nudThreadsCount.Location = new System.Drawing.Point(305, 16);
+            this.nudThreadsCount.Location = new System.Drawing.Point(129, 47);
             this.nudThreadsCount.Maximum = new decimal(new int[] {
             50,
             0,
@@ -145,7 +145,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(164, 20);
+            this.label11.Location = new System.Drawing.Point(190, 20);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(11, 12);
             this.label11.TabIndex = 9;
@@ -154,7 +154,7 @@
             // TestTimeout
             // 
             this.TestTimeout.AutoSize = true;
-            this.TestTimeout.Location = new System.Drawing.Point(10, 20);
+            this.TestTimeout.Location = new System.Drawing.Point(11, 20);
             this.TestTimeout.Name = "TestTimeout";
             this.TestTimeout.Size = new System.Drawing.Size(89, 12);
             this.TestTimeout.TabIndex = 8;
@@ -162,7 +162,7 @@
             // 
             // nudTestOutTime
             // 
-            this.nudTestOutTime.Location = new System.Drawing.Point(103, 16);
+            this.nudTestOutTime.Location = new System.Drawing.Point(129, 16);
             this.nudTestOutTime.Maximum = new decimal(new int[] {
             60,
             0,
@@ -287,7 +287,7 @@
             this.DisplayName = "验证选项";
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "TestPanel";
-            this.Size = new System.Drawing.Size(402, 394);
+            this.Size = new System.Drawing.Size(402, 427);
             this.Load += new System.EventHandler(this.TestOptionPanel_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

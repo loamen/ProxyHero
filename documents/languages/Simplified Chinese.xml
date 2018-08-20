@@ -3,7 +3,7 @@
   <LanguageName>简体中文</LanguageName>
   <LanguageFileAuthor>龙门信息网（www.loamen.com）</LanguageFileAuthor>
   <LanguageFileVersion>V 1.0</LanguageFileVersion>
-  <LanguageFileForLPHVersion>V 1.6.1</LanguageFileForLPHVersion>
+  <LanguageFileForLPHVersion>V 1.6.2</LanguageFileForLPHVersion>
   <MainPage>
     <File>文件</File>
     <Exit>退出</Exit>
@@ -34,7 +34,6 @@
     <Debug>允许调试信息</Debug>
   </MainPage>
   <ProxyPage>
-    <ResetAllSetting>初始化所有设置</ResetAllSetting>
     <Option>选项</Option>
     <DownloadProxy>下载代理数据</DownloadProxy>
     <TestAll>验证全部</TestAll>
@@ -58,6 +57,7 @@
     <Clear>清空</Clear>
   </ProxyPage>
   <OptionPage>
+    <ResetAllSetting>初始化所有设置</ResetAllSetting>
     <CzIpDbFileName>纯真IP数据库地址</CzIpDbFileName>
     <BasicOptions>基本设置</BasicOptions>
     <TestOptions>验证配置</TestOptions>
@@ -88,6 +88,17 @@
     <Anonymity>验证匿名度</Anonymity>
     <PleaseSelectOrFill>请选择默认验证网址或者在下面填写</PleaseSelectOrFill>
     <ClickForSystemTesting>点击进行系统检测</ClickForSystemTesting>
+    <GeneralPanelCategoryPath>选项\基本选项</GeneralPanelCategoryPath>
+    <GeneralPanelDisplayName>基本选项</GeneralPanelDisplayName>
+    <LanguagePanelCategoryPath>选项\语言</LanguagePanelCategoryPath>
+    <LanguagePanelDisplayName>语言</LanguagePanelDisplayName>
+    <TestPanelCategoryPath>选项\验证选项</TestPanelCategoryPath>
+    <TestPanelDisplayName>验证选项</TestPanelDisplayName>
+    <UserAgentPanelCategoryPath>选项\User-Agent</UserAgentPanelCategoryPath>
+    <UserAgentPanelDisplayName>User-Agent</UserAgentPanelDisplayName>
+    <SystemTestPanelCategoryPath>选项\系统检测</SystemTestPanelCategoryPath>
+    <SystemTestPanelDisplayName>系统检测</SystemTestPanelDisplayName>
+    <OptionsNoDescription>说明</OptionsNoDescription>
   </OptionPage>
   <InformationPage>
     <Delete>删除</Delete>

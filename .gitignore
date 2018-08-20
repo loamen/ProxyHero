@@ -176,3 +176,6 @@ Library/*
 Library/Dos.Common/*
 Library/Dos.WeChat/*
 Porter.Corporation.Web/upload/*
+
+src/.vs
+src/.vs/*

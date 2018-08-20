@@ -19,7 +19,7 @@
     <PluginManage>Plugin Management</PluginManage>  
     <Tool>Tools</Tool>  
     <DirectConnection>Disable proxy</DirectConnection>  
-    <OnlineHelp>Documents</OnlineHelp>  
+    <OnlineHelp>Help Document</OnlineHelp>  
     <Forum>Forum</Forum>  
     <CheckUpdate>Check for Updates</CheckUpdate>  
     <Donate>Donate</Donate>  
@@ -35,8 +35,7 @@
     <Debug>Allows debugging information</Debug> 
   </MainPage>  
   <ProxyPage> 
-    <ResetAllSetting>Initialize all settings</ResetAllSetting>  
-    <Option>Setting</Option>  
+    <Option>Settings</Option>  
     <DownloadProxy>Download proxy list</DownloadProxy>  
     <TestAll>Test all</TestAll>  
     <StopTest>Stop Test</StopTest>  
@@ -59,18 +58,19 @@
     <Clear>Clear</Clear> 
   </ProxyPage>  
   <OptionPage> 
-    <CzIpDbFileName>IP database</CzIpDbFileName>  
-    <BasicOptions>Basic Options</BasicOptions>  
-    <TestOptions>Test Options</TestOptions>  
+    <CzIpDbFileName>IP address database</CzIpDbFileName>  
+    <BasicOptions>Basic Settings</BasicOptions>  
+    <TestOptions>Verify Configuration</TestOptions>  
     <LanguageOptions>Language</LanguageOptions>  
     <SystemCheck>System Detection</SystemCheck>  
     <CloudServer>Cloud Server</CloudServer>  
     <AutoSwitchingInterval>Automatic switching proxy interval</AutoSwitchingInterval>  
     <AutoSwitchingProxyMaxDelay>Automatically proxy maximum delay is less than</AutoSwitchingProxyMaxDelay>  
     <ExportTxtFormat>Export TXT file format</ExportTxtFormat>  
-    <OK>OK</OK>  
-    <Cancel>Cancel</Cancel>  
-    <Apply>Apply</Apply>  
+    <OK>OK</OK>
+	<Apply>Apply</Apply>
+	<Cancel>Cancel</Cancel>
+	<OptionsNoDescription>There is description.</OptionsNoDescription>
     <BuiltinBrowserScriptErrorsSuppressed>Prevents display of built-in browser script errors</BuiltinBrowserScriptErrorsSuppressed>  
     <LanguageFile>Language file path</LanguageFile>  
     <LanguageName>Language name</LanguageName>  
@@ -84,11 +84,22 @@
     <TestWebsiteTitle>Keyword</TestWebsiteTitle>  
     <TestWebsiteEncode>Encoding</TestWebsiteEncode>  
     <TestTimeout>Test timeout</TestTimeout>  
-    <TestThreadsCount>Max threads</TestThreadsCount>  
+    <TestThreadsCount>Test threads</TestThreadsCount>  
     <Country>Test location</Country>  
     <Anonymity>Test Anonymity</Anonymity>  
     <PleaseSelectOrFill>Please select the default verification URL or fill in below</PleaseSelectOrFill>  
     <ClickForSystemTesting>Click to perform system detection</ClickForSystemTesting> 
+	<ResetAllSetting>Reset all settings</ResetAllSetting>  
+	<GeneralPanelCategoryPath>Settings\General Options</GeneralPanelCategoryPath>
+	<GeneralPanelDisplayName>General Options</GeneralPanelDisplayName>
+	<LanguagePanelCategoryPath>Settings\Language</LanguagePanelCategoryPath>
+	<LanguagePanelDisplayName>Language</LanguagePanelDisplayName>
+	<TestPanelCategoryPath>Settings\Test Options</TestPanelCategoryPath>
+	<TestPanelDisplayName>Test Options</TestPanelDisplayName>
+	<UserAgentPanelCategoryPath>Settings\User-Agent</UserAgentPanelCategoryPath>
+	<UserAgentPanelDisplayName>User-Agent</UserAgentPanelDisplayName>
+	<SystemTestPanelCategoryPath>Settings\System Detection</SystemTestPanelCategoryPath>
+	<SystemTestPanelDisplayName>System Detection</SystemTestPanelDisplayName>
   </OptionPage>  
   <InformationPage> 
     <Delete>Delete</Delete>  

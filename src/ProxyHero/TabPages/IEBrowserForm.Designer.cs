@@ -216,7 +216,7 @@
             this.Setting.Image = ((System.Drawing.Image)(resources.GetObject("Setting.Image")));
             this.Setting.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Setting.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Setting.Name = "Setting";
+            this.Setting.Name = "Settings";
             this.Setting.Size = new System.Drawing.Size(28, 28);
             this.Setting.Text = "设置";
             this.Setting.Click += new System.EventHandler(this.tsbSetting_Click);

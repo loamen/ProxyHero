@@ -388,18 +388,12 @@ namespace ProxyHero.LanguageInformation
         private string _option = "选项";
         private string _paste = "粘贴";
         private string _port = "端口";
-        private string _resetAllSetting = "初始化所有设置";
+        
         private string _search = "查找";
         private string _stopTest = "停止验证";
         private string _switchTo = "使用该代理";
         private string _test = "验证";
         private string _testAll = "验证全部";
-
-        public string ResetAllSetting
-        {
-            get { return _resetAllSetting; }
-            set { _resetAllSetting = value; }
-        }
 
         public string Option
         {
@@ -565,6 +559,7 @@ namespace ProxyHero.LanguageInformation
         private string _builtinBrowserScriptErrorsSuppressed = "禁止显示内置浏览器脚本错误";
         private string _cancel = "取消";
         private string _clickForSystemTesting = "点击进行系统检测";
+        private string _resetAllSetting = "初始化所有设置";
         private string _cloudServer = "云服务器";
         private string _country = "验证地理位置";
         private string _defaultTestWebsite = "默认网址";
@@ -588,6 +583,25 @@ namespace ProxyHero.LanguageInformation
         private string _testWebsiteTitle = "网站标题";
         private string _useSystemProxySetting = "使用系统代理设置访问网络";
         private string _czIpDbFileName = "纯真IP数据库地址";
+
+        private string _optionNoDescription = "说明";
+
+        private string _generalPanelCategoryPath = @"选项\基本选项";
+        private string _generalPanelDisplayName = "基本选项";
+        private string _languagePanelCategoryPath = @"选项\语言";
+        private string _languagePanelDisplayName = "语言";
+        private string _testPanelCategoryPath = @"选项\验证选项";
+        private string _testPanelDisplayName = "验证选项";
+        private string _userAgentPanelCategoryPath = @"选项\User-Agent";
+        private string _userAgentPanelDisplayName = "User-Agent";
+        private string _systemTestPanelCategoryPath = @"选项\系统检测";
+        private string _systemTestPanelDisplayName = "系统检测";
+
+        public string ResetAllSetting
+        {
+            get { return _resetAllSetting; }
+            set { _resetAllSetting = value; }
+        }
 
         /// <summary>
         /// 纯真IP数据库地址
@@ -859,6 +873,41 @@ namespace ProxyHero.LanguageInformation
             get { return _clickForSystemTesting; }
             set { _clickForSystemTesting = value; }
         }
+        /// <summary>
+        /// GeneralPanelCategoryPath
+        /// </summary>
+        public string GeneralPanelCategoryPath { get => _generalPanelCategoryPath; set => _generalPanelCategoryPath = value; }
+        /// <summary>
+        /// GeneralPanelDisplayName
+        /// </summary>
+        public string GeneralPanelDisplayName { get => _generalPanelDisplayName; set => _generalPanelDisplayName = value; }
+        /// <summary>
+        /// LanguagePanelCategoryPath
+        /// </summary>
+        public string LanguagePanelCategoryPath { get => _languagePanelCategoryPath; set => _languagePanelCategoryPath = value; }
+        /// <summary>
+        /// LanguagePanelDisplayName
+        /// </summary>
+        public string LanguagePanelDisplayName { get => _languagePanelDisplayName; set => _languagePanelDisplayName = value; }
+        /// <summary>
+        /// TestPanelCategoryPath
+        /// </summary>
+        public string TestPanelCategoryPath { get => _testPanelCategoryPath; set => _testPanelCategoryPath = value; }
+        /// <summary>
+        /// TestPanelDisplayName
+        /// </summary>
+        public string TestPanelDisplayName { get => _testPanelDisplayName; set => _testPanelDisplayName = value; }
+        /// <summary>
+        /// UserAgentPanelCategoryPath
+        /// </summary>
+        public string UserAgentPanelCategoryPath { get => _userAgentPanelCategoryPath; set => _userAgentPanelCategoryPath = value; }
+        /// <summary>
+        /// UserAgentPanelDisplayName
+        /// </summary>
+        public string UserAgentPanelDisplayName { get => _userAgentPanelDisplayName; set => _userAgentPanelDisplayName = value; }
+        public string SystemTestPanelCategoryPath { get => _systemTestPanelCategoryPath; set => _systemTestPanelCategoryPath = value; }
+        public string SystemTestPanelDisplayName { get => _systemTestPanelDisplayName; set => _systemTestPanelDisplayName = value; }
+        public string OptionsNoDescription { get => _optionNoDescription; set => _optionNoDescription = value; }
     }
 
     [Serializable]

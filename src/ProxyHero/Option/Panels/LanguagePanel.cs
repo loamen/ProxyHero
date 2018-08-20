@@ -33,7 +33,7 @@ namespace ProxyHero.Option.Panels
         /// </summary>
         private void LoadLanguage(Language language)
         {
-            Text = Config.IsChineseLanguage ? "选项" : "Setting";
+            Text = Config.IsChineseLanguage ? "选项" : "Settings";
 
             lblForLPHVersion.Text = ProductVersion;
 
@@ -41,6 +41,8 @@ namespace ProxyHero.Option.Panels
             {
                 object model = language.OptionPage;
                 _languageLoader.Load(model, typeof(LanguagePanel), this);
+                this.CategoryPath = Config.LocalLanguage.OptionPage.LanguagePanelCategoryPath;
+                this.DisplayName = Config.LocalLanguage.OptionPage.LanguagePanelDisplayName;
             }
         }
 
@@ -70,8 +72,13 @@ namespace ProxyHero.Option.Panels
 
                         LoadLanguage(language);
                     }
-                    if (File.Exists(Config.SettingFileName))
-                        File.Delete(Config.SettingFileName);
+                    var dal = new SettingDAL();
+                    var model = dal.FindAll().FirstOrDefault();
+                    if(model != null)
+                    {
+                        model.LanguageFileName = objOpen.FileName;
+                        dal.Update(model);
+                    }
 
                     ApplicationMustRestart = true;
                 }

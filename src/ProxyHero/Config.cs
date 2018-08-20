@@ -13,6 +13,7 @@ using ProxyHero.Entity;
 using ProxyHero.LanguageInformation;
 using ProxyHero.Model;
 using ProxyHero.Net;
+using System.Linq;
 
 namespace ProxyHero
 {
@@ -51,10 +52,30 @@ namespace ProxyHero
         /// </summary>
         public static readonly string ViewSettingFileName = ProxyHeroPath + @"\ViewSetting.xml";
 
+        public static string DatabasePath
+        {
+            get
+            {
+                string path = ProxyHeroPath + @"\Data";
+                var di = new DirectoryInfo(path);
+                if (!di.Exists)
+                {
+                    di.Create();
+                }
+                return di.FullName;
+            }
+        }
+
         /// <summary>
-        ///     配置文件全路径+文件名
+        /// 配置数据文件
         /// </summary>
-        public static readonly string SettingFileName = ProxyHeroPath + @"\Setting.xml";
+        public static string SettingDataFileName
+        {
+            get
+            {
+                return DatabasePath + @"\setting.db";
+            }
+        }
 
         /// <summary>
         ///     可用代理文件全路径+文件名
@@ -228,19 +249,25 @@ namespace ProxyHero
         {
             get
             {
-                if (_localSetting == null && File.Exists(SettingFileName))
+                var dal = new SettingDAL();
+                var model = dal.FindAll().FirstOrDefault();
+                if (model == null)
                 {
-                    _localSetting = XmlHelper.XmlDeserialize(
-                        SettingFileName,
-                        typeof (Setting)) as Setting;
-                }
+                    model = new Setting();
+                    model.DefaultTestOption = new TestOption();
+                    model.DefaultTestOption.TestUrl = "https://www.baidu.com";
+                    model.DefaultTestOption.TestWebEncoding = "UTF-8";
+                    model.DefaultTestOption.TestWebTitle = "百度";
 
-                return _localSetting ?? (_localSetting = new Setting());
+                    model.TestOptionsList.Add(model.DefaultTestOption);
+
+                    dal.Insert(model);
+                }
+                return model;
             }
             set
             {
                 _localSetting = value;
-                //XmlHelper.XmlSerialize(Config.ConfigPath, _localConfig, typeof(ConfigEntity));
             }
         }
 

@@ -613,13 +613,6 @@ namespace ProxyHero.TabPages
 
                 #region 读取验证配置
 
-                if (Config.LocalSetting == null)
-                {
-                    Config.LocalSetting = XmlHelper.XmlDeserialize(
-                        Config.SettingFileName,
-                        typeof (Setting)) as Setting;
-                }
-
                 if (Config.LocalSetting != null && Config.LocalSetting.DefaultTestOption != null)
                 {
                     testOption = Config.LocalSetting.DefaultTestOption;

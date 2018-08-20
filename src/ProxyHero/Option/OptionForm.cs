@@ -13,16 +13,20 @@ using Loamen.WinControls.UI;
 using Loamen.WinControls.UI.Collections;
 using ProxyHero.Common;
 using ProxyHero.Entity;
+using ProxyHero.LanguageInformation;
 using ProxyHero.Option.Panels;
 
 namespace ProxyHero.Option
 {
     public partial class OptionForm : OptionsForm
     {
+        private readonly LanguageLoader _languageLoader = new LanguageLoader();
+
         public OptionForm()
             : base(PropertyDictionary<string, object>.Convert(Config.LocalSetting))
         {
             InitializeComponent();
+        
 
             Panels.Add(new GeneralPanel());
             Panels.Add(new TestPanel());
@@ -30,8 +34,12 @@ namespace ProxyHero.Option
             Panels.Add(new UserAgentPanel());
             Panels.Add(new SystemTestPanel());
 
-            AppRestartText = Config.LocalLanguage.OptionPage.ProgramRestartRequired;
+            OkButtonText = Config.LocalLanguage.OptionPage.OK;
+            ApplyButtonText = Config.LocalLanguage.OptionPage.Apply;
+            CancelButtonText = Config.LocalLanguage.OptionPage.Cancel;
+            OptionsNoDescription = Config.LocalLanguage.OptionPage.OptionsNoDescription;
 
+            AppRestartText = Config.LocalLanguage.OptionPage.ProgramRestartRequired;
             Config.LocalSetting.PropertyChanged += LocalSetting_PropertyChanged;
         }
 
@@ -101,8 +109,9 @@ namespace ProxyHero.Option
                 localSetting.TestOptionsList.Add(testSetting);
             }
 
-            var res = XmlHelper.XmlSerialize(Config.SettingFileName, localSetting, typeof(Setting));
-            if (!res)
+            var dal = new SettingDAL();
+            var res = dal.Insert(localSetting);
+            if (res == 0)
             {
                 MsgBox.ShowErrorMessage("保存失败！");
             }
@@ -126,7 +135,21 @@ namespace ProxyHero.Option
 
         private void OptionForm_Load(object sender, EventArgs e)
         {
-            Text = Config.IsChineseLanguage ? "选项" : "Setting";
+            Text = Config.IsChineseLanguage ? "选项" : "Settings";
+        }
+
+        /// <summary>
+        ///     加载窗体语言
+        /// </summary>
+        private void LoadLanguage(Language language)
+        {
+            Text = Config.IsChineseLanguage ? "选项" : "Settings";
+
+            if (!Config.LanguageFileName.Contains("Simplified Chinese.xml"))
+            {
+                object model = language.OptionPage;
+                _languageLoader.Load(model, typeof(OptionForm), this);
+            }
         }
     }
 }

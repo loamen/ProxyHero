@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization;
@@ -143,8 +144,9 @@ namespace Loamen.Common
                     return obj;
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Debug.Write(ex.Message);
                 return null;
             }
         }

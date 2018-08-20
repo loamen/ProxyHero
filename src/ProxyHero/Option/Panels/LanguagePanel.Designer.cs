@@ -171,9 +171,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CategoryPath = "选项\\Language";
+            this.CategoryPath = "选项\\语言";
             this.Controls.Add(this.groupBox6);
-            this.DisplayName = "Language";
+            this.DisplayName = "语言";
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "LanguagePanel";
             this.Size = new System.Drawing.Size(402, 291);

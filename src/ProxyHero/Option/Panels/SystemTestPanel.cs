@@ -41,6 +41,9 @@ namespace ProxyHero.Option.Panels
             {
                 object model = language.OptionPage;
                 _languageLoader.Load(model, typeof(SystemTestPanel), this);
+
+                this.CategoryPath = Config.LocalLanguage.OptionPage.SystemTestPanelCategoryPath;
+                this.DisplayName = Config.LocalLanguage.OptionPage.SystemTestPanelDisplayName;
             }
         }
 
