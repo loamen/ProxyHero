@@ -18,9 +18,8 @@ namespace ProxyHero
             // Open data file (or create if not exits)
             using (var db = new LiteDatabase(Config.SettingDataFileName))
             {
-                // Get a collection (or create, if not exits)
                 var col = db.GetCollection<T>(tableName);
-                // Insert new customer document
+
                 var value = col.Insert(model);
                 return value.AsInt32;
             }
@@ -121,6 +120,18 @@ namespace ProxyHero
                 var col = db.GetCollection<T>(tableName);
                 var docs = col.FindAll();
                 return docs;
+            }
+        }
+
+        public static int Count(string tableName)
+        {
+            // Open database (or create if not exits)
+            using (var db = new LiteDatabase(Config.SettingDataFileName))
+            {
+                // Get Settingection collection
+                var col = db.GetCollection<T>(tableName);
+
+                return col.Count();
             }
         }
     }

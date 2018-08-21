@@ -66,7 +66,7 @@ namespace ProxyHero.Option.Panels
                     ips += ip + "\n";
                 }
                 sb.Append("\n        【本地IP】: " + ips);
-                sb.Append("        【外部IP】: " + NetHelper.LocalPublicIp);
+                sb.Append("\n        【外部IP】: " + NetHelper.LocalPublicIp);
                 sb.Append("\n      【连接方式】: " + NetHelper.InternetConnectedState);
                 sb.Append("\n  【是否是局域网】: " + (NetHelper.IsPublicIPAddress(NetHelper.FirstLocalIp + "") ? "否" : "是"));
                 sb.Append("\n【是否连接因特网】: " + (NetHelper.IsConnectedToInternet ? "是" : "否"));

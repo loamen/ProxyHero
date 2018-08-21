@@ -110,7 +110,18 @@ namespace ProxyHero.Option
             }
 
             var dal = new SettingDAL();
-            var res = dal.Insert(localSetting);
+            var model = dal.FindAll().FirstOrDefault();
+            var res = 0;
+            if (model == null)
+            {
+                res = dal.Insert(localSetting);
+            }
+            else
+            {
+                localSetting.Id = model.Id;
+                res = dal.Update(localSetting) ? 1 : 0;
+            }
+
             if (res == 0)
             {
                 MsgBox.ShowErrorMessage("保存失败！");

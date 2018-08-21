@@ -204,18 +204,7 @@ namespace ProxyHero.Plugin
 
         private void DownloadPlugins_Click(object sender, EventArgs e)
         {
-#if DEBUG
-            if (Config.IsChineseLanguage)
-#else
-            if(Config.IsChineseOs)
-#endif
-            {
-                Config.MainForm.OpenIE("http://bbs.loamen.com/forum-47-1.html");
-            }
-            else
-            {
-                Config.MainForm.OpenIE("http://en.loamen.com");
-            }
+            Config.MainForm.OpenIE("https://github.com/loamen/ProxyHero/releases");
         }
     }
 }

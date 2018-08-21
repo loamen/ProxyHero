@@ -19,15 +19,7 @@ namespace ProxyHero
         /// <returns></returns>
         public int Insert(Setting model)
         {
-            // Open database (or create if not exits)
-            using (var db = new LiteDatabase(Config.SettingDataFileName))
-            {
-                // Get Settingection collection
-                var col = db.GetCollection<Setting>(TABLE_NAME);
-
-                var value = col.Insert(model);
-                return value.AsInt32;
-            }
+            return LiteDBHelper<Setting>.Insert(model, TABLE_NAME);
         }
 
         /// <summary>
@@ -43,53 +35,32 @@ namespace ProxyHero
         /// <summary>
         /// Exists
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="query"></param>
         /// <returns></returns>
 
-        public bool Exists(string name)
+        public bool Exists(Query query)
         {
-            // Open database (or create if not exits)
-            using (var db = new LiteDatabase(Config.SettingDataFileName))
-            {
-                // Get Settingection collection
-                var col = db.GetCollection<Setting>(TABLE_NAME);
-
-                return col.Exists(x => x.CzIpDbFileName == name);
-            }
+            return LiteDBHelper<Setting>.Exists(query, TABLE_NAME);
         }
 
         /// <summary>
         /// Delete
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="docId"></param>
         /// <returns></returns>
-        public int Delete(string name)
+        public bool Delete(int docId)
         {
-            // Open database (or create if not exits)
-            using (var db = new LiteDatabase(Config.SettingDataFileName))
-            {
-                // Get Settingection collection
-                var col = db.GetCollection<Setting>(TABLE_NAME);
-
-                return col.Delete(x => x.CzIpDbFileName == name);
-            }
+            return LiteDBHelper<Setting>.Delete(docId, TABLE_NAME);
         }
 
         /// <summary>
         /// Query one model
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="query"></param>
         /// <returns></returns>
-        public Setting FindOne(string name)
+        public Setting FindOne(Query query)
         {
-            // Open database (or create if not exits)
-            using (var db = new LiteDatabase(Config.SettingDataFileName))
-            {
-                // Get Settingection collection
-                var col = db.GetCollection<Setting>(TABLE_NAME);
-
-                return col.FindOne(x => x.CzIpDbFileName == name);
-            }
+            return LiteDBHelper<Setting>.FindOne(query, TABLE_NAME);
         }
 
         /// <summary>
@@ -98,14 +69,7 @@ namespace ProxyHero
         /// <returns></returns>
         public IEnumerable<Setting> FindAll()
         {
-            // Open database (or create if not exits)
-            using (var db = new LiteDatabase(Config.SettingDataFileName))
-            {
-                // Get Settingection collection
-                var col = db.GetCollection<Setting>(TABLE_NAME);
-
-                return col.FindAll();
-            }
+            return LiteDBHelper<Setting>.FindAll(TABLE_NAME);
         }
 
         /// <summary>
@@ -114,33 +78,7 @@ namespace ProxyHero
         /// <returns></returns>
         public int Count()
         {
-            // Open database (or create if not exits)
-            using (var db = new LiteDatabase(Config.SettingDataFileName))
-            {
-                // Get Settingection collection
-                var col = db.GetCollection<Setting>(TABLE_NAME);
-
-                return col.Count();
-            }
-        }
-
-        /// <summary>
-        /// Init Database
-        /// </summary>
-        public static void Init()
-        {
-            // Open database (or create if not exits)
-            using (var db = new LiteDatabase(Config.SettingDataFileName))
-            {
-                // Get Settingection collection
-                var col = db.GetCollection<Setting>(TABLE_NAME);
-
-                if (col.Count() == 0)
-                {
-                    // Index document using a document property
-                    col.EnsureIndex(x => x.CzIpDbFileName, true);
-                }
-            }
+            return LiteDBHelper<Setting>.Count(TABLE_NAME);
         }
     }
 }

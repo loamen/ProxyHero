@@ -73,7 +73,7 @@ namespace ProxyHero
         {
             get
             {
-                return DatabasePath + @"\setting.db";
+                return DatabasePath + @"\data.db";
             }
         }
 
@@ -249,21 +249,25 @@ namespace ProxyHero
         {
             get
             {
-                var dal = new SettingDAL();
-                var model = dal.FindAll().FirstOrDefault();
-                if (model == null)
+                if (_localSetting == null)
                 {
-                    model = new Setting();
-                    model.DefaultTestOption = new TestOption();
-                    model.DefaultTestOption.TestUrl = "https://www.baidu.com";
-                    model.DefaultTestOption.TestWebEncoding = "UTF-8";
-                    model.DefaultTestOption.TestWebTitle = "百度";
+                    var dal = new SettingDAL();
+                    var model = dal.FindAll().FirstOrDefault();
+                    if (model == null)
+                    {
+                        model = new Setting();
+                        model.DefaultTestOption = new TestOption();
+                        model.DefaultTestOption.TestUrl = "https://www.baidu.com";
+                        model.DefaultTestOption.TestWebEncoding = "UTF-8";
+                        model.DefaultTestOption.TestWebTitle = "百度";
 
-                    model.TestOptionsList.Add(model.DefaultTestOption);
+                        model.TestOptionsList.Add(model.DefaultTestOption);
 
-                    dal.Insert(model);
+                        dal.Insert(model);
+                    }
+                    _localSetting = model;
                 }
-                return model;
+                return _localSetting;
             }
             set
             {

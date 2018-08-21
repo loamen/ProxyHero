@@ -25,8 +25,8 @@ namespace ProxyHero.Entity
         private bool _rememberPassword;
         private bool _scriptErrorsSuppressed = true;
         private List<TestOption> _testOptions = new List<TestOption>();
-        private int _testThreadsCount = 10;
-        private int _testTimeOut = 5;
+        private int _testThreadsCount = 50;
+        private int _testTimeOut = 10;
         private string _userAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)";
         private string _userName = string.Empty;
         public int Id { get; set;}

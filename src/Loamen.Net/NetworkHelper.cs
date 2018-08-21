@@ -162,8 +162,11 @@ namespace Loamen.Net
             {
                 var client = new WebClient();
                 client.Proxy = null;
-                byte[] bytRecv = client.DownloadData("http://www.ip138.com/ip2city.asp"); //下载网页数据 
-                string str = Encoding.GetEncoding("gb2312").GetString(bytRecv);
+                client.Credentials = CredentialCache.DefaultCredentials;
+                client.Headers.Add("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; QQWubi 133; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; CIBA; InfoPath.2)");
+                client.Headers.Add("Host", "ip.cn");
+
+                string str = client.DownloadString("https://ip.cn"); //下载网页数据 
                 string r =
                     @"(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])";
                 string ip = Regex.Match(str, r).ToString(); //提取信息                 

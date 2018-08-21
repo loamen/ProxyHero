@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PluginManageForm));
             this.lvPlugin = new System.Windows.Forms.ListView();
-            this.PluginName = new System.Windows.Forms.ColumnHeader();
-            this.Author = new System.Windows.Forms.ColumnHeader();
-            this.Version = new System.Windows.Forms.ColumnHeader();
-            this.LPHVersion = new System.Windows.Forms.ColumnHeader();
-            this.Description = new System.Windows.Forms.ColumnHeader();
-            this.FileName = new System.Windows.Forms.ColumnHeader();
+            this.PluginName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Version = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LPHVersion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FileName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.OK = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
@@ -173,7 +173,7 @@
             this.Name = "PluginManageForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Plugin Manage";
+            this.Text = "Plugins Manage";
             this.Load += new System.EventHandler(this.PluginManageForm_Load);
             this.ResumeLayout(false);
 

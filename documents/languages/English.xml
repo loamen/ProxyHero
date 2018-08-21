@@ -126,7 +126,7 @@
     <Remove>Remove</Remove>  
     <OK>OK</OK>  
     <Cancel>Cancel</Cancel>  
-    <DownloadPlugins>Download Plugin</DownloadPlugins>  
+    <DownloadPlugins>Download Plugins</DownloadPlugins>  
     <Compile>Compile (.cs-&gt;.dll)</Compile> 
   </PluginManagePage>  
   <Messages> 

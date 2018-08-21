@@ -99,6 +99,8 @@ namespace Loamen.Common
                     return "Windows Vista";
                 case "6.1":
                     return "Windows 7";
+                case "6.2":
+                    return "Windows 10";
                 default:
                     return "Unknown version";
             }
