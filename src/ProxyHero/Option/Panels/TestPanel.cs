@@ -87,10 +87,6 @@ namespace ProxyHero.Option.Panels
             nudThreadsCount.DataBindings.Add("Value", localSetting, "TestThreadsCount",
                                                                   true, DataSourceUpdateMode.OnPropertyChanged);
 
-            Country.Checked = localSetting.CheckArea;
-            Country.DataBindings.Add("Checked", localSetting, "CheckArea",
-                                                                  true, DataSourceUpdateMode.OnPropertyChanged);
-
             txtUrl.Text = localSetting.DefaultTestOption.TestUrl;
             txtUrl.DataBindings.Add("Text", localSetting.DefaultTestOption, "TestUrl",
                                                                   true, DataSourceUpdateMode.OnPropertyChanged);
@@ -103,10 +99,6 @@ namespace ProxyHero.Option.Panels
             txtEncoding.DataBindings.Add("Text", localSetting.DefaultTestOption, "TestWebEncoding",
                                                                   true, DataSourceUpdateMode.OnPropertyChanged);
 
-            txtCzIpDbFileName.Text = localSetting.CzIpDbFileName;
-            txtCzIpDbFileName.DataBindings.Add("Text", localSetting, "CzIpDbFileName",
-                                                                  true, DataSourceUpdateMode.OnPropertyChanged);
-           
 
             if (cbbChoose.Items.Count > 0)
             {
@@ -130,7 +122,6 @@ namespace ProxyHero.Option.Panels
             txtUrl.AccessibleDescription = Config.LocalLanguage.Messages.TestWebsiteUrlToolTip;
             txtTitle.AccessibleDescription = Config.LocalLanguage.Messages.TestWebsiteTitleToolTip;
             txtEncoding.AccessibleDescription = Config.LocalLanguage.Messages.TestWebsiteEncodeToolTip;
-            Country.AccessibleDescription = Config.LocalLanguage.Messages.TestAreaToolTip;
         }
 
         private void cbbChoose_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,26 +150,6 @@ namespace ProxyHero.Option.Panels
                 MsgBox.ShowExceptionMessage(ex);
             }
         }
-
-        private void btnBrowseCzIpDb_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var objOpen = new OpenFileDialog
-                {
-                    Filter = @"纯真IP数据库|qqwry.dat|所有文件|*.*",
-                    InitialDirectory = Config.LanguagePath
-                };
-
-                if (objOpen.ShowDialog() == DialogResult.OK)
-                {
-                    txtCzIpDbFileName.Text = objOpen.FileName;
-                }
-            }
-            catch (Exception ex)
-            {
-                MsgBox.ShowExceptionMessage(ex);
-            }
-        }
+       
     }
 }

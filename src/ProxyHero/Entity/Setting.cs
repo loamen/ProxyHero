@@ -12,8 +12,6 @@ namespace ProxyHero.Entity
         private int _autoChangeProxyInterval = 10;
         private bool _autoLogin;
         private int _autoProxySpeed = 10;
-        private bool _checkArea;
-        private string _czIpDbFileName = Application.StartupPath + @"\ip\qqwry.dat";
         private TestOption _defaultTestOption = new TestOption();
         private string _exportMode = Config.LocalLanguage.Messages.LoamenFormat;
         private HttpOptions _httpOption;
@@ -157,20 +155,6 @@ namespace ProxyHero.Entity
             }
         }
 
-        /// <summary>
-        ///     验证地理位置
-        /// </summary>
-        public bool CheckArea
-        {
-            get { return _checkArea; }
-            set
-            {
-                SendPropertyChanging();
-                _checkArea = value;
-                SendPropertyChanged("CheckArea");
-            }
-        }
-
         public bool RememberPassword
         {
             get { return _rememberPassword; }
@@ -290,20 +274,6 @@ namespace ProxyHero.Entity
                 SendPropertyChanging();
                 _userAgent = value;
                 SendPropertyChanged("UserAgent");
-            }
-        }
-
-        /// <summary>
-        ///     纯真IP数据库全文件地址
-        /// </summary>
-        public string CzIpDbFileName
-        {
-            get { return _czIpDbFileName; }
-            set
-            {
-                SendPropertyChanging();
-                _czIpDbFileName = value;
-                SendPropertyChanged("CzIpDbFileName");
             }
         }
 

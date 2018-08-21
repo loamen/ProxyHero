@@ -582,7 +582,6 @@ namespace ProxyHero.LanguageInformation
         private string _testWebsiteEncode = "网页编码";
         private string _testWebsiteTitle = "网站标题";
         private string _useSystemProxySetting = "使用系统代理设置访问网络";
-        private string _czIpDbFileName = "纯真IP数据库地址";
 
         private string _optionNoDescription = "说明";
 
@@ -601,15 +600,6 @@ namespace ProxyHero.LanguageInformation
         {
             get { return _resetAllSetting; }
             set { _resetAllSetting = value; }
-        }
-
-        /// <summary>
-        /// 纯真IP数据库地址
-        /// </summary>
-        public string CzIpDbFileName
-        {
-            get { return _czIpDbFileName; }
-            set { _czIpDbFileName = value; }
         }
 
         /// <summary>
@@ -836,25 +826,6 @@ namespace ProxyHero.LanguageInformation
             get { return _testThreadsCount; }
             set { _testThreadsCount = value; }
         }
-
-        /// <summary>
-        ///     验证地理位置
-        /// </summary>
-        public string Country
-        {
-            get { return _country; }
-            set { _country = value; }
-        }
-
-        /// <summary>
-        ///     验证匿名度
-        /// </summary>
-        public string Anonymity
-        {
-            get { return _anonymity; }
-            set { _anonymity = value; }
-        }
-
 
         /// <summary>
         ///     请选择默认验证网址或者在下面填写
@@ -1569,15 +1540,6 @@ namespace ProxyHero.LanguageInformation
         {
             get { return _testWebsiteEncodeToolTip; }
             set { _testWebsiteEncodeToolTip = value; }
-        }
-
-        /// <summary>
-        ///     验证代理地理位置
-        /// </summary>
-        public string TestAreaToolTip
-        {
-            get { return _testAreaToolTip; }
-            set { _testAreaToolTip = value; }
         }
 
 

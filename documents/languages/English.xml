@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <Language xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
   <LanguageName>English</LanguageName>  
   <LanguageFileAuthor>This is translated by google</LanguageFileAuthor>  
@@ -28,7 +27,7 @@
     <CloseTab>Close the label</CloseTab>  
     <CloseAllTabs>Close all tabs</CloseAllTabs>  
     <Options>Settings</Options>  
-    <Homepage>Homepage </Homepage>  
+    <Homepage>Homepage</Homepage>  
     <Help>Help</Help>  
     <ShowLPH>Shows the main window</ShowLPH>  
     <AutomaticSwitching>Turn on automatic switching proxy</AutomaticSwitching>  
@@ -58,7 +57,7 @@
     <Clear>Clear</Clear> 
   </ProxyPage>  
   <OptionPage> 
-    <CzIpDbFileName>IP address database</CzIpDbFileName>  
+    <ResetAllSetting>Reset all settings</ResetAllSetting>
     <BasicOptions>Basic Settings</BasicOptions>  
     <TestOptions>Verify Configuration</TestOptions>  
     <LanguageOptions>Language</LanguageOptions>  
@@ -67,17 +66,16 @@
     <AutoSwitchingInterval>Automatic switching proxy interval</AutoSwitchingInterval>  
     <AutoSwitchingProxyMaxDelay>Automatically proxy maximum delay is less than</AutoSwitchingProxyMaxDelay>  
     <ExportTxtFormat>Export TXT file format</ExportTxtFormat>  
-    <OK>OK</OK>
-	<Apply>Apply</Apply>
-	<Cancel>Cancel</Cancel>
-	<OptionsNoDescription>There is description.</OptionsNoDescription>
+    <OK>OK</OK>  
+    <Apply>Apply</Apply>  
+    <Cancel>Cancel</Cancel>  
     <BuiltinBrowserScriptErrorsSuppressed>Prevents display of built-in browser script errors</BuiltinBrowserScriptErrorsSuppressed>  
     <LanguageFile>Language file path</LanguageFile>  
     <LanguageName>Language name</LanguageName>  
     <LanguageFileAuthor>Language file author</LanguageFileAuthor>  
     <LanguageFileVersion>Language file version</LanguageFileVersion>  
     <LanguageFileOriginallyIntendedForLPHVersion>is valid for the following versions of this software</LanguageFileOriginallyIntendedForLPHVersion>  
-    <ProgramRestartRequired>requires restart</ProgramRestartRequired>  
+    <ProgramRestartRequired>Restart is required</ProgramRestartRequired>  
     <UseSystemProxySetting>Access the network using the system proxy settings</UseSystemProxySetting>  
     <DefaultTestWebsite>Default URL</DefaultTestWebsite>  
     <TestWebsite>Proxyjudge</TestWebsite>  
@@ -85,21 +83,19 @@
     <TestWebsiteEncode>Encoding</TestWebsiteEncode>  
     <TestTimeout>Test timeout</TestTimeout>  
     <TestThreadsCount>Test threads</TestThreadsCount>  
-    <Country>Test location</Country>  
-    <Anonymity>Test Anonymity</Anonymity>  
     <PleaseSelectOrFill>Please select the default verification URL or fill in below</PleaseSelectOrFill>  
-    <ClickForSystemTesting>Click to perform system detection</ClickForSystemTesting> 
-	<ResetAllSetting>Reset all settings</ResetAllSetting>  
-	<GeneralPanelCategoryPath>Settings\General Options</GeneralPanelCategoryPath>
-	<GeneralPanelDisplayName>General Options</GeneralPanelDisplayName>
-	<LanguagePanelCategoryPath>Settings\Language</LanguagePanelCategoryPath>
-	<LanguagePanelDisplayName>Language</LanguagePanelDisplayName>
-	<TestPanelCategoryPath>Settings\Test Options</TestPanelCategoryPath>
-	<TestPanelDisplayName>Test Options</TestPanelDisplayName>
-	<UserAgentPanelCategoryPath>Settings\User-Agent</UserAgentPanelCategoryPath>
-	<UserAgentPanelDisplayName>User-Agent</UserAgentPanelDisplayName>
-	<SystemTestPanelCategoryPath>Settings\System Detection</SystemTestPanelCategoryPath>
-	<SystemTestPanelDisplayName>System Detection</SystemTestPanelDisplayName>
+    <ClickForSystemTesting>Click to perform system detection</ClickForSystemTesting>  
+    <GeneralPanelCategoryPath>Settings\General Options</GeneralPanelCategoryPath>  
+    <GeneralPanelDisplayName>General Options</GeneralPanelDisplayName>  
+    <LanguagePanelCategoryPath>Settings\Language</LanguagePanelCategoryPath>  
+    <LanguagePanelDisplayName>Language</LanguagePanelDisplayName>  
+    <TestPanelCategoryPath>Settings\Test Options</TestPanelCategoryPath>  
+    <TestPanelDisplayName>Test Options</TestPanelDisplayName>  
+    <UserAgentPanelCategoryPath>Settings\User-Agent</UserAgentPanelCategoryPath>  
+    <UserAgentPanelDisplayName>User-Agent</UserAgentPanelDisplayName>  
+    <SystemTestPanelCategoryPath>Settings\System Detection</SystemTestPanelCategoryPath>  
+    <SystemTestPanelDisplayName>System Detection</SystemTestPanelDisplayName> 
+    <OptionsNoDescription>There is description.</OptionsNoDescription>  
   </OptionPage>  
   <InformationPage> 
     <Delete>Delete</Delete>  
@@ -174,7 +170,7 @@
     <TestWebsiteEncodeToolTip>The encoding format of the webpage, such as: GB2312 or UTF-8</TestWebsiteEncodeToolTip>  
     <TestAreaToolTip>Verify the proxy geolocation</TestAreaToolTip>  
     <AutoSwitchProxyMaxDelayToolTip>The proxy speed is automatically deactivated if it is slower than this value.</AutoSwitchProxyMaxDelayToolTip>  
-    <LoamenFormat>publisher format</LoamenFormat>  
+    <LoamenFormat>ProxyHero format</LoamenFormat>  
     <StandardFormat>Standard Format</StandardFormat>  
     <AutoSwitchingProxyListIsEmpty>The available proxy list is empty and cannot automatically switch agents!</AutoSwitchingProxyListIsEmpty>  
     <SwitchToIEOrBuiltinBrowser>Please confirm whether the proxy is applied to IE or built-in browser? Click "Yes" to apply to Internet Explorer. Click "No" to apply to the built-in browser.</SwitchToIEOrBuiltinBrowser>  

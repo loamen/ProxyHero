@@ -221,7 +221,7 @@ namespace Loamen.PH.Plugin.Anonymity
 
             _txtProxyJudge =
                 (TextBox)
-                GUICreateControl("txtProxyJudge", "http://kojiki.server.ne.jp/etc/pj235.cgi?en", typeof (TextBox),
+                GUICreateControl("txtProxyJudge", "http://www.on-match.com/cc/prxjdg.cgi", typeof (TextBox),
                                  gbOptionUp, new Point(13 + lbProxyJudge.Width, 15), new Size(280, 0), null); //创建一个文本框
 
             _btnStart =
@@ -332,7 +332,7 @@ namespace Loamen.PH.Plugin.Anonymity
         public delegate void CheckerCompletedEventHandler(object sender, EventArgs e);
 
         private readonly IList<ProxyServer> _list;
-        public string CheckUrl = "http://kojiki.server.ne.jp/etc/pj235.cgi?en";
+        public string CheckUrl = "http://www.on-match.com/cc/prxjdg.cgi";
         private List<CheckThread> _threads;
 
         public Checker(IList<ProxyServer> list, IApp app, string checkUrl)
@@ -540,8 +540,8 @@ namespace Loamen.PH.Plugin.Anonymity
                                                                        proxy.proxy + ":" + proxy.port);
                         if (html.Contains("ProxyJudge"))
                         {
-                            level = checkThread._checker.App.GetMidString(html, "AnonyLevel :", "<BR>");
-                            level = checkThread._checker.App.GetMidString(level, "<FONT color=\"yellow\">", "</FONT>");
+                            level = checkThread._checker.App.GetMidString(html, "AnonyLevel", "<BR>");
+                            level = checkThread._checker.App.GetMidString(level, ">", "</");
                             switch (level)
                             {
                                 case "1":

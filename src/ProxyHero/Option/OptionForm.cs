@@ -87,7 +87,6 @@ namespace ProxyHero.Option
             localSetting.TestTimeOut = (int)AppSettings["TestTimeOut"];
             localSetting.TestThreadsCount = (int)AppSettings["TestThreadsCount"];
             localSetting.AutoProxySpeed = (int)AppSettings["AutoProxySpeed"];
-            localSetting.CheckArea = (bool)AppSettings["CheckArea"];
             localSetting.ExportMode = (string)AppSettings["ExportMode"];
             localSetting.IsUseSystemProxy = (bool)AppSettings["IsUseSystemProxy"];
             localSetting.LanguageFileName = (string)AppSettings["LanguageFileName"];

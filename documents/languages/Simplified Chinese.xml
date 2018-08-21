@@ -3,7 +3,7 @@
   <LanguageName>简体中文</LanguageName>
   <LanguageFileAuthor>龙门信息网（www.loamen.com）</LanguageFileAuthor>
   <LanguageFileVersion>V 1.0</LanguageFileVersion>
-  <LanguageFileForLPHVersion>V 1.6.2</LanguageFileForLPHVersion>
+  <LanguageFileForLPHVersion>V 1.7.0</LanguageFileForLPHVersion>
   <MainPage>
     <File>文件</File>
     <Exit>退出</Exit>
@@ -58,7 +58,6 @@
   </ProxyPage>
   <OptionPage>
     <ResetAllSetting>初始化所有设置</ResetAllSetting>
-    <CzIpDbFileName>纯真IP数据库地址</CzIpDbFileName>
     <BasicOptions>基本设置</BasicOptions>
     <TestOptions>验证配置</TestOptions>
     <LanguageOptions>Language</LanguageOptions>
@@ -84,8 +83,6 @@
     <TestWebsiteEncode>网页编码</TestWebsiteEncode>
     <TestTimeout>验证超时时间</TestTimeout>
     <TestThreadsCount>验证线程数</TestThreadsCount>
-    <Country>验证地理位置</Country>
-    <Anonymity>验证匿名度</Anonymity>
     <PleaseSelectOrFill>请选择默认验证网址或者在下面填写</PleaseSelectOrFill>
     <ClickForSystemTesting>点击进行系统检测</ClickForSystemTesting>
     <GeneralPanelCategoryPath>选项\基本选项</GeneralPanelCategoryPath>
@@ -174,7 +171,6 @@
 如百度的为：百度一下，你就知道
 你输入“百度”或“百度一下”都行</TestWebsiteTitleToolTip>
     <TestWebsiteEncodeToolTip>网页的编码格式，如：GB2312或者UTF-8</TestWebsiteEncodeToolTip>
-    <TestAreaToolTip>验证代理地理位置</TestAreaToolTip>
     <AutoSwitchProxyMaxDelayToolTip>自动切换代理时代理速度如果比此值慢则会弃用</AutoSwitchProxyMaxDelayToolTip>
     <LoamenFormat>公布器格式</LoamenFormat>
     <StandardFormat>标准格式</StandardFormat>

@@ -26,7 +26,6 @@ namespace ProxyHero.Proxy
         private readonly Thread _thread;
         private readonly int _timeOut;
         private static TestProxyHelper _testProxyHelper;
-        private static CzIpHelper _czIpHelper;
 
         /// <summary>
         ///     测试线程事件
@@ -94,7 +93,6 @@ namespace ProxyHero.Proxy
                 _testOption = Config.LocalSetting.DefaultTestOption;
 
             _testProxyHelper = new TestProxyHelper(_testOption, _timeOut, Config.LocalSetting.UserAgent);
-            _czIpHelper = new CzIpHelper(Config.LocalSetting.CzIpDbFileName);
 
             _thread = new Thread(DoWork);
             Name = _thread.ManagedThreadId.ToString(CultureInfo.InvariantCulture);
@@ -221,12 +219,6 @@ namespace ProxyHero.Proxy
             {
                 if (model != null)
                 {
-                    if (Config.LocalSetting.CheckArea)
-                    {
-                        var location = SearchIp(proxy.Ip);
-                        model.country = location;
-                    }
-
                     if (testResult)
                     {
                         model.response = int.Parse(sw.ElapsedMilliseconds.ToString("F0"));
@@ -266,24 +258,5 @@ namespace ProxyHero.Proxy
 
         //    //Thread.Sleep(MemCache.ThreadSleepTimeWhenQueueIsEmptyMs);
         //}
-
-        public static string SearchIp(string strIp)
-        {
-            if (_czIpHelper.SetDbFilePath(Config.LocalSetting.CzIpDbFileName))
-            {
-                if (_czIpHelper.IpAddressCheck(strIp))
-                {
-                    return _czIpHelper.GetAddressWithIp(strIp).ToLower().Replace("cz88.net", "Loamen.Com");
-                }
-                else
-                {
-                    return strIp + "格式不正确";
-                }
-            }
-            else
-            {
-                return "纯真IP数据库不存在";
-            }
-        }
     }
 }

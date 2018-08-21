@@ -11,7 +11,7 @@ namespace Loamen.PH.Plugin.DownloadProxy
         public OptionDialog()
         {
             InitializeComponent();
-            txtWebsite.Text = "http://www.01kk.net/daili/";
+            txtWebsite.Text = "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt";
             txtWebsite.Focus();
         }
 

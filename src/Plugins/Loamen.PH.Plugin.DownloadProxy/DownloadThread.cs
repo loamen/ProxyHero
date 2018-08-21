@@ -215,6 +215,7 @@ namespace Loamen.PH.Plugin.DownloadProxy
                 }
                 sw.Stop();
                 downloader.Description = url + "采集完毕，耗时：" + sw.ElapsedMilliseconds + "毫秒，共" + count + "条";
+                downloader.app.SetStatusText(downloader.description);
             }
             catch (Exception ex)
             {

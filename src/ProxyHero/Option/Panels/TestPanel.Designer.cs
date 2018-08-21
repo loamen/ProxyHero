@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBrowseCzIpDb = new System.Windows.Forms.Button();
-            this.txtCzIpDbFileName = new System.Windows.Forms.TextBox();
-            this.CzIpDbFileName = new System.Windows.Forms.Label();
-            this.Country = new System.Windows.Forms.CheckBox();
             this.TestThreadsCount = new System.Windows.Forms.Label();
             this.nudThreadsCount = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
@@ -58,10 +54,6 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.btnBrowseCzIpDb);
-            this.groupBox2.Controls.Add(this.txtCzIpDbFileName);
-            this.groupBox2.Controls.Add(this.CzIpDbFileName);
-            this.groupBox2.Controls.Add(this.Country);
             this.groupBox2.Controls.Add(this.TestThreadsCount);
             this.groupBox2.Controls.Add(this.nudThreadsCount);
             this.groupBox2.Controls.Add(this.label11);
@@ -69,47 +61,9 @@
             this.groupBox2.Controls.Add(this.nudTestOutTime);
             this.groupBox2.Location = new System.Drawing.Point(7, 236);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(389, 182);
+            this.groupBox2.Size = new System.Drawing.Size(389, 85);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            // 
-            // btnBrowseCzIpDb
-            // 
-            this.btnBrowseCzIpDb.Location = new System.Drawing.Point(206, 143);
-            this.btnBrowseCzIpDb.Name = "btnBrowseCzIpDb";
-            this.btnBrowseCzIpDb.Size = new System.Drawing.Size(55, 23);
-            this.btnBrowseCzIpDb.TabIndex = 17;
-            this.btnBrowseCzIpDb.Text = "...";
-            this.btnBrowseCzIpDb.UseVisualStyleBackColor = true;
-            this.btnBrowseCzIpDb.Click += new System.EventHandler(this.btnBrowseCzIpDb_Click);
-            // 
-            // txtCzIpDbFileName
-            // 
-            this.txtCzIpDbFileName.BackColor = System.Drawing.Color.White;
-            this.txtCzIpDbFileName.Location = new System.Drawing.Point(11, 144);
-            this.txtCzIpDbFileName.Name = "txtCzIpDbFileName";
-            this.txtCzIpDbFileName.ReadOnly = true;
-            this.txtCzIpDbFileName.Size = new System.Drawing.Size(193, 21);
-            this.txtCzIpDbFileName.TabIndex = 16;
-            // 
-            // CzIpDbFileName
-            // 
-            this.CzIpDbFileName.AutoSize = true;
-            this.CzIpDbFileName.Location = new System.Drawing.Point(11, 116);
-            this.CzIpDbFileName.Name = "CzIpDbFileName";
-            this.CzIpDbFileName.Size = new System.Drawing.Size(113, 12);
-            this.CzIpDbFileName.TabIndex = 15;
-            this.CzIpDbFileName.Text = "纯真IP数据库地址：";
-            // 
-            // Country
-            // 
-            this.Country.AutoSize = true;
-            this.Country.Location = new System.Drawing.Point(11, 84);
-            this.Country.Name = "Country";
-            this.Country.Size = new System.Drawing.Size(96, 16);
-            this.Country.TabIndex = 13;
-            this.Country.Text = "验证地理位置";
-            this.Country.UseVisualStyleBackColor = true;
             // 
             // TestThreadsCount
             // 
@@ -287,7 +241,7 @@
             this.DisplayName = "验证选项";
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "TestPanel";
-            this.Size = new System.Drawing.Size(402, 427);
+            this.Size = new System.Drawing.Size(402, 328);
             this.Load += new System.EventHandler(this.TestOptionPanel_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -302,10 +256,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnBrowseCzIpDb;
-        private System.Windows.Forms.TextBox txtCzIpDbFileName;
-        private System.Windows.Forms.Label CzIpDbFileName;
-        private System.Windows.Forms.CheckBox Country;
         private System.Windows.Forms.Label TestThreadsCount;
         private System.Windows.Forms.NumericUpDown nudThreadsCount;
         private System.Windows.Forms.Label label11;
