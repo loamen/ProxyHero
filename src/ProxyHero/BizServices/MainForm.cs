@@ -331,6 +331,14 @@ namespace ProxyHero
             }
         }
 
+        public void DataBind()
+        {
+            if (ProxyData.ProxyList != null && ProxyData.ProxyList.Count > 0)
+            {
+                ProxyPage.BindData();
+            }
+        }
+
         /// <summary>
         ///     启用或禁用界面
         /// </summary>

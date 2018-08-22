@@ -154,7 +154,7 @@ namespace ProxyHero.Net
                         port.Trim() != "0" &&
                         !string.IsNullOrEmpty(port.Trim()))
                     {
-                        Config.MyApiHelper.AddOrUpdate(model);
+                        Config.MyApiHelper.AddOrUpdateProxy(model);
                     }
                 }
 

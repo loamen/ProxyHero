@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using Loamen.Common;
 using Loamen.Net;
 using ProxyHero.Common;
+using ProxyHero.Entity;
+using ProxyHero.Net;
 
 namespace ProxyHero
 {
@@ -13,6 +15,7 @@ namespace ProxyHero
     {
         private readonly StringBuilder _stringBuilder;
         private HttpHelper _httpHelper;
+        private delegate bool DelegateVoid(string message, string userIp, string email);
 
         public ExceptionForm(Exception ex)
         {
@@ -48,20 +51,25 @@ namespace ProxyHero
             try
             {
                 var ih = new IpHelper(NetHelper.LocalPublicIp, true);
-                var name = ih.Location + "网友";
+                var userIp = ih.IpAddress;
 
-                if (PostGuestBook(_stringBuilder.ToString(), name, txtQQ.Text.Trim()))
+                var d = new DelegateVoid(this.PostGuestBook);
+                var result = this.Invoke(d, new[] { _stringBuilder.ToString(), userIp, txtQQ.Text.Trim() });
+
+                if ((bool)result)
                 {
                     DialogResult = DialogResult.OK;
                     Close();
                 }
                 else
                 {
+                    DialogResult = DialogResult.No;
                     MsgBox.ShowMessage("发送反馈失败，请检查网络设置！\nSend Failed!");
                 }
             }
             catch (Exception exx)
             {
+                DialogResult = DialogResult.No;
                 MsgBox.ShowMessage(exx.Message);
             }
         }
@@ -82,89 +90,37 @@ namespace ProxyHero
         private void frmException_Load(object sender, EventArgs e)
         {
             _httpHelper = new HttpHelper();
-            //DelegateVoid needVerifyCode = new DelegateVoid(NeedVerifyCode);
-            //this.BeginInvoke(needVerifyCode);
         }
 
-        private delegate void DelegateVoid();
 
-        public bool PostGuestBook(string verifyCode, string message)
-        {
-            try
-            {
-                var title = "异常" + DateTime.Now.ToString("yyyyMMddhhmmss");
-                var ih = new IpHelper(NetHelper.LocalPublicIp);
-                //拼凑登陆参数
-                string postData = string.Format(
-                    "title={0}&validate={1}&vdcode2={2}&uname={3}&img=01&action=save&msg={4}",
-                    title,
-                    verifyCode,
-                    verifyCode,
-                    ih.Location + "网友",
-                    Microsoft.JScript.GlobalObject.escape(message));
 
-                string result = _httpHelper.GetHtml("http://www.loamen.com/plus/guestbook.php", postData, Encoding.GetEncoding("UTF-8"));
 
-                if (result.Contains(title))
-                {
-                    return true;
-                }
-                return false;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public bool PostGuestBook(string message, string name, string email)
+        public bool PostGuestBook(string message, string userIp, string email)
         {
             try
             {
                 string title = "异常" + DateTime.Now.ToString("yyyyMMddhhmmss");
-                IpHelper ih = new IpHelper(NetHelper.LocalPublicIp, true);
 
+                var log = new OperatorLog();
+                log.contact = email;
+                log.message = message;
+                log.title = title;
+                log.type = "Exception";
+                log.userip = userIp;
 
-                #region values
-                //System.Collections.Specialized.NameValueCollection VarPost = new System.Collections.Specialized.NameValueCollection();
-                //VarPost.Add("action", "save");
-                //VarPost.Add("title", title);
-                //VarPost.Add("validate", "SendException");
-                //byte[] strUtf8 = System.Text.Encoding.GetEncoding("GB2312").GetBytes(ih.Location + "网友");
-                //VarPost.Add("uname", Encoding.GetEncoding("GB2312").GetString(strUtf8));
-                //VarPost.Add("qq", "");
-                //VarPost.Add("email", "");
-                //VarPost.Add("homepage", "http://www.loamen.com");
-                //VarPost.Add("msg", message);
-                //VarPost.Add("img", "01");
-                #endregion
+                var apiHelper = new ApiHelper();
 
-                Random ran = new Random();
-                int imgIndex = ran.Next(1, 20);
-                string img = imgIndex.ToString().Length == 1 ? "0" + imgIndex : imgIndex.ToString();
+                var result = apiHelper.AddExceptionLog(log);
 
-                //拼凑登陆参数
-                string postData = string.Format(
-                    "title={0}&validate={1}&homepage={2}&uname={3}&img={4}&action=save&msg={5}&email={6}",
-                    title,
-                    "sendexception",
-                    "http://www.loamen.com",
-                    string.IsNullOrEmpty(name) ? ih.Location + "网友" : name,
-                    img,
-                    message,
-                    email);
-
-                var sRemoteInfo = _httpHelper.GetHtml("http://www.loamen.com/plus/guestbook.php", postData, Encoding.UTF8);
-               
-
-                if (sRemoteInfo.Contains("成功"))
+                if (!string.IsNullOrEmpty(result))
                 {
                     return true;
                 }
                 return false;
             }
-            catch
+            catch(Exception ex)
             {
+                LogHelper.WriteException(ex);
                 return false;
             }
         }

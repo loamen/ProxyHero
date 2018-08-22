@@ -6,12 +6,15 @@ using Loamen.PluginFramework;
 using ProxyHero.Common;
 using ProxyHero.Entity;
 using ProxyHero.LanguageInformation;
+using System.Linq;
+using LiteDB;
 
 namespace ProxyHero.Plugin
 {
     public partial class PluginManageForm : Form
     {
         private readonly LanguageLoader languageLoader = new LanguageLoader();
+        private PluginDAL dal = new PluginDAL();
 
         public PluginManageForm()
         {
@@ -38,10 +41,10 @@ namespace ProxyHero.Plugin
 
         private void PluginManageForm_Load(object sender, EventArgs e)
         {
-            var ps = Config.PluginSetting;
-            if (null != ps && ps.Plugins.Count > 0)
+            var ps = dal.FindAll().ToList();
+            if (null != ps && ps.Count > 0)
             {
-                foreach (Entity.Plugin plugin in ps.Plugins)
+                foreach (Entity.Plugin plugin in ps)
                 {
                     var lvi = new ListViewItem(plugin.Name);
                     lvi.Checked = plugin.Checked;
@@ -116,6 +119,12 @@ namespace ProxyHero.Plugin
                 {
                     PluginManager.Remove(li.SubItems[5].Text);
                     lvPlugin.Items.Remove(li);
+
+                    var model = dal.FindOne(li.SubItems[5].Text);
+                    if (model != null)
+                    {
+                        dal.Delete(model.Id);
+                    }
                 }
             }
             catch (Exception ex)
@@ -161,7 +170,6 @@ namespace ProxyHero.Plugin
             try
             {
                 Save:
-                var ps = new PluginSetting();
                 foreach (ListViewItem li in lvPlugin.Items)
                 {
                     if (!File.Exists(li.SubItems[5].Text))
@@ -180,7 +188,16 @@ namespace ProxyHero.Plugin
                     plugin.Description = li.SubItems[4].Text;
                     plugin.FileName = li.SubItems[5].Text;
 
-                    ps.Plugins.Add(plugin);
+                    var model = dal.FindOne(plugin.FileName);
+                    if(model == null)
+                    {
+                        dal.Insert(plugin);
+                    }
+                    else
+                    {
+                        plugin.Id = model.Id;
+                        dal.Update(plugin);
+                    }
                     if (li.Checked)
                     {
                         if (!PluginManager.Exists(plugin.FileName))
@@ -190,9 +207,6 @@ namespace ProxyHero.Plugin
                         }
                     }
                 }
-
-                if (ps.Plugins.Count > 0)
-                    Config.PluginSetting = ps;
 
                 Close();
             }

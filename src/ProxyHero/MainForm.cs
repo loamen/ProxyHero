@@ -599,7 +599,7 @@ namespace ProxyHero
                 try
                 {
                     var ih = new IpHelper(res[1], Config.IsChineseLanguage);
-                    location = " " + ih.Location;
+                    location = " " + ih.IpAddress;
                 }
                 catch (Exception ex)
                 {

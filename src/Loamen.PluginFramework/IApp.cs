@@ -205,6 +205,11 @@ namespace Loamen.PluginFramework
         void RefreshCloud();
 
         /// <summary>
+        /// 刷新代理列表
+        /// </summary>
+        void DataBind();
+
+        /// <summary>
         ///     启用或禁用界面
         /// </summary>
         /// <param name="enabled"></param>

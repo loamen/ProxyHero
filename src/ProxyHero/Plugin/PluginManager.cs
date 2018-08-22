@@ -5,15 +5,14 @@ using System.IO;
 using Loamen.Common;
 using Loamen.PluginFramework;
 using ProxyHero.Entity;
+using System.Linq;
 
 namespace ProxyHero
 {
     public class PluginManager
     {
         private static List<PluginEngine> engines;
-
         private PluginEngine engine;
-
         private FileInfo pluginFileInfo;
 
         public PluginManager(string fileName, IApp app)
@@ -131,10 +130,11 @@ namespace ProxyHero
         /// </summary>
         public static void LoadAllPlugins()
         {
-            var ps = Config.PluginSetting;
-            if (null != ps && ps.Plugins.Count > 0)
+            var dal = new PluginDAL();
+            var ps = dal.FindAll().ToList();
+            if (null != ps && ps.Count > 0)
             {
-                foreach (Entity.Plugin plugin in ps.Plugins)
+                foreach (Entity.Plugin plugin in ps)
                 {
                     if (File.Exists(plugin.FileName) && plugin.Checked && !Exists(plugin.FileName))
                     {

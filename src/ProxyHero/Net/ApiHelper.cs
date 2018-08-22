@@ -16,10 +16,6 @@ namespace ProxyHero.Net
 {
     public class ApiHelper : BmobBaseForm
     {
-    
-        //接下来要操作的数据的数据
-        private ProxyHero.Entity.ProxyServers gameObject = new ProxyHero.Entity.ProxyServers();
-
         private ProxyItems _proxyItems;
         private Worker _worker;
 
@@ -27,8 +23,9 @@ namespace ProxyHero.Net
         {
         }
 
+        #region 代理
         /// <summary>
-        ///     下载代理数据
+        /// 下载代理数据
         /// </summary>
         /// <returns></returns>
         public ProxyItems DownloadProxyList()
@@ -40,7 +37,7 @@ namespace ProxyHero.Net
             try
             {
                 sw.Start();
-                var totalCount = GetTotalCount();
+                var totalCount = GetTotalProxyCount();
                 if (totalCount > 0)
                 {
                     const int pageSize = 1000; //每次取的数量 
@@ -127,12 +124,12 @@ namespace ProxyHero.Net
         ///     获取代理总数
         /// </summary>
         /// <returns></returns>
-        public int GetTotalCount()
+        public int GetTotalProxyCount()
         {
             //创建一个BmobQuery查询对象
             BmobQuery query = new BmobQuery();
             //查询playerName的值为bmob的记录
-            query.WhereEqualTo("status", 1);
+            //query.WhereEqualTo("status", 1);
 
             BmobInt count = 0;
 
@@ -153,7 +150,7 @@ namespace ProxyHero.Net
         /// </summary>
         /// <param name="proxy"></param>
         /// <returns></returns>
-        public void AddOrUpdate(ProxyServer proxy)
+        public void AddOrUpdateProxy(ProxyServer proxy)
         {
             var result = string.Empty;
 
@@ -198,7 +195,26 @@ namespace ProxyHero.Net
             }
            
         }
+        #endregion
 
+        #region 异常日志
+        public string AddExceptionLog(OperatorLog log)
+        {
+            var result = string.Empty;
+
+            if (BmobUser.CurrentUser != null)
+            {
+                log.user = BmobUser.CurrentUser;
+            }
+            var createResult = Bmob.CreateTaskAsync(log);
+            if(createResult.Result != null)
+            {
+                return createResult.Result.objectId;
+            }
+
+            return null;
+        }
+        #endregion
 
         #region 工作
 

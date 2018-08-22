@@ -124,7 +124,6 @@ namespace ProxyHero
 
         private static string _userName = "";
         private static ApiHelper _myApiHelper;
-        private static PluginSetting _pluginSetting;
 
         /// <summary>
         ///     代理公布器存储目录
@@ -518,92 +517,6 @@ namespace ProxyHero
                 pe.Port = port;
             }
             return pe;
-        }
-
-        public static PluginSetting PluginSetting
-        {
-            get
-            {
-                if (!File.Exists(PluginSettingFileName))
-                {
-                    _pluginSetting = new PluginSetting();
-                    var plugins = _pluginSetting.Plugins;
-                    if (plugins == null || plugins.Count == 0)
-                    {
-                        try
-                        {
-
-                            #region 采集代理插件
-
-                            var downLoadPluginName = PluginPath + @"Loamen.PH.Plugin.DownloadProxy.dll";
-                            var pm = new PluginManager(downLoadPluginName, Config.MainForm);
-                            pm.Run();
-                            if (pm.Engine.Errors.Count == 0)
-                            {
-                                if (plugins != null)
-                                    plugins.Add(new ProxyHero.Entity.Plugin
-                                        {
-                                            Checked = true,
-                                            Author = pm.Engine.Author,
-                                            Version = pm.Engine.Version,
-                                            LphVersion = pm.Engine.LPHVersion,
-                                            Description = pm.Engine.Description,
-                                            FileName = pm.Engine.FileName.ToLower(),
-                                            Name = pm.Engine.Name
-                                        });
-                            }
-
-                            #endregion
-
-                            #region 验证匿名度插件
-
-                            var anonymityPluginName = PluginPath + @"Loamen.PH.Plugin.Anonymity.dll";
-                            pm = new PluginManager(anonymityPluginName, Config.MainForm);
-                            pm.Run();
-                            if (pm.Engine.Errors.Count == 0)
-                            {
-                                if (plugins != null)
-                                    plugins.Add(new ProxyHero.Entity.Plugin
-                                        {
-                                            Checked = true,
-                                            Author = pm.Engine.Author,
-                                            Version = pm.Engine.Version,
-                                            LphVersion = pm.Engine.LPHVersion,
-                                            Description = pm.Engine.Description,
-                                            FileName = pm.Engine.FileName.ToLower(),
-                                            Name = pm.Engine.Name
-                                        });
-                            }
-
-                            #endregion
-                        }
-                        catch
-                        {
-                        }
-
-                    }
-
-                    if (_pluginSetting.Plugins.Count > 0)
-                        XmlHelper.XmlSerialize(Config.PluginSettingFileName, _pluginSetting, typeof(PluginSetting));
-                }
-
-                if (_pluginSetting == null)
-                {
-                    _pluginSetting = (PluginSetting)XmlHelper.XmlDeserialize(Config.PluginSettingFileName, typeof(PluginSetting));
-                }
-
-                return _pluginSetting;
-            }
-            set
-            {
-                if (_pluginSetting != value)
-                {
-                    if (File.Exists(Config.PluginSettingFileName))
-                        File.Delete(Config.PluginSettingFileName);
-                    XmlHelper.XmlSerialize(Config.PluginSettingFileName, value, typeof(PluginSetting));
-                }
-                _pluginSetting = value;
-            }
         }
     }
 }

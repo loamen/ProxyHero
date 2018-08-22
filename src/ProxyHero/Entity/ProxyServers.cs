@@ -18,9 +18,8 @@ namespace ProxyHero.Entity
         private string __type = "HTTP";
         private String fTable;
 
-        public ProxyServers()
+        public ProxyServers():this(TABLE_NAME)
         {
-           new ProxyServers(TABLE_NAME);
         }
 
         public ProxyServers(String tableName)

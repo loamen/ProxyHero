@@ -214,13 +214,17 @@ namespace Loamen.PH.Plugin.DownloadProxy
                     }
                 }
                 sw.Stop();
-                downloader.Description = url + "采集完毕，耗时：" + sw.ElapsedMilliseconds + "毫秒，共" + count + "条";
-                downloader.app.SetStatusText(downloader.description);
+                var message = "采集完毕，耗时：" + sw.ElapsedMilliseconds + "毫秒，共" + count + "条";
+                downloader.app.DataBind();
+                downloader.Description = url + message;
+                downloader.app.SetStatusText(message);
             }
             catch (Exception ex)
             {
                 sw.Stop();
-                downloader.Description = url + "出错啦：" + ex.Message + sw.ElapsedMilliseconds;
+                var message = "出错啦：" + ex.Message + sw.ElapsedMilliseconds;
+                downloader.Description = url + message;
+                downloader.app.SetStatusText(message);
             }
             finally
             {

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Loamen.com")]
 [assembly: AssemblyProduct("Loamen.PH.Plugin.DownloadProxy")]
-[assembly: AssemblyCopyright("Copyright ©Loamen.com  2011")]
+[assembly: AssemblyCopyright("Copyright ©Loamen.com  2011-2018")]
 [assembly: AssemblyTrademark("Loamen.com")]
 [assembly: AssemblyCulture("")]
 
@@ -35,5 +35,5 @@ using System.Runtime.InteropServices;
 // 方法是按如下所示使用“*”:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.6.13.1028")]
-[assembly: AssemblyFileVersion("1.6.0")]
+[assembly: AssemblyVersion("1.7.0.*")]
+[assembly: AssemblyFileVersion("1.7.0")]

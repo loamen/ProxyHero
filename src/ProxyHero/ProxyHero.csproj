@@ -94,7 +94,9 @@
     </Compile>
     <Compile Include="Database\BsonHelper.cs" />
     <Compile Include="Database\LiteDBHelper.cs" />
+    <Compile Include="Database\PluginDAL.cs" />
     <Compile Include="Database\SettingDAL.cs" />
+    <Compile Include="Entity\OperatorLog.cs" />
     <Compile Include="Entity\ProxyServers.cs" />
     <Compile Include="Forms\BmobBaseForm.cs">
       <SubType>Form</SubType>
@@ -210,7 +212,6 @@
     <Compile Include="Model\ListItem.cs" />
     <Compile Include="Model\ProxyData.cs" />
     <Compile Include="Model\ProxyItems.cs" />
-    <Compile Include="Model\Token.cs" />
     <Compile Include="Net\ApiHelper.cs">
       <SubType>Form</SubType>
     </Compile>
