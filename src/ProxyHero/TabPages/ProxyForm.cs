@@ -71,44 +71,19 @@ namespace ProxyHero.TabPages
             CheckForIllegalCrossThreadCalls = false;
             dgvProxyList.AutoGenerateColumns = false;
 
-#if DEBUG
-            if (Config.IsChineseLanguage)
-#else
-                if (Config.IsChineseOs)
-#endif
-
+            var dataGridViewColumn = dgvProxyList.Columns["LocationColumn"];
+            if (dataGridViewColumn != null)
             {
-                var dataGridViewColumn = dgvProxyList.Columns["LocationColumn"];
-                if (dataGridViewColumn != null)
-                {
-                    var gridViewColumn = dgvProxyList.Columns["AnonymityCol"];
-                    if (gridViewColumn != null)
-                        gridViewColumn.Visible = dataGridViewColumn.Visible = true;
-                }
-                var viewColumn = dgvProxyList.Columns["AnonymityEn"];
-                if (viewColumn != null)
-                {
-                    var column = dgvProxyList.Columns["CountryEn"];
-                    if (column != null)
-                        viewColumn.Visible = column.Visible = false;
-                }
+                var gridViewColumn = dgvProxyList.Columns["AnonymityCol"];
+                if (gridViewColumn != null)
+                    gridViewColumn.Visible = dataGridViewColumn.Visible = true;
             }
-            else
+            var viewColumn = dgvProxyList.Columns["AnonymityEn"];
+            if (viewColumn != null)
             {
-                var dataGridViewColumn = dgvProxyList.Columns["AnonymityCol"];
-                if (dataGridViewColumn != null)
-                {
-                    var gridViewColumn = dgvProxyList.Columns["LocationColumn"];
-                    if (gridViewColumn != null)
-                        dataGridViewColumn.Visible = gridViewColumn.Visible = false;
-                }
-                var viewColumn = dgvProxyList.Columns["AnonymityEn"];
-                if (viewColumn != null)
-                {
-                    var column = dgvProxyList.Columns["CountryEn"];
-                    if (column != null)
-                        viewColumn.Visible = column.Visible = true;
-                }
+                var column = dgvProxyList.Columns["CountryEn"];
+                if (column != null)
+                    viewColumn.Visible = column.Visible = false;
             }
         }
 
