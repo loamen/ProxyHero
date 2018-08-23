@@ -25,7 +25,7 @@ namespace Loamen.PH.Plugin.Refresh
         private string name = "喜刷刷";
         private string author = "龙门信息网";
         private string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-        private string lPHVersion = "1.3.0+";
+        private string lPHVersion = "1.6.0+";
         private string description = "喜刷刷是基于龙门代理公布器刷流量插件的增强版本，可用于刷网页IP和PV，刷淘宝、拍拍的浏览量！";
         #endregion
 

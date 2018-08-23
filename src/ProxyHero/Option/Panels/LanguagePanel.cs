@@ -112,5 +112,9 @@ namespace ProxyHero.Option.Panels
                                                                  true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
+        private void Download_Click(object sender, EventArgs e)
+        {
+            Config.MainForm.OpenIE("https://github.com/loamen/ProxyHero/tree/master/documents/languages");
+        }
     }
 }

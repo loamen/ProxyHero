@@ -122,6 +122,15 @@ namespace ProxyHero
                 var splashthread = new Thread(SplashScreen.ShowSplashScreen) {IsBackground = true};
                 splashthread.Start();
 
+                Config.LanguageFileName = Config.LocalSetting.LanguageFileName;
+                if (System.IO.File.Exists(Config.LanguageFileName))
+                {
+                    var language = XmlHelper.XmlDeserialize(
+                        Config.LanguageFileName,
+                        typeof(Language)) as Language;
+                    Config.LocalLanguage = language;
+                }
+
                 SplashScreen.UpdateStatusText(Config.LocalLanguage.Messages.InitializeComponent);
                 InitializeComponent();
             }
@@ -171,15 +180,9 @@ namespace ProxyHero
                 _deserializeDockContent = GetContentFromPersistString;
 
                 SplashScreen.UpdateStatusText(Config.LocalLanguage.Messages.LoadingLanguages);
-                Config.LanguageFileName = Config.LocalSetting.LanguageFileName;
-                if (System.IO.File.Exists(Config.LanguageFileName))
-                {
-                    var language = XmlHelper.XmlDeserialize(
-                        Config.LanguageFileName,
-                        typeof(Language)) as Language;
-                    Config.LocalLanguage = language;
-                }
                 LoadLanguage();
+                
+                
 
                 #endregion
 

@@ -3,7 +3,7 @@
   <LanguageName>English</LanguageName>  
   <LanguageFileAuthor>This is translated by google</LanguageFileAuthor>  
   <LanguageFileVersion>V 1.0</LanguageFileVersion>  
-  <LanguageFileForLPHVersion>V 1.6.1</LanguageFileForLPHVersion>  
+  <LanguageFileForLPHVersion>V 1.7.0</LanguageFileForLPHVersion>  
   <MainPage> 
     <File>File</File>  
     <Exit>Exit</Exit>  
@@ -95,7 +95,8 @@
     <UserAgentPanelDisplayName>User-Agent</UserAgentPanelDisplayName>  
     <SystemTestPanelCategoryPath>Settings\System Detection</SystemTestPanelCategoryPath>  
     <SystemTestPanelDisplayName>System Detection</SystemTestPanelDisplayName> 
-    <OptionsNoDescription>There is description.</OptionsNoDescription>  
+    <OptionsNoDescription>There is description.</OptionsNoDescription>
+	<Download>Download</Download>
   </OptionPage>  
   <InformationPage> 
     <Delete>Delete</Delete>  
@@ -135,8 +136,8 @@
     <CheckUpdate>Detect Updates</CheckUpdate>  
     <LoadingPlugins>Load Plugin</LoadingPlugins>  
     <ConnectingCloudEngine>is connecting to the cloud engine</ConnectingCloudEngine>  
-    <ConnectCloudEngineSuccess>Cloud Engine Connection Successfully</ConnectCloudEngineSuccess>  
-    <ConnectCloudEngineFailed>Cloud Engine Connection Failed</ConnectCloudEngineFailed>  
+    <ConnectCloudEngineSuccess>Cloud Connection Successfully</ConnectCloudEngineSuccess>  
+    <ConnectCloudEngineFailed>Cloud Connection Failed</ConnectCloudEngineFailed>  
     <CurrentProxy>Current Proxy</CurrentProxy>  
     <NotUseProxy>is not currently using a proxy</NotUseProxy>  
     <AutomaticSwitchingOn>Automatic Switching Agent is turned on</AutomaticSwitchingOn>  
@@ -151,11 +152,11 @@
     <Stopping>is stopping</Stopping>  
     <NetworkIsbusyPleaseTryAgainLater>The network is busy, please try again later!</NetworkIsbusyPleaseTryAgainLater>  
     <NumOfProxiesDownloaded>Total {0} has been acquired</NumOfProxiesDownloaded>  
-    <NumOfProxiesDownloadedByThreads>A total of {0} threads are reading data {1} articles</NumOfProxiesDownloadedByThreads>  
+    <NumOfProxiesDownloadedByThreads>A total of {0} threads are downloading {1} datas</NumOfProxiesDownloadedByThreads>  
     <Testing>is verifying</Testing>  
     <Swithing>Automatic switching</Swithing>  
     <NumOfProxiesTested>{0}Verification completed</NumOfProxiesTested>  
-    <AllTestingCompleted>All verified]</AllTestingCompleted>  
+    <AllTestingCompleted>Test Compleated</AllTestingCompleted>  
     <TestingHaveBeenTerminated>has terminated validation</TestingHaveBeenTerminated>  
     <ProxyIsAlive>This proxy is valid</ProxyIsAlive>  
     <ProxyIsDead>This proxy is invalid</ProxyIsDead>  
@@ -185,12 +186,12 @@
     <Dead>valid</Dead>  
     <NotTest>not verified</NotTest>  
     <Total>Total</Total>  
-    <NumOfThreadsAreTesting>A total of {0} threads are being verified</NumOfThreadsAreTesting>  
+    <NumOfThreadsAreTesting>A total of {0} threads are being tested </NumOfThreadsAreTesting>  
     <PleaseEnterTheUrlYouWantToRefresh>Please enter the URL to be refreshed!</PleaseEnterTheUrlYouWantToRefresh>  
     <PleaseTurnOnTheAutomaticSwitching>Please turn on the automatic switching agent first!</PleaseTurnOnTheAutomaticSwitching>  
     <AreYouSureDoThis>Are you sure you want to continue with this item?</AreYouSureDoThis>  
     <ProxyIsDeadAutoSwithing>The proxy {0} is invalid and automatically switches to the next proxy.</ProxyIsDeadAutoSwithing>  
     <SpeedDoestConformToTheRequirement>Speed ​​does not meet the requirements</SpeedDoestConformToTheRequirement>  
-    <MinimizedToSaveResources>Minimize to save resources</MinimizedToSaveResources> 
+    <MinimizedToSaveResources>Minimize</MinimizedToSaveResources> 
   </Messages> 
 </Language>

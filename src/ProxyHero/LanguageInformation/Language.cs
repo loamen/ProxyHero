@@ -584,6 +584,7 @@ namespace ProxyHero.LanguageInformation
         private string _useSystemProxySetting = "使用系统代理设置访问网络";
 
         private string _optionNoDescription = "说明";
+        private string _download = "下载";
 
         private string _generalPanelCategoryPath = @"选项\基本选项";
         private string _generalPanelDisplayName = "基本选项";
@@ -879,6 +880,7 @@ namespace ProxyHero.LanguageInformation
         public string SystemTestPanelCategoryPath { get => _systemTestPanelCategoryPath; set => _systemTestPanelCategoryPath = value; }
         public string SystemTestPanelDisplayName { get => _systemTestPanelDisplayName; set => _systemTestPanelDisplayName = value; }
         public string OptionsNoDescription { get => _optionNoDescription; set => _optionNoDescription = value; }
+        public string Download { get => _download; set => _download = value; }
     }
 
     [Serializable]

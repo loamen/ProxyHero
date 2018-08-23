@@ -96,6 +96,7 @@
     <SystemTestPanelCategoryPath>选项\系统检测</SystemTestPanelCategoryPath>
     <SystemTestPanelDisplayName>系统检测</SystemTestPanelDisplayName>
     <OptionsNoDescription>说明</OptionsNoDescription>
+    <Download>下载</Download>
   </OptionPage>
   <InformationPage>
     <Delete>删除</Delete>

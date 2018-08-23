@@ -29,11 +29,8 @@ namespace ProxyHero.TabPages
                     Text = "起始页";
                 else
                     Text = "Home";
-#if DEBUG
+
                 if (Config.IsChineseLanguage)
-#else
-                if (Config.IsChineseOs)
-#endif
                 {
                     wbStatistics.Navigate(Config.ProxyHeroCloudSetting.StatisticsUrl);
                 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Download = new System.Windows.Forms.Button();
             this.lblForLPHVersion = new System.Windows.Forms.Label();
             this.lblLanguageFileVersion = new System.Windows.Forms.Label();
             this.lblLanguageFileAuthor = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.Download);
             this.groupBox6.Controls.Add(this.lblForLPHVersion);
             this.groupBox6.Controls.Add(this.lblLanguageFileVersion);
             this.groupBox6.Controls.Add(this.lblLanguageFileAuthor);
@@ -63,6 +65,16 @@
             this.groupBox6.Size = new System.Drawing.Size(392, 280);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
+            // 
+            // Download
+            // 
+            this.Download.Location = new System.Drawing.Point(301, 37);
+            this.Download.Name = "Download";
+            this.Download.Size = new System.Drawing.Size(75, 23);
+            this.Download.TabIndex = 12;
+            this.Download.Text = "下载";
+            this.Download.UseVisualStyleBackColor = true;
+            this.Download.Click += new System.EventHandler(this.Download_Click);
             // 
             // lblForLPHVersion
             // 
@@ -142,7 +154,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(268, 38);
+            this.btnOpen.Location = new System.Drawing.Point(220, 37);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 2;
@@ -155,7 +167,7 @@
             this.txtLanguageFile.Location = new System.Drawing.Point(19, 39);
             this.txtLanguageFile.Name = "txtLanguageFile";
             this.txtLanguageFile.ReadOnly = true;
-            this.txtLanguageFile.Size = new System.Drawing.Size(242, 21);
+            this.txtLanguageFile.Size = new System.Drawing.Size(195, 21);
             this.txtLanguageFile.TabIndex = 1;
             // 
             // LanguageFile
@@ -198,5 +210,6 @@
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.TextBox txtLanguageFile;
         private System.Windows.Forms.Label LanguageFile;
+        private System.Windows.Forms.Button Download;
     }
 }
