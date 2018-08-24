@@ -28,8 +28,6 @@ namespace ProxyHero
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                //Config.BbsHelper = new SnsHelper();
-
                 var formMain = new MainForm();
                 int hdc = formMain.Handle.ToInt32();
                 Application.Run(formMain);
@@ -37,7 +35,7 @@ namespace ProxyHero
             }
             else
             {
-                //ProxyHero.Common.MsgBox.ShowMessage("已经运行了一个实例！");
+                ProxyHero.Common.MsgBox.ShowMessage("已经运行了一个实例！");
             }
         }
     }

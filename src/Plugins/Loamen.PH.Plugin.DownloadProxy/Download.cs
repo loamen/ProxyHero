@@ -228,6 +228,7 @@ namespace Loamen.PH.Plugin.DownloadProxy
             tsbDownload.Image = Resources.download;
             tsbDownload.Text = "开始采集";
             app.WriteDebug("全部采集完成");
+            app.DataBind();
             ActiveProxyForm();
         }
 

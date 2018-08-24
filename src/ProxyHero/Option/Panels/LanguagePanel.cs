@@ -110,6 +110,11 @@ namespace ProxyHero.Option.Panels
             txtLanguageFile.Text = localSetting.LanguageFileName;
             txtLanguageFile.DataBindings.Add("Text", localSetting, "LanguageFileName",
                                                                  true, DataSourceUpdateMode.OnPropertyChanged);
+
+            lblForLPHVersion.Text = Config.LocalLanguage.LanguageFileForLPHVersion;
+            lblLanguageFileAuthor.Text = Config.LocalLanguage.LanguageFileAuthor;
+            lblLanguageFileVersion.Text = Config.LocalLanguage.LanguageFileVersion;
+            lblLanguageName.Text = Config.LocalLanguage.LanguageName;
         }
 
         private void Download_Click(object sender, EventArgs e)

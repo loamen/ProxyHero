@@ -153,13 +153,13 @@
     <NetworkIsbusyPleaseTryAgainLater>The network is busy, please try again later!</NetworkIsbusyPleaseTryAgainLater>  
     <NumOfProxiesDownloaded>Total {0} has been acquired</NumOfProxiesDownloaded>  
     <NumOfProxiesDownloadedByThreads>A total of {0} threads are downloading {1} datas</NumOfProxiesDownloadedByThreads>  
-    <Testing>is verifying</Testing>  
+    <Testing>testing</Testing>  
     <Swithing>Automatic switching</Swithing>  
     <NumOfProxiesTested>{0}Verification completed</NumOfProxiesTested>  
     <AllTestingCompleted>Test Compleated</AllTestingCompleted>  
     <TestingHaveBeenTerminated>has terminated validation</TestingHaveBeenTerminated>  
-    <ProxyIsAlive>This proxy is valid</ProxyIsAlive>  
-    <ProxyIsDead>This proxy is invalid</ProxyIsDead>  
+    <ProxyIsAlive>This proxy is valid </ProxyIsAlive>  
+    <ProxyIsDead>This proxy is invalid </ProxyIsDead>  
     <TimeConsuming>Time-consuming: {0} milliseconds</TimeConsuming>  
     <AbortingThread>is terminating the read thread</AbortingThread>  
     <LoamenServer>Official Server</LoamenServer>  
