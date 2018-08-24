@@ -1,4 +1,4 @@
-Download:<a href="http://www.onlinedown.net/soft/106578.htm" target="_blank">http://www.onlinedown.net/soft/106578.htm</a> <br/>
+Download:<a href="https://github.com/loamen/ProxyHero/releases" target="_blank">https://github.com/loamen/ProxyHero/releases</a> <br/>
 Homepage:<a href="http://www.loamen.com" target="_blank">http://www.loamen.com</a> <br/>
 Blog:<a href="http://www.cnblogs.com/mops/articles/2377951.html" target="_blank">http://www.cnblogs.com/mops/articles/2377951.html</a> <br/>
 
@@ -14,7 +14,7 @@ Blog:<a href="http://www.cnblogs.com/mops/articles/2377951.html" target="_blank"
 
 # ProxyHero
 
-Loamen Proxy Hero is a professional proxy software to test, use and manange proxy list.
+Loamen Proxy Hero is a professional proxy software to test, use and manange proxy list.You can use Loamen Proxy Hero to protect your Internet privacy or access the blocked sites by hiding your real IP using a proxy. Loamen Proxy Hero (LPH) is a professional proxy checker and proxy switcher for your browsers. It can test the details (speed, anonymity, country, city, distance, smtp, ssl) of the proxy and automatically change the proxy settings of your browsers. Moreover, LPH is the client program of Loamen proxy list service. You can easily and quickly get daily fresh proxy list from LPH by just one click.
 
 # Features
 
