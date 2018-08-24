@@ -43,6 +43,8 @@
             this.Compile = new System.Windows.Forms.Button();
             this.p_OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.DownloadPlugins = new System.Windows.Forms.Button();
+            this.MenuItems = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ToolButtons = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lvPlugin
@@ -54,7 +56,9 @@
             this.Version,
             this.LPHVersion,
             this.Description,
-            this.FileName});
+            this.FileName,
+            this.MenuItems,
+            this.ToolButtons});
             this.lvPlugin.FullRowSelect = true;
             this.lvPlugin.GridLines = true;
             this.lvPlugin.Location = new System.Drawing.Point(14, 12);
@@ -152,6 +156,14 @@
             this.DownloadPlugins.UseVisualStyleBackColor = true;
             this.DownloadPlugins.Click += new System.EventHandler(this.DownloadPlugins_Click);
             // 
+            // MenuItems
+            // 
+            this.MenuItems.Text = "MenuItems";
+            // 
+            // ToolButtons
+            // 
+            this.ToolButtons.Text = "ToolButtons";
+            // 
             // PluginManageForm
             // 
             this.AcceptButton = this.OK;
@@ -195,5 +207,7 @@
         private System.Windows.Forms.OpenFileDialog p_OpenFileDialog;
         private System.Windows.Forms.ColumnHeader FileName;
         private System.Windows.Forms.Button DownloadPlugins;
+        private System.Windows.Forms.ColumnHeader MenuItems;
+        private System.Windows.Forms.ColumnHeader ToolButtons;
     }
 }

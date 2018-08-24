@@ -53,6 +53,8 @@ namespace ProxyHero.Plugin
                     lvi.SubItems.Add(plugin.LphVersion);
                     lvi.SubItems.Add(plugin.Description);
                     lvi.SubItems.Add(plugin.FileName.ToLower());
+                    lvi.SubItems.Add(string.Join(",", plugin.MenuItems));
+                    lvi.SubItems.Add(string.Join(",", plugin.ToolButtons));
                     lvPlugin.Items.Add(lvi);
                 }
             }
@@ -84,6 +86,8 @@ namespace ProxyHero.Plugin
                     lvi.SubItems.Add(pm.Engine.LPHVersion);
                     lvi.SubItems.Add(pm.Engine.Description);
                     lvi.SubItems.Add(pm.Engine.FileName.ToLower());
+                    lvi.SubItems.Add(string.Join(",",pm.Engine.MenuItems));
+                    lvi.SubItems.Add(string.Join(",", pm.Engine.ToolButtons));
                     lvPlugin.Items.Add(lvi);
                 }
             }
@@ -124,6 +128,17 @@ namespace ProxyHero.Plugin
                     if (model != null)
                     {
                         dal.Delete(model.Id);
+                        var menuItems = model.MenuItems;
+                        foreach (var item in menuItems)
+                        {
+                            Config.MainForm.RemoveMenuItem(item);
+                        }
+
+                        var toolButtons = model.ToolButtons;
+                        foreach (var button in toolButtons)
+                        {
+                            Config.MainForm.RemoveToolButton(button);
+                        }
                     }
                 }
             }
@@ -187,6 +202,8 @@ namespace ProxyHero.Plugin
                     plugin.LphVersion = li.SubItems[3].Text;
                     plugin.Description = li.SubItems[4].Text;
                     plugin.FileName = li.SubItems[5].Text;
+                    plugin.MenuItems = li.SubItems[6].Text.Split(',').ToList();
+                    plugin.ToolButtons = li.SubItems[7].Text.Split(',').ToList();
 
                     var model = dal.FindOne(plugin.FileName);
                     if(model == null)

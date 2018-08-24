@@ -290,6 +290,23 @@ namespace ProxyHero
         }
 
         /// <summary>
+        /// 移出主菜单
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public void RemoveMenuItem(string name)
+        {
+            foreach (ToolStripMenuItem item in PluginMenu.DropDownItems)
+            {
+                if(item.Name == name)
+                {
+                    PluginMenu.DropDownItems.Remove(item);
+                    break;
+                }
+            }
+        }
+
+        /// <summary>
         ///     添加工具栏按钮
         /// </summary>
         /// <param name="name"></param>
@@ -304,6 +321,22 @@ namespace ProxyHero
             Toolbar.Items.Add(tsb);
 
             return tsb;
+        }
+
+        /// <summary>
+        /// 移出工具栏按钮
+        /// </summary>
+        /// <param name="name"></param>
+        public void RemoveToolButton(string name)
+        {
+            foreach (ToolStripButton item in Toolbar.Items)
+            {
+                if (item.Name == name)
+                {
+                    Toolbar.Items.Remove(item);
+                    break;
+                }
+            }
         }
 
         /// <summary>

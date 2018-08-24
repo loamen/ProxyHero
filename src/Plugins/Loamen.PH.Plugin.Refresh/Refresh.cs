@@ -84,6 +84,15 @@ namespace Loamen.PH.Plugin.Refresh
             get { return description; }
             set { description = value; }
         }
+
+        /// <summary>
+        /// 插件添加的菜单
+        /// </summary>
+        public List<string> MenuItems { get; set; }
+        /// <summary>
+        /// 插件添加的工具按钮
+        /// </summary>
+        public List<string> ToolButtons { get; set; }
         #endregion
 
         #region 方法

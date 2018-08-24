@@ -84,6 +84,14 @@ namespace Loamen.PluginFramework
         /// </summary>
         public string Description { get; set; }
 
+        /// <summary>
+        /// 插件添加的菜单
+        /// </summary>
+        public List<string> MenuItems { get; set; } = new List<string>();
+        /// <summary>
+        /// 插件添加的工具按钮
+        /// </summary>
+        public List<string> ToolButtons { get; set; } = new List<string>();
         #endregion
 
         #region Constructor
@@ -195,6 +203,8 @@ namespace Loamen.PluginFramework
                             Version = pluginObject.Version;
                             LPHVersion = pluginObject.LPHVersion;
                             Description = pluginObject.Description;
+                            MenuItems = pluginObject.MenuItems;
+                            ToolButtons = pluginObject.ToolButtons;
                             errors.Clear();
                             return true;
                         }

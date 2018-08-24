@@ -91,6 +91,14 @@ namespace Loamen.PH.Plugin.Anonymity
             set { description = value; }
         }
 
+        /// <summary>
+        /// 插件添加的菜单
+        /// </summary>
+        public List<string> MenuItems { get; set; } = new List<string>();
+        /// <summary>
+        /// 插件添加的工具按钮
+        /// </summary>
+        public List<string> ToolButtons { get; set; } = new List<string>();
         #endregion
 
         #region 方法
@@ -111,12 +119,22 @@ namespace Loamen.PH.Plugin.Anonymity
             #region
 
             // 定义一个下拉菜单
-            dsmi = App.AddMenuItem("AnonymityPluginMenu", "验证匿名度");
+            var menuItemName = "AnonymityPluginMenu";
+            dsmi = App.AddMenuItem(menuItemName, "验证匿名度");
             dsmi.Click += item_Click; //为下拉单添加事件
+            if (!MenuItems.Contains(menuItemName))
+            {
+                MenuItems.Add(menuItemName);
+            }
 
             //定义一个工具按钮
-            ToolStripButton tsb = App.AddToolButton("AnonymityPlugin", "验证匿名度");
+            var toolButtonName = "AnonymityPluginToolButton";
+            ToolStripButton tsb = App.AddToolButton(toolButtonName, "验证匿名度");
             tsb.Click += item_Click; //为工具栏按钮添加事件
+            if (!ToolButtons.Contains(toolButtonName))
+            {
+                ToolButtons.Add(toolButtonName);
+            }
 
             #endregion
         }

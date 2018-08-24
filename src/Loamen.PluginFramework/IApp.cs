@@ -181,6 +181,12 @@ namespace Loamen.PluginFramework
         /// <param name="text"></param>
         /// <returns></returns>
         ToolStripMenuItem AddMenuItem(string name, string text);
+        /// <summary>
+        /// 移出主菜单
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        void RemoveMenuItem(string name);
 
         /// <summary>
         ///     添加工具栏按钮
@@ -189,7 +195,12 @@ namespace Loamen.PluginFramework
         /// <param name="text"></param>
         /// <returns></returns>
         ToolStripButton AddToolButton(string name, string text);
-
+        /// <summary>
+        /// 移出工具栏按钮
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        void RemoveToolButton(string name);
         /// <summary>
         ///     截取字符串
         /// </summary>

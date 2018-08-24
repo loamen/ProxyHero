@@ -15,5 +15,13 @@ namespace ProxyHero.Entity
         public string LphVersion { get; set; }
         public string Description { get; set; }
         public string FileName { get; set; }
+        /// <summary>
+        /// 插件添加的菜单
+        /// </summary>
+        public List<string> MenuItems { get; set; } = new List<string>();
+        /// <summary>
+        /// 插件添加的工具按钮
+        /// </summary>
+        public List<string> ToolButtons { get; set; } = new List<string>();
     }
 }
