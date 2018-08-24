@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>PADManager 2.0.76</MASTER_PAD_EDITOR>
+    <MASTER_PAD_EDITOR_URL>http://robosoft.rudenko.com</MASTER_PAD_EDITOR_URL>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <RoboSoft>
+    <Company_UIN>CMP-01281865EF6</Company_UIN>
+    <Company_Description></Company_Description>
+    <Product_UIN>APP-012818818D2</Product_UIN>
+    <Publish_on_CD>FALSE</Publish_on_CD>
+    <RSProductType></RSProductType>
+    <Search_String></Search_String>
+    <Press_Release_Search_String></Press_Release_Search_String>
+    <NewsFeed_Search_String></NewsFeed_Search_String>
+    <Search_Engine_Search_String></Search_Engine_Search_String>
+    <Web_Directories_Search_String></Web_Directories_Search_String>
+    <Search_String_Unique></Search_String_Unique>
+    <Comments_For_Reviewer></Comments_For_Reviewer>
+    <Backlink></Backlink>
+  </RoboSoft>
+  <Company_Info>
+    <Company_Name>Loamen</Company_Name>
+    <Address_1>Jin niu qu</Address_1>
+    <Address_2>Hua Zhao bi zhong heng jie</Address_2>
+    <City_Town>Chengdu</City_Town>
+    <State_Province>Sichuan</State_Province>
+    <Zip_Postal_Code>624200</Zip_Postal_Code>
+    <Country>China</Country>
+    <Company_WebSite_URL>http://www.loamen.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Contact_First_Name>Don</Contact_First_Name>
+      <Contact_Last_Name>Yang</Contact_Last_Name>
+      <Contact_Email>loamen.com@gmail.com</Contact_Email>
+      <Author_Email>loamen.com@gmail.com</Author_Email>
+      <Author_First_Name>Don</Author_First_Name>
+      <Author_Last_Name>Yang</Author_Last_Name>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>loamen.com@gmail.com</Sales_Email>
+      <Support_Email>loamen.com@gmail.com</Support_Email>
+      <General_Email>loamen.com@gmail.com</General_Email>
+      <Sales_Phone></Sales_Phone>
+      <Support_Phone></Support_Phone>
+      <General_Phone></General_Phone>
+      <Fax_Phone></Fax_Phone>
+    </Support_Info>
+  </Company_Info>
+  <NewsFeed>
+    <NewsFeed_FORM>Y</NewsFeed_FORM>
+    <NewsFeed_VERSION>1.0</NewsFeed_VERSION>
+    <NewsFeed_URL>http://Submit-Everywhere.com/extensions/NewsFeed.htm</NewsFeed_URL>
+    <NewsFeed_DESCRIPTION>This PAD extension allows you to add your RSS and Atom news feeds info into your PAD file. This info can be used by RSS feed submission software or by feed directories themselves.</NewsFeed_DESCRIPTION>
+    <NewsFeed_Type>RSS 0.90</NewsFeed_Type>
+    <NewsFeed_Language>English</NewsFeed_Language>
+    <NewsFeed_Purpose>News</NewsFeed_Purpose>
+    <NewsFeed_Author_Email>loamen.com@gmail.com</NewsFeed_Author_Email>
+    <NewsFeed_Author_First_Name>Don</NewsFeed_Author_First_Name>
+    <NewsFeed_Author_Last_Name>Yang</NewsFeed_Author_Last_Name>
+    <NewsFeed_Feed_URL></NewsFeed_Feed_URL>
+    <NewsFeed_Site_Name></NewsFeed_Site_Name>
+    <NewsFeed_Site_URL></NewsFeed_Site_URL>
+    <NewsFeed_Title></NewsFeed_Title>
+    <NewsFeed_Description_70></NewsFeed_Description_70>
+    <NewsFeed_Description_250></NewsFeed_Description_250>
+  </NewsFeed>
+  <Site>
+    <Site_FORM>Y</Site_FORM>
+    <Site_VERSION>1.0</Site_VERSION>
+    <Site_URL>http://Submit-Everywhere.com/extensions/Site.htm</Site_URL>
+    <Site_DESCRIPTION>This PAD extension allows you to add your site info into your PAD file. This info can be used by site submission software or by web directories themselves.</Site_DESCRIPTION>
+    <Site_Site_Title>Loamen Homepage</Site_Site_Title>
+    <Site_Site_URL>http://www.loamen.com</Site_Site_URL>
+    <Site_Contact_Email>loamen.com@gmail.com</Site_Contact_Email>
+    <Site_Contact_First_Name>Don</Site_Contact_First_Name>
+    <Site_Contact_Last_Name>Yang</Site_Contact_Last_Name>
+    <Site_Description_100></Site_Description_100>
+    <Site_Description_250></Site_Description_250>
+    <Site_Description_450></Site_Description_450>
+    <Site_Keywords></Site_Keywords>
+  </Site>
+  <Program_Info>
+    <Program_Name>Loamen Proxy Hero</Program_Name>
+    <Program_Version>1.7.0</Program_Version>
+    <Program_Release_Month>08</Program_Release_Month>
+    <Program_Release_Day>24</Program_Release_Day>
+    <Program_Release_Year>2018</Program_Release_Year>
+    <Program_Cost_Dollars>0</Program_Cost_Dollars>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>New Release</Program_Release_Status>
+    <Program_Install_Support>No Install Support</Program_Install_Support>
+    <Program_OS_Support>WinXP,WinVista,WinVista x64,Win7 x32,Win7 x64,Win2000,WinOther,Windows2000,Windows2003,WinServer,Windows Vista Ultimate,Windows Vista Ultimate x64,Windows Vista Starter,Windows Vista Home Basic,Windows Vista Home Premium,Windows Vista Business,Windows Vista Enterprise,Windows Vista Home Basic x64,Windows Vista Home Premium x64,Windows Vista Business x64,Windows Vista Enterprise x64</Program_OS_Support>
+    <Program_Language>English,Chinese,ChineseSimplified,ChineseTraditional</Program_Language>
+    <Program_Change_Info>* Proxy Checker: professionally test the details of the proxies.
+* Proxy Switcher: quickly change the proxy settings of the browsers.
+* Proxy Downloader: get daily fresh proxy list</Program_Change_Info>
+    <Program_System_Requirements>.Net framework 4.6.1</Program_System_Requirements>
+    <Program_Category_Class>Network &amp; Internet::Other</Program_Category_Class>
+    <File_Info>
+      <File_Size_Bytes>946176</File_Size_Bytes>
+      <File_Size_K>924</File_Size_K>
+      <File_Size_MB>0.90</File_Size_MB>
+      <Filename_Versioned></Filename_Versioned>
+      <Filename_Previous></Filename_Previous>
+      <Filename_Generic></Filename_Generic>
+      <Filename_Long></Filename_Long>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Based_On>Days</Expire_Based_On>
+      <Expire_Count></Expire_Count>
+      <Expire_Other_Info></Expire_Other_Info>
+      <Expire_Month></Expire_Month>
+      <Expire_Day></Expire_Day>
+      <Expire_Year></Expire_Year>
+    </Expire_Info>
+    <Program_Categories>IP tools</Program_Categories>
+    <Program_Cost_Other_Code></Program_Cost_Other_Code>
+    <Program_Cost_Other></Program_Cost_Other>
+    <Limitations></Limitations>
+    <Awards></Awards>
+    <Program_Specific_Category></Program_Specific_Category>
+    <Includes_JAVA_VM></Includes_JAVA_VM>
+    <Includes_VB_Runtime></Includes_VB_Runtime>
+    <Includes_DirectX></Includes_DirectX>
+  </Program_Info>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://github.com/loamen/ProxyHero/blob/master/README.md</Application_Info_URL>
+      <Application_Order_URL>http://www.loamen.com</Application_Order_URL>
+      <Application_Screenshot_URL>https://github.com/loamen/ProxyHero/raw/master/documents/images/en_main.png</Application_Screenshot_URL>
+      <Application_Icon_URL>http://src.onlinedown.net/d/file/user_p/logo/2018-08-10/95940e5df4b58a77d9fa8febb582858b.png</Application_Icon_URL>
+      <Application_XML_File_URL>https://raw.githubusercontent.com/loamen/ProxyHero/master/documents/ProxyHero_pad.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://github.com/loamen/ProxyHero/releases/download/v1.7.0/ProxyHero1.7.0.zip</Primary_Download_URL>
+      <Secondary_Download_URL>http://www.loamen.com/mini/ProxyHero1.7.0.zip</Secondary_Download_URL>
+      <Additional_Download_URL_1></Additional_Download_URL_1>
+      <Additional_Download_URL_2></Additional_Download_URL_2>
+    </Download_URLs>
+  </Web_Info>
+  <Permissions>
+    <Distribution_Permissions></Distribution_Permissions>
+    <EULA></EULA>
+  </Permissions>
+  <Program_Descriptions>
+    <English>
+      <Keywords>loamen proxy hero, proxy software, hide ip, proxy switcher, test proxy, checker proxy</Keywords>
+      <Char_Desc_45>A professional proxy software.</Char_Desc_45>
+      <Char_Desc_80>A professional proxy software to test, use and manange proxy list.</Char_Desc_80>
+      <Char_Desc_250>Loamen Proxy Hero is a professional proxy software to test, use and manange proxy list.</Char_Desc_250>
+      <Char_Desc_450>Loamen Proxy Hero is a professional proxy software to test, use and manange proxy list.  # Features  &gt; * Proxy Checker: professionally test the details of the proxies. &gt; * Proxy Switcher: quickly change the proxy settings of the browsers. &gt; * Proxy Downloader: get daily fresh proxy lists by just one click. &gt; * Proxy Manager: easily maintain your personal proxy list.</Char_Desc_450>
+      <Char_Desc_2000>Loamen Proxy Hero is a professional proxy software to test, use and manange proxy list.
+
+Overview: Loamen Proxy Hero can help you to visit the blocked websites and protect your Internet privacy.
+How it works: Loamen Proxy Hero changes your IP address using a proxy. Thus the websites regard the IP address of the proxy as your IP address.
+Introduction: Loamen Proxy Hero (EPS) is a proxy software to test and use the proxy list. It can test the details (speed, anonymity, country, gateway, ssl/https, dangerous and google feature) of the http proxy and change the proxy settings of your browsers (IE, Firefox and Chrome).
+
+# Features
+
+&gt; * Proxy Checker: professionally test the details of the proxies.
+&gt; * Proxy Switcher: quickly change the proxy settings of the browsers.
+&gt; * Proxy Downloader: get daily fresh proxy lists by just one click.
+&gt; * Proxy Manager: easily maintain your personal proxy list.</Char_Desc_2000>
+    </English>
+    <Chinese>
+      <Keywords>免费HTTP代理,免费高匿代理,免费匿名代理,隐藏IP,IP工具,代理IP工具</Keywords>
+      <Char_Desc_45>是一款全功能全自动的代理搜索、验证、管理软件。</Char_Desc_45>
+      <Char_Desc_80>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。</Char_Desc_80>
+      <Char_Desc_250>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。</Char_Desc_250>
+      <Char_Desc_450>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。</Char_Desc_450>
+      <Char_Desc_2000>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。
+【主要功能】：
+1. 自动从服务器读取最新代理加独特云计算，让你更快的找到快速的代理。省去自己找代理的麻烦。
+2. 自动多线程验证代理的匿名程度（超级匿名、普通匿名、透明代理），可在验证代理匿名程度的基础上自定义特定验证网址以便验证代理对该网址是否有效。
+3. 自动识别代理所在国家或地区，可查询哪些国家和地区和端口的代理。
+4. 特有内置浏览器吸附代理功能，可直接从浏览的网页中获取代理。
+5. 可以直接启用代理和停止代理（无须重启IE，即时生效），可以复制代理指定格式到剪贴板，方便别处设置。
+6. 可以对代理列表进行管理：复制、粘贴、剪切、删除、清空、导入、导出。
+7. 自定义User-Agent,可以方便的浏览WAP站点或验证代理是否能够访问WAP网站。
+8. 特有的插件扩展，可添加如刷流量等扩展插件。
+9. 自动切换代理功能，只需一个键变能按代理速度自动切换代理。
+10.简单直观的操作状态显示：程序主界面的状态栏图标提示使用代理和自动切换状态提示。
+11.可以自动保存和载入上次可用代理列表，方便用户操作。
+12.内置浏览器，可使用Ctrl+T一键采集网页中代理内容。</Char_Desc_2000>
+    </Chinese>
+    <ChineseSimplified>
+      <Keywords>免费HTTP代理,免费高匿代理,免费匿名代理,隐藏IP,IP工具,代理IP工具</Keywords>
+      <Char_Desc_45>是一款全功能全自动的代理搜索、验证、管理软件。</Char_Desc_45>
+      <Char_Desc_80>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。</Char_Desc_80>
+      <Char_Desc_250>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。</Char_Desc_250>
+      <Char_Desc_450>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。</Char_Desc_450>
+      <Char_Desc_2000>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。
+【主要功能】：
+1. 自动从服务器读取最新代理加独特云计算，让你更快的找到快速的代理。省去自己找代理的麻烦。
+2. 自动多线程验证代理的匿名程度（超级匿名、普通匿名、透明代理），可在验证代理匿名程度的基础上自定义特定验证网址以便验证代理对该网址是否有效。
+3. 自动识别代理所在国家或地区，可查询哪些国家和地区和端口的代理。
+4. 特有内置浏览器吸附代理功能，可直接从浏览的网页中获取代理。
+5. 可以直接启用代理和停止代理（无须重启IE，即时生效），可以复制代理指定格式到剪贴板，方便别处设置。
+6. 可以对代理列表进行管理：复制、粘贴、剪切、删除、清空、导入、导出。
+7. 自定义User-Agent,可以方便的浏览WAP站点或验证代理是否能够访问WAP网站。
+8. 特有的插件扩展，可添加如刷流量等扩展插件。
+9. 自动切换代理功能，只需一个键变能按代理速度自动切换代理。
+10.简单直观的操作状态显示：程序主界面的状态栏图标提示使用代理和自动切换状态提示。
+11.可以自动保存和载入上次可用代理列表，方便用户操作。
+12.内置浏览器，可使用Ctrl+T一键采集网页中代理内容。</Char_Desc_2000>
+    </ChineseSimplified>
+    <ChineseTraditional>
+      <Keywords>免费HTTP代理,免费高匿代理,免费匿名代理,隐藏IP,IP工具,代理IP工具</Keywords>
+      <Char_Desc_45>是一款全功能全自动的代理搜索、验证、管理软件。</Char_Desc_45>
+      <Char_Desc_80>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。</Char_Desc_80>
+      <Char_Desc_250>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。</Char_Desc_250>
+      <Char_Desc_450>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。</Char_Desc_450>
+      <Char_Desc_2000>龙门代理公布器是一款全功能全自动的代理搜索、验证、管理软件。设置方便操作简单，可以同时多线程验证代理的匿名程度、所在地区和传输速度。软件独特的智能代理更是省去了N多操作，完全自动的实现代理的取得和使用。独特的自动切换代理功能，可直接应用于IE和内置浏览器。
+【主要功能】：
+1. 自动从服务器读取最新代理加独特云计算，让你更快的找到快速的代理。省去自己找代理的麻烦。
+2. 自动多线程验证代理的匿名程度（超级匿名、普通匿名、透明代理），可在验证代理匿名程度的基础上自定义特定验证网址以便验证代理对该网址是否有效。
+3. 自动识别代理所在国家或地区，可查询哪些国家和地区和端口的代理。
+4. 特有内置浏览器吸附代理功能，可直接从浏览的网页中获取代理。
+5. 可以直接启用代理和停止代理（无须重启IE，即时生效），可以复制代理指定格式到剪贴板，方便别处设置。
+6. 可以对代理列表进行管理：复制、粘贴、剪切、删除、清空、导入、导出。
+7. 自定义User-Agent,可以方便的浏览WAP站点或验证代理是否能够访问WAP网站。
+8. 特有的插件扩展，可添加如刷流量等扩展插件。
+9. 自动切换代理功能，只需一个键变能按代理速度自动切换代理。
+10.简单直观的操作状态显示：程序主界面的状态栏图标提示使用代理和自动切换状态提示。
+11.可以自动保存和载入上次可用代理列表，方便用户操作。
+12.内置浏览器，可使用Ctrl+T一键采集网页中代理内容。</Char_Desc_2000>
+    </ChineseTraditional>
+  </Program_Descriptions>
+</XML_DIZ_INFO>
