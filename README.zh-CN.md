@@ -34,8 +34,7 @@
 功能截图
 ------
 
-![龙门代理公布器](http://pic002.cnblogs.com/images/2010/110188/2010121415203353.jpg)
-![龙门代理公布器](documents/images/en_main.png)
+![龙门代理公布器](documents/images/cn_main.png)
 
 捐赠
 ------

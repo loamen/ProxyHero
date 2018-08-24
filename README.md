@@ -25,5 +25,4 @@ Loamen Proxy Hero is a professional proxy software to test, use and manange prox
 
 # Screen Shots
 
-![Proxy Hero](http://pic002.cnblogs.com/images/2010/110188/2010121415203353.jpg)
 ![Proxy Hero](documents/images/en_main.png)
