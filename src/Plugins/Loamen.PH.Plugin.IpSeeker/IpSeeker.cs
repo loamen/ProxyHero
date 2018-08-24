@@ -18,7 +18,7 @@ namespace Loamen.PH.Plugin.IpSeeker
         private string name = "验证IP地理位置";
         private string author = "龙门信息网";
         private string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-        private string lPHVersion = "1.6.0+";
+        private string lPHVersion = "1.7.0+";
         private string description = "使用纯真本地IP数据库验证服务器地理位置！";
         #endregion
 
@@ -81,11 +81,11 @@ namespace Loamen.PH.Plugin.IpSeeker
         /// <summary>
         /// 插件添加的菜单
         /// </summary>
-        public List<string> MenuItems { get; set; }
+        public List<string> MenuItems { get; set; } = new List<string>();
         /// <summary>
         /// 插件添加的工具按钮
         /// </summary>
-        public List<string> ToolButtons { get; set; }
+        public List<string> ToolButtons { get; set; } = new List<string>();
         #endregion
 
         #region 方法
@@ -96,16 +96,29 @@ namespace Loamen.PH.Plugin.IpSeeker
         {
             #region
             // 定义一个下拉菜单
+            var menuItemName = "IPSeekerPluginMenu";
+            if (!MenuItems.Contains(menuItemName))
+            {
+                MenuItems.Add(menuItemName);
+            }
+
             dsmi = new ToolStripMenuItem();
             dsmi.Text = "验证IP地理位置";
-            dsmi.Name = "IPSeekerPluginMenu";
+            dsmi.Name = menuItemName;
             dsmi.Visible = true;
             dsmi.Click += new EventHandler(this.item_Click); //为下拉单添加时间
             App.PluginMenu.DropDownItems.Add(dsmi); //在宿主程序中添加菜单
+            
 
             //定义一个工具按钮
+            var toolButtonName = "IPSeekerPluginToolButton";
+            if (!ToolButtons.Contains(toolButtonName))
+            {
+                ToolButtons.Add(toolButtonName);
+            }
+
             ToolStripButton tsb = new ToolStripButton();
-            tsb.Name = "IPSeekerPlugin";
+            tsb.Name = toolButtonName;
             tsb.Text = "验证IP地理位置";
             tsb.ToolTipText = tsb.Text;
             tsb.Image = Properties.Resources.world;

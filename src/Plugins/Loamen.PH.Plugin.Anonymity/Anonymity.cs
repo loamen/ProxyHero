@@ -27,7 +27,7 @@ namespace Loamen.PH.Plugin.Anonymity
         private string author = "龙门信息网";
         private string description = "龙门代理公布器使用代理匿名度插件！";
         private ToolStripMenuItem dsmi;
-        private string lPHVersion = "1.6.0+";
+        private string lPHVersion = "1.7.0+";
 
         private string name = "验证匿名度插件";
         private string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -120,22 +120,23 @@ namespace Loamen.PH.Plugin.Anonymity
 
             // 定义一个下拉菜单
             var menuItemName = "AnonymityPluginMenu";
-            dsmi = App.AddMenuItem(menuItemName, "验证匿名度");
-            dsmi.Click += item_Click; //为下拉单添加事件
             if (!MenuItems.Contains(menuItemName))
             {
                 MenuItems.Add(menuItemName);
             }
 
+            dsmi = App.AddMenuItem(menuItemName, "验证匿名度");
+            dsmi.Click += item_Click; //为下拉单添加事件
+
             //定义一个工具按钮
             var toolButtonName = "AnonymityPluginToolButton";
-            ToolStripButton tsb = App.AddToolButton(toolButtonName, "验证匿名度");
-            tsb.Click += item_Click; //为工具栏按钮添加事件
             if (!ToolButtons.Contains(toolButtonName))
             {
                 ToolButtons.Add(toolButtonName);
             }
 
+            ToolStripButton tsb = App.AddToolButton(toolButtonName, "验证匿名度");
+            tsb.Click += item_Click; //为工具栏按钮添加事件
             #endregion
         }
 
