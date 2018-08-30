@@ -16,7 +16,7 @@ namespace Loamen.PH.Plugin.Security
         private string author = "龙门信息网";
         private string description = "加密解密插件用于对龙门代理公布器插件脚本的c#源代码加密，以达到保护你的知识产权的目录！";
         private ToolStripMenuItem dsmi;
-        private string lPHVersion = "1.6.0+";
+        private string lPHVersion = "1.7.0+";
 
         private string name = "加密解密";
         public SecurityForm securityForm = null;
@@ -84,11 +84,11 @@ namespace Loamen.PH.Plugin.Security
         /// <summary>
         /// 插件添加的菜单
         /// </summary>
-        public List<string> MenuItems { get; set; }
+        public List<string> MenuItems { get; set; } = new List<string>();
         /// <summary>
         /// 插件添加的工具按钮
         /// </summary>
-        public List<string> ToolButtons { get; set; }
+        public List<string> ToolButtons { get; set; } = new List<string>();
 
         #endregion
 
@@ -127,16 +127,28 @@ namespace Loamen.PH.Plugin.Security
             #region
 
             // 定义一个下拉菜单
+            var menuItemName = "EncodePluginMenu";
+            if (!MenuItems.Contains(menuItemName))
+            {
+                MenuItems.Add(menuItemName);
+            }
+
             dsmi = new ToolStripMenuItem();
             dsmi.Text = "加密解密";
-            dsmi.Name = "EncodePluginMenu";
+            dsmi.Name = menuItemName;
             dsmi.Visible = true;
             dsmi.Click += item_Click; //为下拉单添加时间
             App.PluginMenu.DropDownItems.Add(dsmi); //在宿主程序中添加菜单
 
             //定义一个工具按钮
+            var toolButtonName = "EncodePluginToolButton";
+            if (!ToolButtons.Contains(toolButtonName))
+            {
+                ToolButtons.Add(toolButtonName);
+            }
+
             var tsb = new ToolStripButton();
-            tsb.Name = "EncodePlugin";
+            tsb.Name = toolButtonName;
             tsb.Text = "加密解密";
             tsb.ToolTipText = tsb.Text;
             tsb.DisplayStyle = ToolStripItemDisplayStyle.Image;

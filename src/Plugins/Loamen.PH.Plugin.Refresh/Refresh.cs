@@ -25,7 +25,7 @@ namespace Loamen.PH.Plugin.Refresh
         private string name = "喜刷刷";
         private string author = "龙门信息网";
         private string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-        private string lPHVersion = "1.6.0+";
+        private string lPHVersion = "1.7.0+";
         private string description = "喜刷刷是基于龙门代理公布器刷流量插件的增强版本，可用于刷网页IP和PV，刷淘宝、拍拍的浏览量！";
         #endregion
 
@@ -88,11 +88,11 @@ namespace Loamen.PH.Plugin.Refresh
         /// <summary>
         /// 插件添加的菜单
         /// </summary>
-        public List<string> MenuItems { get; set; }
+        public List<string> MenuItems { get; set; } = new List<string>();
         /// <summary>
         /// 插件添加的工具按钮
         /// </summary>
-        public List<string> ToolButtons { get; set; }
+        public List<string> ToolButtons { get; set; } = new List<string>();
         #endregion
 
         #region 方法
@@ -102,17 +102,29 @@ namespace Loamen.PH.Plugin.Refresh
         public void InitApp()
         {
             #region
+            var menuItemName = "RefreshPluginMenu";
+            if (!MenuItems.Contains(menuItemName))
+            {
+                MenuItems.Add(menuItemName);
+            }
+
             // 定义一个下拉菜单
             dsmi = new ToolStripMenuItem();
             dsmi.Text = "喜刷刷";
-            dsmi.Name = "RefreshPluginMenu";
+            dsmi.Name = menuItemName;
             dsmi.Visible = true;
             dsmi.Click += new EventHandler(this.item_Click); //为下拉单添加时间
             App.PluginMenu.DropDownItems.Add(dsmi); //在宿主程序中添加菜单
 
             //定义一个工具按钮
+            var toolButtonName = "RefreshPluginToolButton";
+            if (!ToolButtons.Contains(toolButtonName))
+            {
+                ToolButtons.Add(toolButtonName);
+            }
+
             ToolStripButton tsb = new ToolStripButton();
-            tsb.Name = "RefreshPlugin";
+            tsb.Name = toolButtonName;
             tsb.Text = "喜刷刷";
             tsb.ToolTipText = tsb.Text;
             tsb.Image = Properties.Resources.refresh;

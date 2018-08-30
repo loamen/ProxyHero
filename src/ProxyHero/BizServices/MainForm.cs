@@ -296,12 +296,16 @@ namespace ProxyHero
         /// <returns></returns>
         public void RemoveMenuItem(string name)
         {
-            foreach (ToolStripMenuItem item in PluginMenu.DropDownItems)
+            foreach (var item in PluginMenu.DropDownItems)
             {
-                if(item.Name == name)
+                if (item.GetType() == typeof(ToolStripMenuItem))
                 {
-                    PluginMenu.DropDownItems.Remove(item);
-                    break;
+                    var menu = (ToolStripMenuItem)item;
+                    if (menu.Name == name)
+                    {
+                        PluginMenu.DropDownItems.Remove(menu);
+                        break;
+                    }
                 }
             }
         }
@@ -329,12 +333,16 @@ namespace ProxyHero
         /// <param name="name"></param>
         public void RemoveToolButton(string name)
         {
-            foreach (ToolStripButton item in Toolbar.Items)
+            foreach (var item in Toolbar.Items)
             {
-                if (item.Name == name)
+                if (item.GetType() == typeof(ToolStripButton))
                 {
-                    Toolbar.Items.Remove(item);
-                    break;
+                    var button = (ToolStripButton)item;
+                    if (button.Name == name)
+                    {
+                        Toolbar.Items.Remove(button);
+                        break;
+                    }
                 }
             }
         }

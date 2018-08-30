@@ -20,7 +20,7 @@ namespace Loamen.PH.Plugin.DownloadProxy
         private string author = "龙门信息网";
         private string description = "代理公布器采集网页中的代理资源插件";
         private Downloader downloader;
-        private string lPHVersion = "1.6.0+";
+        private string lPHVersion = "1.7.0+";
 
         private string name = "采集网页代理资源插件";
         private ToolStripButton tsbDownload;
@@ -91,11 +91,11 @@ namespace Loamen.PH.Plugin.DownloadProxy
         /// <summary>
         /// 插件添加的菜单
         /// </summary>
-        public List<string> MenuItems { get; set; }
+        public List<string> MenuItems { get; set; } = new List<string>();
         /// <summary>
         /// 插件添加的工具按钮
         /// </summary>
-        public List<string> ToolButtons { get; set; }
+        public List<string> ToolButtons { get; set; } = new List<string>();
         #endregion
 
         #region 方法
@@ -108,9 +108,15 @@ namespace Loamen.PH.Plugin.DownloadProxy
             #region
 
             // 定义一个下拉菜单
+            var menuItemName = "DownloadProxyPluginMenu";
+            if (!MenuItems.Contains(menuItemName))
+            {
+                MenuItems.Add(menuItemName);
+            }
+
             tsmiDownloadPlugin = new ToolStripMenuItem();
             tsmiDownloadPlugin.Text = "采集代理资源";
-            tsmiDownloadPlugin.Name = "DownloadProxyPluginMenu";
+            tsmiDownloadPlugin.Name = menuItemName;
             tsmiDownloadPlugin.Visible = true;
             App.PluginMenu.DropDownItems.Add(tsmiDownloadPlugin); //在宿主程序中添加菜单
 
@@ -134,8 +140,14 @@ namespace Loamen.PH.Plugin.DownloadProxy
 
 
             //定义一个工具按钮
+            var toolButtonName = "DownloadProxyPluginToolButton";
+            if (!ToolButtons.Contains(toolButtonName))
+            {
+                ToolButtons.Add(toolButtonName);
+            }
+
             tsbDownload = new ToolStripButton();
-            tsbDownload.Name = "DownloadProxyPlugin";
+            tsbDownload.Name = toolButtonName;
             tsbDownload.Text = "开始采集";
             tsbDownload.ToolTipText = tsbDownload.Text;
             //tsb.Image = Properties.Resources.refresh;
