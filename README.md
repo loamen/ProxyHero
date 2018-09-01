@@ -9,7 +9,7 @@ Blog:<a href="http://www.cnblogs.com/mops/articles/2377951.html" target="_blank"
 [![license](http://img.shields.io/badge/license-LGPL-red.svg?style=flat)](https://raw.githubusercontent.com/loamen/ProxyHero/master/LICENSE)
 [![platforms](https://img.shields.io/badge/platform-Windows-yellow.svg?style=flat)]()
 [![download_count](https://img.shields.io/github/downloads/loamen/ProxyHero/total.svg?style=plastic)](https://github.com/loamen/ProxyHero/releases) 
-[![release](https://img.shields.io/github/release/loamen/ProxyHero.svg?style=flat)](https:/github.com/loamen/ProxyHero/releases) 
+[![release](https://img.shields.io/github/release/loamen/ProxyHero.svg?style=flat)](https://github.com/loamen/ProxyHero/releases) 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=419cea0774ab1aa37ae1a35eb0292482f9d8aa8decbab52eb62d9c5aa92c9c13"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="龙门信息①" title="龙门信息①"></a>
 
 # ProxyHero
