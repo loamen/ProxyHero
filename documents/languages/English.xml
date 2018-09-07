@@ -24,14 +24,14 @@
     <Donate>Donate</Donate>  
     <About>About</About>  
     <NewTab>New Tab</NewTab>  
-    <CloseTab>Close the label</CloseTab>  
+    <CloseTab>Close the tab</CloseTab>  
     <CloseAllTabs>Close all tabs</CloseAllTabs>  
     <Options>Settings</Options>  
     <Homepage>Homepage</Homepage>  
     <Help>Help</Help>  
-    <ShowLPH>Shows the main window</ShowLPH>  
-    <AutomaticSwitching>Turn on automatic switching proxy</AutomaticSwitching>  
-    <Debug>Allows debugging information</Debug> 
+    <ShowLPH>Show main window</ShowLPH>  
+    <AutomaticSwitching>Enable for auto switching</AutomaticSwitching>  
+    <Debug>Enable debugging window</Debug> 
   </MainPage>  
   <ProxyPage> 
     <Option>Settings</Option>  
@@ -42,8 +42,8 @@
     <ExportProxy>Export Proxy</ExportProxy>  
     <Delete>Delete</Delete>  
     <Cut>Cut</Cut>  
-    <DeleteDeadProxy>Delete invalid proxy</DeleteDeadProxy>  
-    <DeleteSeleted>Delete selected</DeleteSeleted>  
+    <DeleteDeadProxy>Delete timeout proxies</DeleteDeadProxy>  
+    <DeleteSeleted>Delete selected proxies</DeleteSeleted>  
     <Country>Region</Country>  
     <Port>Port</Port>  
     <Anonymity>Anonymity</Anonymity>  
@@ -51,14 +51,14 @@
     <Copy>Copy</Copy>  
     <Paste>Paste</Paste>  
     <Test>Test</Test>  
-    <SwitchTo>Use this proxy</SwitchTo>  
-    <DoNotUseProxy>prohibits the use of a proxy</DoNotUseProxy>  
+    <SwitchTo>Set as current active proxy</SwitchTo>  
+    <DoNotUseProxy>Disconnect from this proxy</DoNotUseProxy>  
     <BuiltinBrowser>built-in browser</BuiltinBrowser>  
     <Clear>Clear</Clear> 
   </ProxyPage>  
   <OptionPage> 
     <ResetAllSetting>Reset all settings</ResetAllSetting>
-    <BasicOptions>Basic Settings</BasicOptions>  
+    <BasicOptions>General Settings</BasicOptions>  
     <TestOptions>Verify Configuration</TestOptions>  
     <LanguageOptions>Language</LanguageOptions>  
     <SystemCheck>System Detection</SystemCheck>  
@@ -106,7 +106,7 @@
     <Paste>Paste</Paste>  
     <Clear>Clear</Clear>  
     <Testing>Testing</Testing>  
-    <ThreadsInfo>Test Thread Information</ThreadsInfo> 
+    <ThreadsInfo>Test Threads window</ThreadsInfo> 
   </InformationPage>  
   <IeBrowserPage> 
     <HomePage>Homepage</HomePage>  
@@ -115,7 +115,7 @@
     <Fresh>Refresh</Fresh>  
     <LockAndRefresh>locks the current page and automatically refreshes when the proxy switches</LockAndRefresh>  
     <Go>Go to</Go>  
-    <AddToTestingList>Add current page proxy to validation window (Ctrl+T)</AddToTestingList>  
+    <AddToTestingList>Add current page's proxies to test window (Ctrl+T)</AddToTestingList>  
     <Setting>Settings</Setting> 
   </IeBrowserPage>  
   <PluginManagePage> 
