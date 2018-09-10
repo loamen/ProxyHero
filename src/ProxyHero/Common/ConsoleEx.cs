@@ -9,21 +9,9 @@ namespace ProxyHero.Common
     {
         private void WriteText(string value)
         {
-            Config.MainForm.InfoPage.RichBox.AppendText(value);
+            Config.MainForm.InfoPage.AppendText(value);
         }
-
-        /// <summary>
-        ///     输出
-        /// </summary>
-        /// <param name="value"></param>
-        public void Write(string value)
-        {
-            if (Config.MainForm != null)
-            {
-                DoSomething doSth = WriteText;
-                Config.MainForm.InfoPage.Invoke(doSth, new object[] {DateTime.Now.ToString() + ":" + value});
-            }
-        }
+      
 
         /// <summary>
         ///     信息窗口显示信息
@@ -31,19 +19,14 @@ namespace ProxyHero.Common
         /// <param name="value"></param>
         public void WriteLine(string value)
         {
-            if (Config.MainForm != null)
-            {
-                DoSomething doSth = WriteText;
-                Config.MainForm.InfoPage.Invoke(doSth, new object[] {DateTime.Now.ToString() + ":" + value + "\n"});
-            }
+            Config.MainForm.InfoPage.AppendLine(value);
         }
 
         public void Debug(string value)
         {
             if (null != Config.MainForm && Config.LocalSetting.NeedDebug)
             {
-                DoSomething doSth = WriteText;
-                Config.MainForm.InfoPage.Invoke(doSth, new object[] {DateTime.Now.ToString() + ":" + value + "\n"});
+                Config.MainForm.InfoPage.AppendLine(DateTime.Now.ToString() + ":" + value);
             }
         }
 
@@ -53,7 +36,7 @@ namespace ProxyHero.Common
         /// <param name="ex"></param>
         public void Debug(Exception ex)
         {
-            if (null != Config.MainForm && Config.LocalSetting != null && Config.LocalSetting.NeedDebug)
+            if (null != Config.MainForm && Config.LocalSetting.NeedDebug)
             {
                 var sb = new StringBuilder("ErrorMessage:" + ex.Message);
                 sb.Append("\nType:" + ex.GetType());
@@ -68,11 +51,9 @@ namespace ProxyHero.Common
                 sb.Append("\n【IEV ersion】: ");
                 sb.Append(OSVersion.InternetExplorerVersion);
 
-                DoSomething doSth = WriteText;
-                Config.MainForm.InfoPage.Invoke(doSth, new object[] {DateTime.Now.ToString() + ":" + sb + "\n"});
+
+                Config.MainForm.InfoPage.AppendLine(DateTime.Now.ToString() + ":" + sb.ToString());
             }
         }
-
-        private delegate void DoSomething(string value);
     }
 }

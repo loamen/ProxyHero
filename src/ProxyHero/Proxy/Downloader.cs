@@ -69,6 +69,7 @@ namespace ProxyHero.Proxy
                 string countText = string.Format(Config.LocalLanguage.Messages.NumOfProxiesDownloadedByThreads,
                                                  (threads.Count - CompletedCount), ProxyData.TotalNum);
                 Config.MainForm.SetStatusText(countText);
+                Config.ConsoleEx.Debug(countText);
             }
 
             if (CompletedCount == threads.Count)

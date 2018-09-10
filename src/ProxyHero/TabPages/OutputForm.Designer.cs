@@ -1,6 +1,6 @@
 ﻿namespace ProxyHero.TabPages
 {
-    partial class InfomationForm
+    partial class OutputForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfomationForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OutputForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.spInfo = new System.Windows.Forms.SplitContainer();
             this.InfoBox = new System.Windows.Forms.RichTextBox();

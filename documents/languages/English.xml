@@ -31,7 +31,7 @@
     <Help>Help</Help>  
     <ShowLPH>Show main window</ShowLPH>  
     <AutomaticSwitching>Enable for auto switching</AutomaticSwitching>  
-    <Debug>Enable debugging window</Debug> 
+    <Debug>Debug</Debug> 
   </MainPage>  
   <ProxyPage> 
     <Option>Settings</Option>  

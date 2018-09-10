@@ -124,7 +124,8 @@ namespace ProxyHero.TabPages
                     }
                     else if (DownloadProxy.Text == Config.LocalLanguage.Messages.StopDownload)
                     {
-                        Config.MainForm.Status.Text = Config.LocalLanguage.Messages.Stopping + @"...";
+                        Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Stopping);
+                        Config.ConsoleEx.Debug(Config.LocalLanguage.Messages.Stopping);
                         DownloadProxy.Enabled = false;
                         _downloader.Stop();
                     }
@@ -157,7 +158,7 @@ namespace ProxyHero.TabPages
         {
             try
             {
-                if (Config.MainForm.Status.Text.Contains(Config.LocalLanguage.Messages.Testing))
+                if (Config.MainForm.StatusContains(Config.LocalLanguage.Messages.Testing))
                 {
                     StopTest.Enabled = false;
                     Tester.Stop();
@@ -197,7 +198,7 @@ namespace ProxyHero.TabPages
         {
             try
             {
-                if (!Config.MainForm.Status.Text.Contains(Config.LocalLanguage.Messages.Testing))
+                if (!Config.MainForm.StatusContains(Config.LocalLanguage.Messages.Testing))
                 {
                     List<ProxyServer> list = (from row in ProxyData.ProxyList
                                               where row.status != 0
@@ -220,7 +221,7 @@ namespace ProxyHero.TabPages
         {
             try
             {
-                if (!Config.MainForm.Status.Text.Contains(Config.LocalLanguage.Messages.Testing))
+                if (!Config.MainForm.StatusContains(Config.LocalLanguage.Messages.Testing))
                 {
                     DeleteProxy();
                     Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Total + ":" + ProxyData.ProxyList.Count);
@@ -262,7 +263,7 @@ namespace ProxyHero.TabPages
                     {
                         BindDgv(ProxyData.ProxyList);
                     }
-                    Config.MainForm.Status.Text = Config.LocalLanguage.Messages.Total + @":" + dgvProxyList.RowCount;
+                    Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Total + @":" + dgvProxyList.RowCount);
                 }
             }
             catch (Exception ex)
@@ -355,12 +356,16 @@ namespace ProxyHero.TabPages
             if (StopTest.Enabled)
             {
                 sbInfo.Append(string.Format(Config.LocalLanguage.Messages.NumOfProxiesTested, _testingNumber));
-                Config.MainForm.SetToolTipText(Config.LocalLanguage.Messages.AllTestingCompleted + "," + sb);
+                var message = Config.LocalLanguage.Messages.AllTestingCompleted + "," + sb;
+                Config.MainForm.SetToolTipText(message);
+                Config.ConsoleEx.Debug(message);
             }
             else
             {
                 sbInfo.Append(Config.LocalLanguage.Messages.TestingHaveBeenTerminated);
-                Config.MainForm.SetToolTipText(Config.LocalLanguage.Messages.TestingHaveBeenTerminated + "," + sb);
+                var message = Config.LocalLanguage.Messages.TestingHaveBeenTerminated + "," + sb;
+                Config.MainForm.SetToolTipText(message);
+                Config.ConsoleEx.Debug(message);
             }
             sbInfo.Append("," + sb);
             UpdateLabelInfo();
@@ -675,7 +680,9 @@ namespace ProxyHero.TabPages
                 {
                     _testingNumber = list.Count;
                     TestingAllEnable(false);
-                    Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Testing + "...");
+                    var message = Config.LocalLanguage.Messages.Testing + "...";
+                    Config.MainForm.SetStatusText(message);
+                    Config.ConsoleEx.Debug(message);
                     Test.Enabled = Cut.Enabled = Clear.Enabled = DeleteThis.Enabled = false;
                     _timerCheckAllTested.Enabled = true;
                     _timerCheckAllTested.Start();
@@ -684,84 +691,6 @@ namespace ProxyHero.TabPages
                     Tester.TesterCompleted += tester_Completed;
                     Tester.Start();
                 }
-
-                #region Test
-
-                //if (dataTable.Rows.Count > 0)
-                //{
-                //    this.testingNumber = dataTable.Rows.Count;
-                //    this.TestingAllEnable(false);
-
-                //    swTestAll = new Stopwatch();
-                //    swTestAll.Start();
-                //    int threadsCount = Config.LocalSetting.TestThreadsCount; 
-
-                //    Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Testing + "...");
-                //    this.Test.Enabled = this.Cut.Enabled = this.Clear.Enabled = this.DeleteThis.Enabled = false;
-
-                //    Queue<ProxyEntity> ProxiesQueue = new Queue<ProxyEntity>();
-                //    int index = 0;
-                //    foreach (DataRow dr in dataTable.Rows)
-                //    {
-                //        ProxyEntity pe = new ProxyEntity();
-                //        pe.Ip = dr["Proxy"] + "";
-                //        pe.Id = index;
-                //        index++;
-                //        try
-                //        {
-                //            pe.Port = int.Parse(dr["Port"] + "");
-                //        }
-                //        catch
-                //        {
-                //            continue;
-                //        }
-                //        ProxiesQueue.Enqueue(pe);
-                //    }
-
-                //    int intEvery = ProxiesQueue.Count / threadsCount; //得到每组个数
-                //    int intRemainder = ProxiesQueue.Count % threadsCount; //得到余数
-                //    threadsCount = intEvery == 0 ? ProxiesQueue.Count : threadsCount; //如果验证数量小于线程数,则每个代理一个线程
-                //    TestingThreads = new List<TestThread>(); //定义所有验证线程
-
-                //    for (int i = 0; i < threadsCount; i++)
-                //    {
-                //        List<ProxyEntity> pList = new List<ProxyEntity>();
-
-                //        if (intEvery == 0 && intRemainder == threadsCount)//如果是每组只有一个代理
-                //            pList.Add(ProxiesQueue.Dequeue());
-
-                //        if (intEvery > 0 && intRemainder == 0) //如果每组不止一个，并且刚好除尽
-                //        {
-                //            for (int k = 0; k < intEvery; k++)
-                //            {
-                //                pList.Add(ProxiesQueue.Dequeue()); //每次加入每组的个数
-                //            }
-                //        }
-
-                //        if (intEvery > 0 && intRemainder > 0) //如果每组不止一个，而且还有剩余则分配到前面每个线程中
-                //        {
-                //            for (int k = 0; k < intEvery; k++)
-                //            {
-                //                pList.Add(ProxiesQueue.Dequeue()); //每次加入每组的个数
-                //            }
-                //            if (i < intRemainder)
-                //                pList.Add(ProxiesQueue.Dequeue()); //把剩余的分配到前几个线程中
-                //        }
-
-                //        if (pList.Count > 0)
-                //        {
-                //            TestThread testThread = new TestThread(pList);
-                //            testThread.Completed += new TestThread.CompletedEventHandler(this.tester_Completed);
-                //            TestingThreads.Add(testThread);
-                //            testThread.Start();
-                //        }
-                //    }
-
-                //    this.timerCheckAllTested.Enabled = true;
-                //    this.timerCheckAllTested.Start();
-                //}
-
-                #endregion
             }
             catch (Exception)
             {
@@ -1034,7 +963,7 @@ namespace ProxyHero.TabPages
         /// </summary>
         private void Import()
         {
-            if (Config.MainForm.Status.Text.Contains(Config.LocalLanguage.Messages.Testing)) return;
+            if (Config.MainForm.StatusContains(Config.LocalLanguage.Messages.Testing)) return;
             var objOpen = new OpenFileDialog {Filter = @"(*.txt)|*.txt|" + @"(*.*)|*.*"};
 
             if (objOpen.ShowDialog() == DialogResult.OK)

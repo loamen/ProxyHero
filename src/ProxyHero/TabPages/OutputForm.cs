@@ -9,11 +9,13 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ProxyHero.TabPages
 {
-    public partial class InfomationForm : DockContent
+    public partial class OutputForm : DockContent
     {
         private readonly LanguageLoader languageLoader = new LanguageLoader();
+        private delegate void AppendTextCallback(string text);
+        private delegate void UpdateDataGridCallback();
 
-        public InfomationForm()
+        public OutputForm()
         {
             InitializeComponent();
             CloseButtonVisible = CloseButton = false;
@@ -23,14 +25,6 @@ namespace ProxyHero.TabPages
             ShowDebugPanel(false);
             dataGridThreads.AutoGenerateColumns = false;
             splitContainer1.Panel2Collapsed = true;
-        }
-
-        /// <summary>
-        ///     信息框
-        /// </summary>
-        public RichTextBox RichBox
-        {
-            get { return InfoBox; }
         }
 
         public void ShowDebugPanel(bool isShow)
@@ -49,7 +43,7 @@ namespace ProxyHero.TabPages
             if (!Config.LanguageFileName.Contains("Simplified Chinese.xml"))
             {
                 object model = language.InformationPage;
-                languageLoader.Load(model, typeof (InfomationForm), this);
+                languageLoader.Load(model, typeof (OutputForm), this);
             }
         }
 
@@ -109,6 +103,28 @@ namespace ProxyHero.TabPages
             //this.contextMenuStrip1.Enabled = (this.dataGridThreads.Rows.Count > 0);
         }
 
-        private delegate void UpdateDataGridCallback();
+
+        public void AppendText(string text)
+        {
+            if (this.InfoBox.InvokeRequired)
+            {
+                AppendTextCallback d = new AppendTextCallback(AppendText);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(text)) return;
+                InfoBox.AppendText(text);
+            }
+        }
+
+        /// <summary>
+        /// 向输出窗口追加一行文本
+        /// </summary>
+        /// <param name="s"></param>
+        public void AppendLine(string text)
+        {
+            AppendText(text + Environment.NewLine);
+        }
     }
 }

@@ -34,9 +34,6 @@ namespace ProxyHero
     public partial class MainForm : Form
     {
         #region Variable
-
-        public delegate void DelegateSetCloudStatus(string text, Image image);
-
         private readonly HttpHelper _httpHelper = new HttpHelper();
         private readonly ServiceContainer _serviceContainer = new ServiceContainer();
         private bool _hasDockSettingExceptioin;
@@ -59,7 +56,7 @@ namespace ProxyHero
 
         #region
 
-        private InfomationForm _infoPage;
+        private OutputForm _infoPage;
         private ProxyForm _proxyPage;
         private StartForm _startPage;
 
@@ -74,9 +71,9 @@ namespace ProxyHero
         /// <summary>
         ///     信息页
         /// </summary>
-        public InfomationForm InfoPage
+        public OutputForm InfoPage
         {
-            get { return _infoPage ?? (_infoPage = new InfomationForm()); }
+            get { return _infoPage ?? (_infoPage = new OutputForm()); }
             set { _infoPage = value; }
         }
 
@@ -202,9 +199,7 @@ namespace ProxyHero
                 }
                 catch
                 {
-                    if (Config.LocalLanguage != null)
-                        CloudStatus.Text = Config.LocalLanguage.Messages.ConnectCloudEngineFailed;
-                    CloudStatus.Image = Resources.cloudno;
+                    SetCloudStatus(Config.LocalLanguage.Messages.ConnectCloudEngineFailed, Resources.cloudno);
                 }
 
                 #endregion
@@ -234,8 +229,8 @@ namespace ProxyHero
                 SetProxyStatusLabel();
                 if (Config.LocalLanguage != null)
                     AutoSwitchProxyStatus.Text = Config.LocalLanguage.Messages.AutomaticSwitchingOff;
-                Status.Text = Config.InitErrorInfo;
-                Status.Spring = true;
+                StatusLabel.Spring = true;
+                SetStatusText(Config.InitErrorInfo);
 
                 #endregion
 
@@ -480,7 +475,7 @@ namespace ProxyHero
         {
             if (persistString == typeof (StartForm).ToString())
                 return StartPage;
-            if (persistString == typeof (InfomationForm).ToString())
+            if (persistString == typeof (OutputForm).ToString())
                 return InfoPage;
             return persistString == typeof (ProxyForm).ToString() ? ProxyPage : null;
         }
@@ -529,19 +524,6 @@ namespace ProxyHero
         }
 
         /// <summary>
-        ///     设置云引擎连接状态
-        /// </summary>
-        /// <param name="text"></param>
-        /// <param name="image"></param>
-        public void SetCloudStatus(string text, Image image)
-        {
-            if (!string.IsNullOrEmpty(text))
-                CloudStatus.Text = text;
-            if (image != null)
-                CloudStatus.Image = image;
-        }
-
-        /// <summary>
         ///     连接云引擎,下载数据
         /// </summary>
         public void ConnectCloud()
@@ -549,15 +531,18 @@ namespace ProxyHero
             TimeSpan ts = DateTime.Now - Config.LateUpdateProxyListTime;
             if (ts.TotalSeconds > 30)
             {
-                DelegateSetCloudStatus dv = SetCloudStatus;
-                Invoke(dv, new object[] {Config.LocalLanguage.Messages.ConnectingCloudEngine + "...", Resources.loading});
+                SetCloudStatus(Config.LocalLanguage.Messages.ConnectingCloudEngine + "...", Resources.loading);
 
                 var cloudHelper = new CloudHelper();
                 bool isConnected = cloudHelper.DownloadProxyList();
-                Invoke(dv,
-                       isConnected
-                           ? new object[] {Config.LocalLanguage.Messages.ConnectCloudEngineSuccess, Resources.cloud}
-                           : new object[] {Config.LocalLanguage.Messages.ConnectCloudEngineFailed, Resources.cloudno});
+                if (isConnected)
+                {
+                    SetCloudStatus(Config.LocalLanguage.Messages.ConnectCloudEngineSuccess, Resources.cloud);
+                }
+                else
+                {
+                    SetCloudStatus(Config.LocalLanguage.Messages.ConnectCloudEngineFailed, Resources.cloudno);
+                }
             }
         }
 
@@ -913,6 +898,7 @@ namespace ProxyHero
 
         private void InfomationWindowVisible_Click(object sender, EventArgs e)
         {
+            if (InfoPage == null) return;
             if (InfomationWindow.Checked)
             {
                 InfoPage.Hide();
@@ -1178,7 +1164,7 @@ namespace ProxyHero
         private void Status_TextChanged(object sender, EventArgs e)
         {
             tsslLoading.Visible = !ProxyPage.IsNotDownloadingOrTesting;
-            Status.Spring = true;
+            StatusLabel.Spring = true;
         }
 
         private void CloseTab_Click(object sender, EventArgs e)
@@ -1271,8 +1257,6 @@ namespace ProxyHero
         ///     显示状态栏提示信息委托
         /// </remarks>
         /// <param name="text"></param>
-        /// 创 建 人：杨栋
-        /// 创建日期：2013/05/29
         private void DelegateSetToolTipText(string text)
         {
             notifyIconMain.ShowBalloonTip(2000, Config.LocalLanguage.Messages.Information, text, ToolTipIcon.Info);
@@ -1288,7 +1272,7 @@ namespace ProxyHero
         /// <param name="text"></param>
         private void DelegateSetStatusText(string text)
         {
-            Status.Text = text;
+            StatusLabel.Text = text;
             if (WindowState == FormWindowState.Minimized)
             {
                 notifyIconMain.Text = text;

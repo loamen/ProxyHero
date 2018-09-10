@@ -71,7 +71,9 @@ namespace ProxyHero.Proxy
             {
                 if (thread.IsAlive)
                 {
-                    Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.AbortingThread + thread.Name + "...");
+                    var message = Config.LocalLanguage.Messages.AbortingThread + thread.Name + "...";
+                    Config.MainForm.SetStatusText(message);
+                    Config.ConsoleEx.Debug(message);
                     thread.Abort();
                 }
                 else

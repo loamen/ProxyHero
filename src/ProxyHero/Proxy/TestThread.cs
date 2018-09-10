@@ -211,7 +211,7 @@ namespace ProxyHero.Proxy
 
             var testResult = result.IsAlive;
 
-            testThread.Description = proxy.IpAndPort + (testResult ? " Alive " : " Dead ") + sw.ElapsedMilliseconds +
+            testThread.Description = proxy.IpAndPort + (testResult ? " Alive " : " Timeout ") + sw.ElapsedMilliseconds +
                                      "ms";
 
             var model = ProxyData.GetCopy(proxy.Ip, proxy.Port);
