@@ -481,8 +481,12 @@ namespace ProxyHero.TabPages
                 var updateList = new List<ProxyServer>();
                 foreach (var item in from item in list let cloudModel = CloudProxyData.Get(item.proxy, item.port) where null != cloudModel where updateList.FirstOrDefault(p => p.proxy == item.proxy && p.port == item.port) == null select item)
                 {
-                    updateList.Add(item);
+                    updateList.Add(item); //云端存在且无法连接的数据
                 }
+
+                updateList = (from p in ProxyData.ProxyList
+                        where p.status == 1
+                        select p).Union(updateList).Distinct().ToList();
 
                 cloudHelper.UploadProxyList(updateList);
                 Config.MainForm.ConnectCloud();

@@ -82,7 +82,7 @@ namespace ProxyHero.Common
                 if (result == "")
                 {
                     RegistryKey pregkey;
-                    pregkey = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\RAS AutoDial\\Default", true);
+                    pregkey = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\RAS AutoDial\\Default", RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
                     if (pregkey == null)
                     {
                         result = "";
@@ -104,12 +104,12 @@ namespace ProxyHero.Common
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey(
                 @"Software\Classes\MIME\Database\Content Type\text/vnd.wap.wml",
-                true);
+                RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
 
             if (rk == null)
             {
                 rk = Registry.CurrentUser.CreateSubKey(
-                    @"Software\Classes\MIME\Database\Content Type\text/vnd.wap.wml");
+                    @"Software\Classes\MIME\Database\Content Type\text/vnd.wap.wml", RegistryKeyPermissionCheck.ReadWriteSubTree);
             }
 
             if (rk.GetValue("CLSID") == null ||
@@ -120,12 +120,12 @@ namespace ProxyHero.Common
 
             rk = Registry.CurrentUser.OpenSubKey(
                 @"Software\Classes\MIME\Database\Content Type\application/xhtml+xml",
-                true);
+                 RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
 
             if (rk == null)
             {
                 rk = Registry.CurrentUser.CreateSubKey(
-                    @"Software\Classes\MIME\Database\Content Type\application/xhtml+xml");
+                    @"Software\Classes\MIME\Database\Content Type\application/xhtml+xml", RegistryKeyPermissionCheck.ReadWriteSubTree);
             }
 
             if (rk.GetValue("CLSID") == null ||
@@ -197,7 +197,7 @@ namespace ProxyHero.Common
                 //打开注册表键 
                 RegistryKey rk = Registry.CurrentUser.OpenSubKey(
                     @"Software\Microsoft\Windows\CurrentVersion\Internet Settings",
-                    true);
+                    RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
 
                 //rk.SetAccessControl(RegistryFullRight);
 
@@ -224,7 +224,7 @@ namespace ProxyHero.Common
                 //打开注册表键 
                 RegistryKey rk = Registry.CurrentUser.OpenSubKey(
                     @"Software\Microsoft\Windows\CurrentVersion\Internet Settings",
-                    true);
+                     RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
 
                 //rk.SetAccessControl(RegistryFullRight);
 
@@ -272,7 +272,7 @@ namespace ProxyHero.Common
             //MessageBox.Show(sDirectX);
             RegistryKey pregkey =
                 Registry.CurrentUser.OpenSubKey(
-                    "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Connections", true);
+                    "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Connections", RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
             if (pregkey != null)
             {
                 if (EnableProxy == 1)
@@ -344,7 +344,7 @@ namespace ProxyHero.Common
             //打开注册表键 
             RegistryKey rk = Registry.CurrentUser.OpenSubKey(
                 @"Software\Microsoft\Windows\CurrentVersion\Internet Settings",
-                true);
+                 RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
 
             result[0] = rk.GetValue("ProxyEnable") == null ? "" : rk.GetValue("ProxyEnable").ToString();
             result[1] = rk.GetValue("ProxyServer") == null ? "" : rk.GetValue("ProxyServer").ToString();
@@ -365,10 +365,10 @@ namespace ProxyHero.Common
                 //打开注册表键 
                 RegistryKey rk = Registry.LocalMachine.OpenSubKey(
                     key,
-                    true);
+                    RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
                 RegistryKey rkUser = Registry.CurrentUser.OpenSubKey(
                     key,
-                    true);
+                    RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
 
                 // rk.SetAccessControl(RegistryFullRight);
                 // rkUser.SetAccessControl(RegistryFullRight);
@@ -411,10 +411,10 @@ namespace ProxyHero.Common
                 //打开注册表键 
                 RegistryKey rk = Registry.LocalMachine.OpenSubKey(
                     key,
-                    true);
+                    RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
                 RegistryKey rkUser = Registry.CurrentUser.OpenSubKey(
                     key,
-                    true);
+                     RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
 
                 rk.SetAccessControl(RegistryFullRight);
                 rkUser.SetAccessControl(RegistryFullRight);
@@ -446,7 +446,7 @@ namespace ProxyHero.Common
         {
             //自定义RegistryKey对象实例
             RegistryKey reg =
-                Registry.CurrentUser.CreateSubKey(@"SoftWare\Policies\Microsoft\Internet Explorer\Control Panel");
+                Registry.CurrentUser.CreateSubKey(@"SoftWare\Policies\Microsoft\Internet Explorer\Control Panel", RegistryKeyPermissionCheck.ReadWriteSubTree);
 
             reg.SetValue("HomePage", enable ? 1 : 0, RegistryValueKind.DWord);
         }

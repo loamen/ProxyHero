@@ -43,9 +43,9 @@ namespace ProxyHero.TabPages
             Language language = Config.LocalLanguage;
             //if (System.Globalization.CultureInfo.InstalledUICulture.Name.ToLower().Contains("zh-"))
             if (Config.IsChineseLanguage)
-                Text = "信息窗口";
+                Text = "输出";
             else
-                Text = "Information";
+                Text = "Output";
             if (!Config.LanguageFileName.Contains("Simplified Chinese.xml"))
             {
                 object model = language.InformationPage;

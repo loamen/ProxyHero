@@ -2,8 +2,8 @@
 <Language xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
   <LanguageName>English</LanguageName>  
   <LanguageFileAuthor>This is translated by google</LanguageFileAuthor>  
-  <LanguageFileVersion>V 1.0</LanguageFileVersion>  
-  <LanguageFileForLPHVersion>V 1.7.0</LanguageFileForLPHVersion>  
+  <LanguageFileVersion>v1.7</LanguageFileVersion>  
+  <LanguageFileForLPHVersion>v1.7.0</LanguageFileForLPHVersion>  
   <MainPage> 
     <File>File</File>  
     <Exit>Exit</Exit>  
@@ -11,14 +11,14 @@
     <MenuBar>Menu bar</MenuBar>  
     <ToolBar>Toolbar</ToolBar>  
     <StatusBar>Status bar</StatusBar>  
-    <InfomationWindow>Information Window</InfomationWindow>  
+    <InfomationWindow>Output Window</InfomationWindow>  
     <ProxyWindow>Proxy Window</ProxyWindow>  
-    <ResetView>Reset View</ResetView>  
+    <ResetView>Default</ResetView>  
     <Plugin>Plugins</Plugin>  
     <PluginManage>Plugin Management</PluginManage>  
     <Tool>Tools</Tool>  
-    <DirectConnection>Disable proxy</DirectConnection>  
-    <OnlineHelp>Help Document</OnlineHelp>  
+    <DirectConnection>Disconnect from the proxy</DirectConnection>  
+    <OnlineHelp>Documents</OnlineHelp>  
     <Forum>Forum</Forum>  
     <CheckUpdate>Check for Updates</CheckUpdate>  
     <Donate>Donate</Donate>  
@@ -38,8 +38,8 @@
     <DownloadProxy>Download proxy list</DownloadProxy>  
     <TestAll>Test all</TestAll>  
     <StopTest>Stop Test</StopTest>  
-    <ImportProxy>Import Proxy</ImportProxy>  
-    <ExportProxy>Export Proxy</ExportProxy>  
+    <ImportProxy>Load proxy list</ImportProxy>  
+    <ExportProxy>Save the whole proxy list</ExportProxy>  
     <Delete>Delete</Delete>  
     <Cut>Cut</Cut>  
     <DeleteDeadProxy>Delete timeout proxies</DeleteDeadProxy>  
@@ -58,8 +58,8 @@
   </ProxyPage>  
   <OptionPage> 
     <ResetAllSetting>Reset all settings</ResetAllSetting>
-    <BasicOptions>General Settings</BasicOptions>  
-    <TestOptions>Verify Configuration</TestOptions>  
+    <BasicOptions>General settings</BasicOptions>  
+    <TestOptions>Test settings</TestOptions>  
     <LanguageOptions>Language</LanguageOptions>  
     <SystemCheck>System Detection</SystemCheck>  
     <CloudServer>Cloud Server</CloudServer>  
@@ -70,13 +70,13 @@
     <Apply>Apply</Apply>  
     <Cancel>Cancel</Cancel>  
     <BuiltinBrowserScriptErrorsSuppressed>Prevents display of built-in browser script errors</BuiltinBrowserScriptErrorsSuppressed>  
-    <LanguageFile>Language file path</LanguageFile>  
+    <LanguageFile>Language file</LanguageFile>  
     <LanguageName>Language name</LanguageName>  
     <LanguageFileAuthor>Language file author</LanguageFileAuthor>  
     <LanguageFileVersion>Language file version</LanguageFileVersion>  
-    <LanguageFileOriginallyIntendedForLPHVersion>is valid for the following versions of this software</LanguageFileOriginallyIntendedForLPHVersion>  
-    <ProgramRestartRequired>Restart is required</ProgramRestartRequired>  
-    <UseSystemProxySetting>Access the network using the system proxy settings</UseSystemProxySetting>  
+    <LanguageFileOriginallyIntendedForLPHVersion>Support LPH version</LanguageFileOriginallyIntendedForLPHVersion>  
+    <ProgramRestartRequired>LPH needs to be restarted for the language change to take effect.</ProgramRestartRequired>  
+    <UseSystemProxySetting>Use the system proxy settings</UseSystemProxySetting>  
     <DefaultTestWebsite>Default URL</DefaultTestWebsite>  
     <TestWebsite>Proxyjudge</TestWebsite>  
     <TestWebsiteTitle>Keyword</TestWebsiteTitle>  
@@ -96,7 +96,7 @@
     <SystemTestPanelCategoryPath>Settings\System Detection</SystemTestPanelCategoryPath>  
     <SystemTestPanelDisplayName>System Detection</SystemTestPanelDisplayName> 
     <OptionsNoDescription>There is description.</OptionsNoDescription>
-	<Download>Download</Download>
+	  <Download>Download</Download>
   </OptionPage>  
   <InformationPage> 
     <Delete>Delete</Delete>  
@@ -140,8 +140,8 @@
     <ConnectCloudEngineFailed>Cloud Connection Failed</ConnectCloudEngineFailed>  
     <CurrentProxy>Current Proxy</CurrentProxy>  
     <NotUseProxy>is not currently using a proxy</NotUseProxy>  
-    <AutomaticSwitchingOn>Automatic Switching Agent is turned on</AutomaticSwitchingOn>  
-    <AutomaticSwitchingOff>Automatic Switching Agent is turned off</AutomaticSwitchingOff>  
+    <AutomaticSwitchingOn>Automatic Switching is turned on</AutomaticSwitchingOn>  
+    <AutomaticSwitchingOff>Automatic Switching is turned off</AutomaticSwitchingOff>  
     <BuiltinBrowser>built-in browser</BuiltinBrowser>  
     <Information>Tips</Information>  
     <Warning>Warning</Warning>  
@@ -158,8 +158,8 @@
     <NumOfProxiesTested>{0}Verification completed</NumOfProxiesTested>  
     <AllTestingCompleted>Test Compleated</AllTestingCompleted>  
     <TestingHaveBeenTerminated>has terminated validation</TestingHaveBeenTerminated>  
-    <ProxyIsAlive>This proxy is valid </ProxyIsAlive>  
-    <ProxyIsDead>This proxy is invalid </ProxyIsDead>  
+    <ProxyIsAlive>This proxy is alive </ProxyIsAlive>  
+    <ProxyIsDead>This proxy is timeout </ProxyIsDead>  
     <TimeConsuming>Time-consuming: {0} milliseconds</TimeConsuming>  
     <AbortingThread>is terminating the read thread</AbortingThread>  
     <LoamenServer>Official Server</LoamenServer>  
@@ -171,19 +171,19 @@
     <TestWebsiteEncodeToolTip>The encoding format of the webpage, such as: GB2312 or UTF-8</TestWebsiteEncodeToolTip>  
     <TestAreaToolTip>Verify the proxy geolocation</TestAreaToolTip>  
     <AutoSwitchProxyMaxDelayToolTip>The proxy speed is automatically deactivated if it is slower than this value.</AutoSwitchProxyMaxDelayToolTip>  
-    <LoamenFormat>ProxyHero format</LoamenFormat>  
-    <StandardFormat>Standard Format</StandardFormat>  
+    <LoamenFormat>ProxyHero</LoamenFormat>  
+    <StandardFormat>Standard</StandardFormat>  
     <AutoSwitchingProxyListIsEmpty>The available proxy list is empty and cannot automatically switch agents!</AutoSwitchingProxyListIsEmpty>  
     <SwitchToIEOrBuiltinBrowser>Please confirm whether the proxy is applied to IE or built-in browser? Click "Yes" to apply to Internet Explorer. Click "No" to apply to the built-in browser.</SwitchToIEOrBuiltinBrowser>  
     <AreYouSureClearThis>Are you sure you want to clear the data in the list?</AreYouSureClearThis>  
-    <InformationWindow>information window</InformationWindow>  
-    <HighAnonymous>High Anonymous Agent</HighAnonymous>  
-    <Anonymous>Ordinary Anonymous Agent</Anonymous>  
-    <Transparent>Transparent Agent</Transparent>  
+    <InformationWindow>Output window</InformationWindow>  
+    <HighAnonymous>High Anonymous</HighAnonymous>  
+    <Anonymous>Ordinary Anonymous</Anonymous>  
+    <Transparent>Transparent</Transparent>  
     <CopySucess>has been successfully copied</CopySucess>  
     <CopyFailed>Copy failed, the current system may run other programs (for example: Microsoft Office software) to occupy a lot of pasteboard resources!</CopyFailed>  
-    <Alive>is available</Alive>  
-    <Dead>valid</Dead>  
+    <Alive>is alive</Alive>  
+    <Dead>timeout</Dead>  
     <NotTest>not verified</NotTest>  
     <Total>Total</Total>  
     <NumOfThreadsAreTesting>A total of {0} threads are being tested </NumOfThreadsAreTesting>  
@@ -192,6 +192,6 @@
     <AreYouSureDoThis>Are you sure you want to continue with this item?</AreYouSureDoThis>  
     <ProxyIsDeadAutoSwithing>The proxy {0} is invalid and automatically switches to the next proxy.</ProxyIsDeadAutoSwithing>  
     <SpeedDoestConformToTheRequirement>Speed ​​does not meet the requirements</SpeedDoestConformToTheRequirement>  
-    <MinimizedToSaveResources>Minimize</MinimizedToSaveResources> 
+    <MinimizedToSaveResources>Minimize to tray</MinimizedToSaveResources> 
   </Messages> 
 </Language>

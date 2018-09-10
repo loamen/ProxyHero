@@ -94,9 +94,9 @@ namespace Loamen.Net
         /// </summary>
         /// <param name="url">请求地址</param>
         /// <returns></returns>
-        public WebResponse DoGet(string url)
+        public WebResponse DoGet(HttpWebRequest webRequest)
         {
-            var webRequest = (HttpWebRequest) WebRequest.Create(url);
+            //var webRequest = (HttpWebRequest) WebRequest.Create(url);
             //设置代理
             ProxySetting(webRequest);
 
@@ -137,16 +137,16 @@ namespace Loamen.Net
         /// <param name="url">请求地址</param>
         /// <param name="retry">重试次数</param>
         /// <returns></returns>
-        public WebResponse DoGet(string url, int retry)
-        {
-            for (var i = 0; i < retry; i++)
-            {
-                var response = DoGet(url);
-                if (response != null)
-                    return response;
-            }
-            return null;
-        }
+        //public WebResponse DoGet(string url, int retry)
+        //{
+        //    for (var i = 0; i < retry; i++)
+        //    {
+        //        var response = DoGet(url);
+        //        if (response != null)
+        //            return response;
+        //    }
+        //    return null;
+        //}
 
         #endregion
 

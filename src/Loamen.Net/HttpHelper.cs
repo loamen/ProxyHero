@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -16,13 +17,25 @@ namespace Loamen.Net
         /// <returns></returns>
         public Image GetImage(string url)
         {
-            Stream stream = DoGet(url).GetResponseStream();
-            if (stream != null)
+            var webRequest = (HttpWebRequest)WebRequest.Create(url);
+            try
             {
-                Image img = Image.FromStream(stream);
-                return img;
+                Stream stream = DoGet(webRequest).GetResponseStream();
+                if (stream != null)
+                {
+                    Image img = Image.FromStream(stream);
+                    return img;
+                }
+                return null;
             }
-            return null;
+            finally
+            {
+                if(webRequest != null)
+                {
+                    webRequest.Abort();
+                    webRequest = null;
+                }
+            }
         }
 
         /// <summary>
@@ -34,20 +47,36 @@ namespace Loamen.Net
         public string GetHtml(string url, Encoding encode = null)
         {
             string html = "";
+            WebResponse response = null;
+
+            var webRequest = (HttpWebRequest)WebRequest.Create(url);
             try
             {
-                WebResponse response = DoGet(url);
+                response = DoGet(webRequest);
                 if (response != null)
                 {
                     using (var stream = new StreamReader(response.GetResponseStream(), encode ?? HttpOption.Encoding))
                     {
                         html = stream.ReadToEnd();
                     }
-                    response.Close();
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (response != null)
+                {
+                    response.Close();
+                    response = null;
+                }
+                if(webRequest != null)
+                {
+                    webRequest.Abort();
+                    webRequest = null;
+                }
             }
             return html;
         }

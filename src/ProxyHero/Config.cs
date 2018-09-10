@@ -256,9 +256,9 @@ namespace ProxyHero
                     {
                         model = new Setting();
                         model.DefaultTestOption = new TestOption();
-                        model.DefaultTestOption.TestUrl = "https://www.baidu.com";
+                        model.DefaultTestOption.TestUrl = "https://www.baidu.com/robots.txt";
                         model.DefaultTestOption.TestWebEncoding = "UTF-8";
-                        model.DefaultTestOption.TestWebTitle = "百度";
+                        model.DefaultTestOption.TestWebTitle = "Baiduspider";
 
                         model.TestOptionsList.Add(model.DefaultTestOption);
 

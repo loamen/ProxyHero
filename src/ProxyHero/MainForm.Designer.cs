@@ -139,26 +139,26 @@ namespace ProxyHero
             this.toolStripMenuItem7,
             this.Exit});
             this.File.Name = "File";
-            this.File.Size = new System.Drawing.Size(44, 21);
-            this.File.Text = "文件";
+            this.File.Size = new System.Drawing.Size(58, 21);
+            this.File.Text = "文件(&F)";
             // 
             // MenuNewTab
             // 
             this.MenuNewTab.Name = "MenuNewTab";
-            this.MenuNewTab.Size = new System.Drawing.Size(112, 22);
-            this.MenuNewTab.Text = "新标签";
+            this.MenuNewTab.Size = new System.Drawing.Size(180, 22);
+            this.MenuNewTab.Text = "新标签(&N)";
             this.MenuNewTab.Click += new System.EventHandler(this.NewTab_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(109, 6);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(177, 6);
             // 
             // Exit
             // 
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(112, 22);
-            this.Exit.Text = "退出";
+            this.Exit.Size = new System.Drawing.Size(180, 22);
+            this.Exit.Text = "退出(&E)";
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // View
@@ -173,23 +173,23 @@ namespace ProxyHero
             this.toolStripMenuItem9,
             this.ResetView});
             this.View.Name = "View";
-            this.View.Size = new System.Drawing.Size(44, 21);
-            this.View.Text = "视图";
+            this.View.Size = new System.Drawing.Size(60, 21);
+            this.View.Text = "视图(&V)";
             // 
             // MenuBar
             // 
             this.MenuBar.Checked = true;
             this.MenuBar.CheckState = System.Windows.Forms.CheckState.Checked;
             this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Size = new System.Drawing.Size(124, 22);
-            this.MenuBar.Text = "菜单栏";
+            this.MenuBar.Size = new System.Drawing.Size(180, 22);
+            this.MenuBar.Text = "菜单栏(&M)";
             this.MenuBar.Click += new System.EventHandler(this.MenuBar_Click);
             // 
             // ToolBar
             // 
             this.ToolBar.Name = "ToolBar";
-            this.ToolBar.Size = new System.Drawing.Size(124, 22);
-            this.ToolBar.Text = "工具栏";
+            this.ToolBar.Size = new System.Drawing.Size(180, 22);
+            this.ToolBar.Text = "工具栏(&T)";
             this.ToolBar.Click += new System.EventHandler(this.ToolBarVisible_Click);
             // 
             // StatusBar
@@ -197,8 +197,8 @@ namespace ProxyHero
             this.StatusBar.Checked = true;
             this.StatusBar.CheckState = System.Windows.Forms.CheckState.Checked;
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(124, 22);
-            this.StatusBar.Text = "状态栏";
+            this.StatusBar.Size = new System.Drawing.Size(180, 22);
+            this.StatusBar.Text = "状态栏(&S)";
             this.StatusBar.Click += new System.EventHandler(this.StatusBarVisible_Click);
             // 
             // toolStripMenuItem1
@@ -209,8 +209,8 @@ namespace ProxyHero
             // InfomationWindow
             // 
             this.InfomationWindow.Name = "InfomationWindow";
-            this.InfomationWindow.Size = new System.Drawing.Size(124, 22);
-            this.InfomationWindow.Text = "信息窗口";
+            this.InfomationWindow.Size = new System.Drawing.Size(180, 22);
+            this.InfomationWindow.Text = "输出窗口(&O)";
             this.InfomationWindow.Click += new System.EventHandler(this.InfomationWindowVisible_Click);
             // 
             // ProxyWindow
@@ -218,8 +218,8 @@ namespace ProxyHero
             this.ProxyWindow.Checked = true;
             this.ProxyWindow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ProxyWindow.Name = "ProxyWindow";
-            this.ProxyWindow.Size = new System.Drawing.Size(124, 22);
-            this.ProxyWindow.Text = "代理窗口";
+            this.ProxyWindow.Size = new System.Drawing.Size(180, 22);
+            this.ProxyWindow.Text = "代理窗口(&P)";
             this.ProxyWindow.Click += new System.EventHandler(this.ProxyWindowVisible_Click);
             // 
             // toolStripMenuItem9
@@ -230,8 +230,8 @@ namespace ProxyHero
             // ResetView
             // 
             this.ResetView.Name = "ResetView";
-            this.ResetView.Size = new System.Drawing.Size(124, 22);
-            this.ResetView.Text = "重置视图";
+            this.ResetView.Size = new System.Drawing.Size(180, 22);
+            this.ResetView.Text = "重置视图(&D)";
             this.ResetView.Click += new System.EventHandler(this.ResetView_Click);
             // 
             // Tool
@@ -243,14 +243,14 @@ namespace ProxyHero
             this.toolStripMenuItem6,
             this.Options});
             this.Tool.Name = "Tool";
-            this.Tool.Size = new System.Drawing.Size(44, 21);
-            this.Tool.Text = "工具";
+            this.Tool.Size = new System.Drawing.Size(59, 21);
+            this.Tool.Text = "工具(&T)";
             // 
             // DirectConnection
             // 
             this.DirectConnection.Name = "DirectConnection";
-            this.DirectConnection.Size = new System.Drawing.Size(148, 22);
-            this.DirectConnection.Text = "禁用代理";
+            this.DirectConnection.Size = new System.Drawing.Size(180, 22);
+            this.DirectConnection.Text = "禁用代理(&D)";
             this.DirectConnection.Click += new System.EventHandler(this.DirectConnection_Click);
             // 
             // toolStripMenuItem5
@@ -261,8 +261,8 @@ namespace ProxyHero
             // Debug
             // 
             this.Debug.Name = "Debug";
-            this.Debug.Size = new System.Drawing.Size(148, 22);
-            this.Debug.Text = "允许调试信息";
+            this.Debug.Size = new System.Drawing.Size(180, 22);
+            this.Debug.Text = "允许调试信息(&A)";
             this.Debug.Click += new System.EventHandler(this.Debug_Click);
             // 
             // toolStripMenuItem6
@@ -273,8 +273,8 @@ namespace ProxyHero
             // Options
             // 
             this.Options.Name = "Options";
-            this.Options.Size = new System.Drawing.Size(148, 22);
-            this.Options.Text = "选项";
+            this.Options.Size = new System.Drawing.Size(180, 22);
+            this.Options.Text = "选项(&S)";
             this.Options.Click += new System.EventHandler(this.Option_Click);
             // 
             // Plugin
@@ -283,14 +283,14 @@ namespace ProxyHero
             this.PluginManage,
             this.toolStripMenuItem12});
             this.Plugin.Name = "Plugin";
-            this.Plugin.Size = new System.Drawing.Size(44, 21);
-            this.Plugin.Text = "插件";
+            this.Plugin.Size = new System.Drawing.Size(59, 21);
+            this.Plugin.Text = "插件(&P)";
             // 
             // PluginManage
             // 
             this.PluginManage.Name = "PluginManage";
-            this.PluginManage.Size = new System.Drawing.Size(124, 22);
-            this.PluginManage.Text = "插件管理";
+            this.PluginManage.Size = new System.Drawing.Size(180, 22);
+            this.PluginManage.Text = "插件管理(&M)";
             this.PluginManage.Click += new System.EventHandler(this.PluginManage_Click);
             // 
             // toolStripMenuItem12
@@ -311,39 +311,39 @@ namespace ProxyHero
             this.Donate,
             this.About});
             this.MenuHelp.Name = "MenuHelp";
-            this.MenuHelp.Size = new System.Drawing.Size(44, 21);
-            this.MenuHelp.Text = "帮助";
+            this.MenuHelp.Size = new System.Drawing.Size(61, 21);
+            this.MenuHelp.Text = "帮助(H)";
             // 
             // OnlineHelp
             // 
             this.OnlineHelp.Name = "OnlineHelp";
             this.OnlineHelp.Size = new System.Drawing.Size(180, 22);
-            this.OnlineHelp.Text = "帮助文档";
+            this.OnlineHelp.Text = "帮助文档(&D)";
             this.OnlineHelp.Click += new System.EventHandler(this.Help_Click);
             // 
             // MenuHomepage
             // 
             this.MenuHomepage.Name = "MenuHomepage";
             this.MenuHomepage.Size = new System.Drawing.Size(180, 22);
-            this.MenuHomepage.Text = "官方主页";
+            this.MenuHomepage.Text = "官方主页(&H)";
             this.MenuHomepage.Click += new System.EventHandler(this.Homepage_Click);
             // 
             // Forum
             // 
             this.Forum.Name = "Forum";
             this.Forum.Size = new System.Drawing.Size(180, 22);
-            this.Forum.Text = "问题反馈";
+            this.Forum.Text = "问题反馈(&I)";
             this.Forum.Click += new System.EventHandler(this.Forum_Click);
             // 
             // toolStripMenuItem10
             // 
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(136, 6);
             // 
             // Languages
             // 
             this.Languages.Name = "Languages";
-            this.Languages.Size = new System.Drawing.Size(180, 22);
+            this.Languages.Size = new System.Drawing.Size(139, 22);
             this.Languages.Text = "Languages";
             this.Languages.Click += new System.EventHandler(this.Languages_Click);
             // 
@@ -351,18 +351,18 @@ namespace ProxyHero
             // 
             this.CheckUpdate.Name = "CheckUpdate";
             this.CheckUpdate.Size = new System.Drawing.Size(180, 22);
-            this.CheckUpdate.Text = "检测更新";
+            this.CheckUpdate.Text = "检测更新(&U)";
             this.CheckUpdate.Click += new System.EventHandler(this.CheckUpdate_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(136, 6);
             // 
             // Donate
             // 
             this.Donate.Name = "Donate";
-            this.Donate.Size = new System.Drawing.Size(180, 22);
+            this.Donate.Size = new System.Drawing.Size(139, 22);
             this.Donate.Text = "捐赠";
             this.Donate.Click += new System.EventHandler(this.Donate_Click);
             // 
@@ -370,7 +370,7 @@ namespace ProxyHero
             // 
             this.About.Name = "About";
             this.About.Size = new System.Drawing.Size(180, 22);
-            this.About.Text = "关于";
+            this.About.Text = "关于(&A)";
             this.About.Click += new System.EventHandler(this.About_Click);
             // 
             // MainStatusBar

@@ -40,6 +40,7 @@
             this.ShowCategoryHeader = true;
             this.ShowOptionsPanelPath = true;
             this.Load += new System.EventHandler(this.OptionForm_Load);
+            this.Shown += new System.EventHandler(this.OptionForm_Shown);
             this.ResumeLayout(false);
 
         }

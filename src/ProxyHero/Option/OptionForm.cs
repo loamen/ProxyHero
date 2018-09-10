@@ -21,16 +21,17 @@ namespace ProxyHero.Option
     public partial class OptionForm : OptionsForm
     {
         private readonly LanguageLoader _languageLoader = new LanguageLoader();
+        private LanguagePanel languagePanel;
 
         public OptionForm()
             : base(PropertyDictionary<string, object>.Convert(Config.LocalSetting))
         {
             InitializeComponent();
-        
+            languagePanel = new LanguagePanel();
 
             Panels.Add(new GeneralPanel());
             Panels.Add(new TestPanel());
-            Panels.Add(new LanguagePanel());
+            Panels.Add(languagePanel);
             Panels.Add(new UserAgentPanel());
             Panels.Add(new SystemTestPanel());
 
@@ -78,8 +79,6 @@ namespace ProxyHero.Option
         {
             var localSetting = Config.LocalSetting;
             var testSetting = (TestOption)AppSettings["DefaultTestOption"];
-            TestOption searchSetting = FindLoginSettingByAccount(localSetting, testSetting.TestUrl);
-
 
             localSetting.DefaultTestOption = testSetting;
             localSetting.ScriptErrorsSuppressed = (bool)AppSettings["ScriptErrorsSuppressed"];
@@ -93,21 +92,6 @@ namespace ProxyHero.Option
             localSetting.UserAgent = string.IsNullOrEmpty((string)AppSettings["UserAgent"])
                                                  ? "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)"
                                                  : (string)AppSettings["UserAgent"];
-
-            if (searchSetting != null && searchSetting.TestUrl != "")
-            {
-                if (searchSetting.TestUrl == testSetting.TestUrl) //如果已经设置，则移除换成新的
-                {
-                    localSetting.TestOptionsList.Remove(searchSetting);
-                    localSetting.DefaultTestOption = testSetting;
-                }
-            }
-
-            if (!Contains(localSetting,testSetting))
-            {
-                localSetting.TestOptionsList.Add(testSetting);
-            }
-
             var dal = new SettingDAL();
             var model = dal.FindAll().FirstOrDefault();
             var res = 0;
@@ -117,6 +101,26 @@ namespace ProxyHero.Option
             }
             else
             {
+                TestOption searchSetting = model.TestOptionsList.FirstOrDefault(temp => temp.TestUrl == testSetting.TestUrl);
+
+                if (searchSetting != null && searchSetting.TestUrl != "")
+                {
+                    if (searchSetting.TestUrl == testSetting.TestUrl) //如果已经设置，则移除换成新的
+                    {
+                        model.TestOptionsList.Remove(searchSetting);
+                        model.DefaultTestOption = testSetting;
+                        localSetting.DefaultTestOption = testSetting;
+                    }
+                }
+
+                if (!model.TestOptionsList.Any(te => te.TestUrl.ToLower() == testSetting.TestUrl.ToLower()))
+                {
+                    model.TestOptionsList.Add(testSetting);
+                }
+
+                localSetting.TestOptionsList = model.TestOptionsList;
+
+
                 localSetting.Id = model.Id;
                 res = dal.Update(localSetting) ? 1 : 0;
             }
@@ -125,22 +129,6 @@ namespace ProxyHero.Option
             {
                 MsgBox.ShowErrorMessage("保存失败！");
             }
-        }
-
-        /// <summary>
-        ///     通过帐号获取登录配置信息
-        /// </summary>
-        /// <param name="localSetting"></param>
-        /// <param name="testUrl"></param>
-        /// <returns></returns>
-        public TestOption FindLoginSettingByAccount(Setting localSetting,string testUrl)
-        {
-            return localSetting.TestOptionsList.FirstOrDefault(temp => temp.TestUrl == testUrl);
-        }
-
-        private bool Contains(Setting localSetting, TestOption testEntity)
-        {
-            return localSetting.TestOptionsList.Any(te => te.TestUrl.ToLower() == testEntity.TestUrl.ToLower());
         }
 
         private void OptionForm_Load(object sender, EventArgs e)
@@ -159,6 +147,14 @@ namespace ProxyHero.Option
             {
                 object model = language.OptionPage;
                 _languageLoader.Load(model, typeof(OptionForm), this);
+            }
+        }
+
+        private void OptionForm_Shown(object sender, EventArgs e)
+        {
+            if (this.Tag != null && this.Tag.ToString() == "Language")
+            {
+                GoToPanel(languagePanel.CategoryPath);
             }
         }
     }

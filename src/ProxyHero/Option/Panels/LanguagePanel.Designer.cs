@@ -68,11 +68,11 @@
             // 
             // Download
             // 
-            this.Download.Location = new System.Drawing.Point(301, 37);
+            this.Download.Location = new System.Drawing.Point(265, 37);
             this.Download.Name = "Download";
-            this.Download.Size = new System.Drawing.Size(75, 23);
+            this.Download.Size = new System.Drawing.Size(111, 23);
             this.Download.TabIndex = 12;
-            this.Download.Text = "下载";
+            this.Download.Text = "下载(&Download)";
             this.Download.UseVisualStyleBackColor = true;
             this.Download.Click += new System.EventHandler(this.Download_Click);
             // 
@@ -156,7 +156,7 @@
             // 
             this.btnOpen.Location = new System.Drawing.Point(220, 37);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.Size = new System.Drawing.Size(39, 23);
             this.btnOpen.TabIndex = 2;
             this.btnOpen.Text = "...";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -175,17 +175,17 @@
             this.LanguageFile.AutoSize = true;
             this.LanguageFile.Location = new System.Drawing.Point(19, 18);
             this.LanguageFile.Name = "LanguageFile";
-            this.LanguageFile.Size = new System.Drawing.Size(77, 12);
+            this.LanguageFile.Size = new System.Drawing.Size(167, 12);
             this.LanguageFile.TabIndex = 0;
-            this.LanguageFile.Text = "语言文件路径";
+            this.LanguageFile.Text = "语言文件路径(Language file)";
             // 
             // LanguagePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CategoryPath = "选项\\语言";
+            this.CategoryPath = "选项\\Language";
             this.Controls.Add(this.groupBox6);
-            this.DisplayName = "语言";
+            this.DisplayName = "Language";
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "LanguagePanel";
             this.Size = new System.Drawing.Size(402, 291);

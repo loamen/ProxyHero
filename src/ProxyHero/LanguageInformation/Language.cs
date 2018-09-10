@@ -8,8 +8,8 @@ namespace ProxyHero.LanguageInformation
         private IEBrowserPage _ieBrowserPage = new IEBrowserPage();
         private InfomationPage _informationPage = new InfomationPage();
         private string _languageFileAuthor = "龙门信息网（www.loamen.com）";
-        private string _languageFileOForLphVersion = "V " + Application.ProductVersion;
-        private string _languageFileVersion = "V 1.0";
+        private string _languageFileOForLphVersion = "v" + Application.ProductVersion;
+        private string _languageFileVersion = "v1.7";
         private string _languageName = "简体中文";
         private MainPage _mainPage = new MainPage();
         private Messages _messages = new Messages();
@@ -112,7 +112,7 @@ namespace ProxyHero.LanguageInformation
         private string _forum = "论坛";
         private string _help = "帮助";
         private string _homepage = "官网主页";
-        private string _infomationWindow = "信息窗口";
+        private string _infomationWindow = "输出窗口";
         private string _menuBar = "菜单栏";
         private string _newTab = "新建标签";
         private string _onlineHelp = "帮助文档";
@@ -561,7 +561,6 @@ namespace ProxyHero.LanguageInformation
         private string _clickForSystemTesting = "点击进行系统检测";
         private string _resetAllSetting = "初始化所有设置";
         private string _cloudServer = "云服务器";
-        private string _country = "验证地理位置";
         private string _defaultTestWebsite = "默认网址";
         private string _exportTxtFormat = "导出TXT文件格式";
         private string _languageFile = "语言文件路径";
@@ -572,7 +571,7 @@ namespace ProxyHero.LanguageInformation
         private string _languageOptions = "Language";
         private string _ok = "确定";
         private string _pleaseSelectOrFill = "请选择默认验证网址或者在下面填写";
-        private string _programRestartRequired = "需要重启才能完全生效";
+        private string _programRestartRequired = "LPH needs to be restarted for the language change to take effect.\n需要重启才能完全生效";
         private string _systemCheck = "系统检测";
 
         private string _testOptions = "验证配置";
@@ -588,8 +587,8 @@ namespace ProxyHero.LanguageInformation
 
         private string _generalPanelCategoryPath = @"选项\基本选项";
         private string _generalPanelDisplayName = "基本选项";
-        private string _languagePanelCategoryPath = @"选项\语言";
-        private string _languagePanelDisplayName = "语言";
+        private string _languagePanelCategoryPath = @"选项\Language";
+        private string _languagePanelDisplayName = "Language";
         private string _testPanelCategoryPath = @"选项\验证选项";
         private string _testPanelDisplayName = "验证选项";
         private string _userAgentPanelCategoryPath = @"选项\User-Agent";
@@ -1124,7 +1123,7 @@ namespace ProxyHero.LanguageInformation
         private string _googleCloudServer = "谷歌云服务器";
         private string _highAnonymous = "高匿名代理";
         private string _information = "提示";
-        private string _informationWindow = "信息窗口";
+        private string _informationWindow = "输出窗口";
         private string _initializeComponent = "初始化组件";
         private string _initializeDatabase = "初始化数据库";
         private string _initializeDockPanel = "初始化停靠窗体";

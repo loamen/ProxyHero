@@ -1254,7 +1254,9 @@ namespace ProxyHero
 
         private void Languages_Click(object sender, EventArgs e)
         {
-            OpenIE("https://github.com/loamen/ProxyHero/tree/master/documents/languages");
+            var of = new OptionForm();
+            of.Tag = "Language";
+            of.ShowDialog();
         }
 
         #endregion

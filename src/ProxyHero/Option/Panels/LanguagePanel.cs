@@ -50,10 +50,19 @@ namespace ProxyHero.Option.Panels
         {
             try
             {
+                var path = Config.LanguagePath;
+                if (!Config.IsChineseOs) //如果不是中文操作系统
+                {
+                    if (!File.Exists(Path.Combine(path, "English.xml")))
+                    {
+                        path = Path.Combine(Application.StartupPath, "Languages");
+                    }
+                }
+
                 var objOpen = new OpenFileDialog
                 {
                     Filter = @"(*.xml)|*.xml|(*.*)|*.*",
-                    InitialDirectory = Config.LanguagePath
+                    InitialDirectory = path
                 };
 
                 if (objOpen.ShowDialog() == DialogResult.OK)
