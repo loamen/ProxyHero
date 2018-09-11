@@ -50,6 +50,7 @@ namespace ProxyHero.TabPages
         private int _testingNumber; //验证中的代理数量
 
         private delegate void DelegateVoid();
+        private delegate void DelegateUpdateLabelInfo(string text);
 
         #endregion
 
@@ -371,7 +372,7 @@ namespace ProxyHero.TabPages
                 Config.ConsoleEx.Debug(message);
             }
             sbInfo.Append("," + sb);
-            UpdateLabelInfo();
+            SetLabelInfo();
 
             try
             {
@@ -426,7 +427,10 @@ namespace ProxyHero.TabPages
                     strInfo.Append("...");
 
                     if (Config.LocalSetting.NeedDebug && null != Config.MainForm)
+                    {
                         Config.MainForm.OutputPage.UpdateDataGrid();
+                        SetLabelInfo();
+                    }
 
                     if (Config.MainForm != null) Config.MainForm.SetStatusText(strInfo.ToString());
                     Thread.Sleep(1000);
@@ -531,6 +535,7 @@ namespace ProxyHero.TabPages
                 dgvProxyList.DataSource = listEx;
             }
             dgvProxyList.Refresh();
+            SetLabelInfo();
         }
 
         public void BindData()
@@ -546,7 +551,7 @@ namespace ProxyHero.TabPages
                 dgvProxyList.DataSource = list;
             }
             dgvProxyList.Refresh();
-            DelegateUpdateLabelInfo();
+            SetLabelInfo();
         }
 
         /// <summary>
@@ -796,7 +801,6 @@ namespace ProxyHero.TabPages
                 {
                     DelegateVoid dv = BindData;
                     Invoke(dv);
-                    DelegateUpdateLabelInfo();
                     Config.MainForm.SetToolTipText(string.Format(Config.LocalLanguage.Messages.NumOfProxiesDownloaded,
                                                                  ProxyData.TotalNum));
                     dv = ReadDataOk;
@@ -819,31 +823,45 @@ namespace ProxyHero.TabPages
         /// <summary>
         ///     更新显示板数据信息
         /// </summary>
-        public void DelegateUpdateLabelInfo()
+        public void SetLabelInfo()
         {
-            DelegateVoid dv = UpdateLabelInfo;
-            Invoke(dv);
+            #region 统计数据
+            var sb = new StringBuilder();
+            ListEx<ProxyServer> list = new ListEx<ProxyServer>();
+            if (dgvProxyList.DataSource != null && dgvProxyList.DataSource is ListEx<ProxyServer>)
+            {
+                list = (ListEx<ProxyServer>)dgvProxyList.DataSource;
+            }
+
+            int aliveCount = list.Count(p => p.status == 1);
+            int deadCount = list.Count(p => p.status == 0);
+            int notTestCount = list.Count(p => p.status != 1 && p.status != 0);
+
+            sb.Append(Config.LocalLanguage.Messages.Alive + ":" + aliveCount);
+            sb.Append(Config.LocalLanguage.Messages.Dead + ":" + deadCount);
+            sb.Append(Config.LocalLanguage.Messages.NotTest + ":" + notTestCount); 
+            sb.Append(Config.LocalLanguage.Messages.Total + ":" + list.Count);
+            #endregion
+
+            if (tsslCountInfo.GetCurrentParent().InvokeRequired)
+            {
+                DelegateUpdateLabelInfo set = UpdateLabelInfo;
+                Invoke(set, new object[] { sb.ToString() });
+            }
+            else
+            {
+                UpdateLabelInfo(sb.ToString());
+            }
         }
 
         /// <summary>
-        ///     更新显示板信息
+        /// 更新显示板信息
         /// </summary>
-        private void UpdateLabelInfo()
+        private void UpdateLabelInfo(string text)
         {
             try
             {
-                var sb = new StringBuilder();
-                var list = (ListEx<ProxyServer>) dgvProxyList.DataSource;
-
-                int aliveCount = list.Count(p => p.status == 1);
-                int deadCount = list.Count(p => p.status == 0);
-                int notTestCount = list.Count(p => p.status != 1 && p.status != 0);
-
-                sb.Append(Config.LocalLanguage.Messages.Alive + ":" + aliveCount + "/" + dgvProxyList.Rows.Count);
-                sb.Append(Config.LocalLanguage.Messages.Dead + ":" + deadCount);
-                sb.Append(Config.LocalLanguage.Messages.NotTest + ":" + notTestCount);
-                tsslCountInfo.Text = sb.ToString();
-                Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Total + ":" + list.Count);
+                tsslCountInfo.Text = text;
                 if (dgvProxyList.Rows.Count > 0)
                 {
                     if (DownloadProxy.Text == Config.LocalLanguage.ProxyPage.DownloadProxy &&
@@ -857,8 +875,9 @@ namespace ProxyHero.TabPages
                     Delete.Enabled = false;
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Config.ConsoleEx.Debug(ex);
             }
         }
 

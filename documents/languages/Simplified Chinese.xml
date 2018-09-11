@@ -3,7 +3,7 @@
   <LanguageName>简体中文</LanguageName>
   <LanguageFileAuthor>龙门信息网（www.loamen.com）</LanguageFileAuthor>
   <LanguageFileVersion>v1.7</LanguageFileVersion>
-  <LanguageFileForLPHVersion>v1.7.0</LanguageFileForLPHVersion>
+  <LanguageFileForLPHVersion>v1.7.1</LanguageFileForLPHVersion>
   <MainPage>
     <File>文件</File>
     <Exit>退出</Exit>
@@ -167,7 +167,7 @@
     <GoogleCloudServer>谷歌云服务器</GoogleCloudServer>
     <SinaCloudServer>新浪云服务器</SinaCloudServer>
     <SelectDefaultTestWebSiteToolTip>选择用来验证的默认网址</SelectDefaultTestWebSiteToolTip>
-    <TestWebsiteUrlToolTip>用来验证的网址，如：http://www.baidu.com。
+    <TestWebsiteUrlToolTip>用来验证的网址，使用IP网址会更快，如百度：http://180.97.33.107/robots.txt
 必须加http://</TestWebsiteUrlToolTip>
     <TestWebsiteTitleToolTip>验证网址中的任意一段文字
 如百度的为：百度一下，你就知道

@@ -158,7 +158,7 @@
     <NumOfProxiesTested>{0}Verification completed</NumOfProxiesTested>  
     <AllTestingCompleted>Test Compleated</AllTestingCompleted>  
     <TestingHaveBeenTerminated>has terminated validation</TestingHaveBeenTerminated>  
-    <ProxyIsAlive>This proxy is alive </ProxyIsAlive>  
+    <ProxyIsAlive>This proxy is working </ProxyIsAlive>  
     <ProxyIsDead>This proxy is timeout </ProxyIsDead>  
     <TimeConsuming>Time-consuming: {0} milliseconds</TimeConsuming>  
     <AbortingThread>is terminating the read thread</AbortingThread>  
@@ -182,9 +182,9 @@
     <Transparent>Transparent</Transparent>  
     <CopySucess>has been successfully copied</CopySucess>  
     <CopyFailed>Copy failed, the current system may run other programs (for example: Microsoft Office software) to occupy a lot of pasteboard resources!</CopyFailed>  
-    <Alive>is alive</Alive>  
-    <Dead>timeout</Dead>  
-    <NotTest>not verified</NotTest>  
+    <Alive>Working</Alive>  
+    <Dead>Timeout</Dead>  
+    <NotTest>Untested</NotTest>  
     <Total>Total</Total>  
     <NumOfThreadsAreTesting>A total of {0} threads are being tested </NumOfThreadsAreTesting>  
     <PleaseEnterTheUrlYouWantToRefresh>Please enter the URL to be refreshed!</PleaseEnterTheUrlYouWantToRefresh>  
