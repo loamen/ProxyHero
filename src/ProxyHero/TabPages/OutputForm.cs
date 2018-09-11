@@ -88,7 +88,7 @@ namespace ProxyHero.TabPages
             }
             catch (ObjectDisposedException odEx)
             {
-                LogHelper.WriteException(odEx);
+                Config.ConsoleEx.Debug(odEx);
             }
         }
 

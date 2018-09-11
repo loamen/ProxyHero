@@ -29,9 +29,6 @@ namespace ProxyHero
                 _stringBuilder.Append("\nStack Trace:" + ex.StackTrace);
 
                 txtMessage.Text = _stringBuilder.ToString();
-#if DEBUG
-                LogHelper.WriteException(ex);
-#endif
 
                 _stringBuilder.Append("\n【操作系统版本】: ");
                 _stringBuilder.Append(OSVersion.VersionString + " Language:" + CultureInfo.InstalledUICulture.Name);
@@ -39,6 +36,8 @@ namespace ProxyHero
                 _stringBuilder.Append(Assembly.GetExecutingAssembly().GetName().Version);
                 _stringBuilder.Append("\n【IE浏览器版本】: ");
                 _stringBuilder.Append(OSVersion.InternetExplorerVersion);
+
+                Config.ConsoleEx.Debug(ex);
             }
             catch (Exception exx)
             {
@@ -120,7 +119,7 @@ namespace ProxyHero
             }
             catch(Exception ex)
             {
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
                 return false;
             }
         }

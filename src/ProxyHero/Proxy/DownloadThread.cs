@@ -181,15 +181,11 @@ namespace ProxyHero.Proxy
             }
             catch (WebException webEx)
             {
-#if DEBUG
-                LogHelper.WriteException(webEx);
-#else
-                Console.WriteLine(webEx.Message);
-#endif
+                Config.ConsoleEx.Debug(webEx);
             }
             catch (Exception ex)
             {
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
             }
             finally
             {
@@ -209,7 +205,7 @@ namespace ProxyHero.Proxy
             }
             catch (Exception ex)
             {
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
             }
         }
 

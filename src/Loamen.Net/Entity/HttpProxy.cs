@@ -17,7 +17,7 @@ namespace Loamen.Net.Entity
 
         private int _port;
         private double _response;
-        private int _type;
+        private string _type;
 
         private string _userName;
 
@@ -63,7 +63,7 @@ namespace Loamen.Net.Entity
             set { _password = value; }
         }
 
-        public int Type
+        public string Type
         {
             get { return _type; }
             set { _type = value; }

@@ -44,6 +44,7 @@ namespace ProxyHero.TabPages
 
         private string _strIp;
         private string _strPort;
+        private string _strType = "HTTP";
 
         public Tester Tester;
         private int _testingNumber; //验证中的代理数量
@@ -285,8 +286,10 @@ namespace ProxyHero.TabPages
                     string ipAndPort = GetProxyInfo(false);
                     if (!string.IsNullOrEmpty(ipAndPort))
                     {
-                        _strIp = ipAndPort.Split(':')[0];
-                        _strPort = ipAndPort.Split(':')[1];
+                        var datas = ipAndPort.Split(':');
+                        _strIp = datas[0];
+                        _strPort = datas[1];
+                        _strType = datas[2];
                     }
 
                     if (string.IsNullOrEmpty(_strIp) ||
@@ -326,7 +329,7 @@ namespace ProxyHero.TabPages
             }
             catch (ExternalException eex)
             {
-                LogHelper.WriteException(eex);
+                Config.ConsoleEx.Debug(eex);
                 MsgBox.ShowErrorMessage(Config.LocalLanguage.Messages.CopyFailed);
             }
             catch (Exception ex)
@@ -423,7 +426,7 @@ namespace ProxyHero.TabPages
                     strInfo.Append("...");
 
                     if (Config.LocalSetting.NeedDebug && null != Config.MainForm)
-                        Config.MainForm.InfoPage.UpdateDataGrid();
+                        Config.MainForm.OutputPage.UpdateDataGrid();
 
                     if (Config.MainForm != null) Config.MainForm.SetStatusText(strInfo.ToString());
                     Thread.Sleep(1000);
@@ -559,13 +562,16 @@ namespace ProxyHero.TabPages
                     if (dgvProxyList.CurrentRow != null)
                     {
                         int rowIndex = dgvProxyList.CurrentRow.Index;
-                        return dgvProxyList.Rows[rowIndex].Cells[1].Value + ":" + dgvProxyList.Rows[rowIndex].Cells[2].Value;
+                        return string.Format("{0}:{1}:{2}",
+                            dgvProxyList.Rows[rowIndex].Cells[1].Value,
+                            dgvProxyList.Rows[rowIndex].Cells[2].Value,
+                            dgvProxyList.Rows[rowIndex].Cells[3].Value);
                     }
                 }
                 var sb = new StringBuilder();
                 foreach (DataGridViewRow dgvr in dgvProxyList.SelectedRows)
                 {
-                    sb.AppendFormat("{0}:{1}\n", dgvr.Cells[1].Value, dgvr.Cells[2].Value);
+                    sb.AppendFormat("{0}:{1}:{2}\n", dgvr.Cells[1].Value, dgvr.Cells[2].Value, dgvr.Cells[3].Value);
                 }
 
                 return sb.ToString();
@@ -662,7 +668,7 @@ namespace ProxyHero.TabPages
                 setting.Port = int.Parse(_strPort);
             }
 
-            setting.Type = 2;
+            setting.Type = _strType;
             setting.UserName = string.Empty;
             setting.Password = string.Empty;
             return setting;
@@ -713,6 +719,7 @@ namespace ProxyHero.TabPages
             BindData();
             _strIp = "";
             _strPort = "";
+            _strType = "HTTP";
         }
 
         #endregion
@@ -750,7 +757,7 @@ namespace ProxyHero.TabPages
             }
             catch (Exception ex)
             {
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
             }
         }
 
@@ -800,7 +807,7 @@ namespace ProxyHero.TabPages
             }
             catch (Exception ex)
             {
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
             }
             finally
             {

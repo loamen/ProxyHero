@@ -171,7 +171,6 @@ namespace ProxyHero
         public void WriteLog(object text)
         {
             var message = text + "";
-            LogHelper.WriteLog(message);
             Config.ConsoleEx.Debug(message);
         }
 
@@ -181,7 +180,6 @@ namespace ProxyHero
         /// <param name="ex"></param>
         public void WriteExceptionLog(Exception ex)
         {
-            LogHelper.WriteException(ex);
             Config.ConsoleEx.Debug(ex);
         }
 

@@ -56,7 +56,7 @@ namespace ProxyHero
 
         #region
 
-        private OutputForm _infoPage;
+        private OutputForm _outputPage;
         private ProxyForm _proxyPage;
         private StartForm _startPage;
 
@@ -71,10 +71,10 @@ namespace ProxyHero
         /// <summary>
         ///     信息页
         /// </summary>
-        public OutputForm InfoPage
+        public OutputForm OutputPage
         {
-            get { return _infoPage ?? (_infoPage = new OutputForm()); }
-            set { _infoPage = value; }
+            get { return _outputPage ?? (_outputPage = new OutputForm()); }
+            set { _outputPage = value; }
         }
 
         /// <summary>
@@ -274,8 +274,8 @@ namespace ProxyHero
                         #region dock
 
                         StartPage.Show(MainDockPanel, DockState.Document);
-                        InfoPage.Show(MainDockPanel, DockState.DockBottomAutoHide);
-                        InfoPage.Hide();
+                        OutputPage.Show(MainDockPanel, DockState.DockBottomAutoHide);
+                        OutputPage.Hide();
                         ProxyPage.Show(MainDockPanel, DockState.Document);
 
                         #endregion
@@ -476,7 +476,7 @@ namespace ProxyHero
             if (persistString == typeof (StartForm).ToString())
                 return StartPage;
             if (persistString == typeof (OutputForm).ToString())
-                return InfoPage;
+                return OutputPage;
             return persistString == typeof (ProxyForm).ToString() ? ProxyPage : null;
         }
 
@@ -592,7 +592,6 @@ namespace ProxyHero
                 catch (Exception ex)
                 {
                     Config.ConsoleEx.Debug(ex);
-                    LogHelper.WriteException(ex);
                 }
                 ProxyStatus.Text = Config.LocalLanguage.Messages.CurrentProxy + @":" + res[1] + location;
                 ProxyStatus.Image = Resources.aused;
@@ -716,10 +715,7 @@ namespace ProxyHero
                     Config.LocalSetting.NeedDebug = Debug.Checked = setting.EnableDebug;
 
                     InfomationWindow.Checked = setting.InformationWindow;
-                    if (InfomationWindow.Checked)
-                        InfoPage.Show();
-                    else
-                        InfoPage.Hide();
+                    ShowOutput();
 
                     ProxyWindow.Checked = setting.ProxyWindow;
                     if (ProxyWindow.Checked)
@@ -898,16 +894,7 @@ namespace ProxyHero
 
         private void InfomationWindowVisible_Click(object sender, EventArgs e)
         {
-            if (InfoPage == null) return;
-            if (InfomationWindow.Checked)
-            {
-                InfoPage.Hide();
-            }
-            else
-            {
-                InfoPage.Show(MainDockPanel, DockState.DockBottomAutoHide);
-            }
-            InfomationWindow.Checked = !InfomationWindow.Checked;
+            ShowOutput();
         }
 
 
@@ -1279,6 +1266,18 @@ namespace ProxyHero
             }
         }
 
+        public void ShowOutput()
+        {
+            if (!InfomationWindow.Checked)
+            {
+                OutputPage.Show(MainDockPanel, DockState.DockBottomAutoHide);
+            }
+            else
+            {
+                OutputPage.Hide();
+            }
+            InfomationWindow.Checked = !InfomationWindow.Checked;
+        }
         #endregion
     }
 }

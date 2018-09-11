@@ -1,3 +1,4 @@
+using Loamen.Common;
 using System;
 using System.Drawing;
 using System.IO;
@@ -49,6 +50,9 @@ namespace Loamen.Net
             string html = "";
             WebResponse response = null;
 
+            GC.Collect();
+            ServicePointManager.DefaultConnectionLimit = 200;
+
             var webRequest = (HttpWebRequest)WebRequest.Create(url);
             try
             {
@@ -63,7 +67,7 @@ namespace Loamen.Net
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                LogHelper.Error(ex, Proxy.IpAndPort);
             }
             finally
             {
@@ -91,17 +95,36 @@ namespace Loamen.Net
         public string GetHtml(string url, string postData, Encoding encode = null)
         {
             string html = "";
+            WebResponse response = null;
+
+            GC.Collect();
+            ServicePointManager.DefaultConnectionLimit = 200;
+
+            var webRequest = (HttpWebRequest)WebRequest.Create(url);
             try
             {
-                WebResponse response = DoPost(url, postData);
+                response = DoPost(webRequest, postData);
                 using (var stream = new StreamReader(response.GetResponseStream(), encode ?? HttpOption.Encoding))
                 {
                     html = stream.ReadToEnd();
                 }
-                response.Close();
             }
-            catch
+            catch (Exception ex)
             {
+                LogHelper.Error(ex);
+            }
+            finally
+            {
+                if (response != null)
+                {
+                    response.Close();
+                    response = null;
+                }
+                if (webRequest != null)
+                {
+                    webRequest.Abort();
+                    webRequest = null;
+                }
             }
             return html;
         }

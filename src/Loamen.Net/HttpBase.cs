@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using Loamen.Common;
 using Loamen.Net.Entity;
 
 namespace Loamen.Net
@@ -60,7 +62,7 @@ namespace Loamen.Net
         /// 代理设置
         /// </summary>
         /// <param name="request"></param>
-        public void ProxySetting(WebRequest request)
+        public void ProxySetting(HttpWebRequest request)
         {
             WebProxy webProxy = null;
 
@@ -96,12 +98,14 @@ namespace Loamen.Net
         /// <returns></returns>
         public WebResponse DoGet(HttpWebRequest webRequest)
         {
-            //var webRequest = (HttpWebRequest) WebRequest.Create(url);
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             //设置代理
             ProxySetting(webRequest);
 
+            webRequest.KeepAlive = false;
             webRequest.CookieContainer = Cookies;
-            webRequest.Method = "get";
+            webRequest.Method = "GET";
 
             webRequest.ContentType = !string.IsNullOrEmpty(HttpOption.ContentType)
                                          ? HttpOption.ContentType
@@ -128,25 +132,11 @@ namespace Loamen.Net
                                      : webRequest.Timeout = 30 * 1000;
             webRequest.ServicePoint.ConnectionLimit = 100;
 
-            return webRequest.GetResponse();
-        }
+            var response = webRequest.GetResponse();
+            stopwatch.Stop();
 
-        /// <summary>
-        /// 发送Get类型请求(根据设定的次数不断重试)
-        /// </summary>
-        /// <param name="url">请求地址</param>
-        /// <param name="retry">重试次数</param>
-        /// <returns></returns>
-        //public WebResponse DoGet(string url, int retry)
-        //{
-        //    for (var i = 0; i < retry; i++)
-        //    {
-        //        var response = DoGet(url);
-        //        if (response != null)
-        //            return response;
-        //    }
-        //    return null;
-        //}
+            return response;
+        }
 
         #endregion
 
@@ -154,13 +144,12 @@ namespace Loamen.Net
         /// <summary>
         /// 发送Post类型请求
         /// </summary>
-        /// <param name="url">请求地址</param>
-        /// <param name="postData">参数</param>
+        /// <param name="webRequest"></param>
+        /// <param name="postData"></param>
         /// <returns></returns>
-        public WebResponse DoPost(string url, string postData)
+        public WebResponse DoPost(HttpWebRequest webRequest, string postData)
         {
             var paramByte = HttpOption.Encoding.GetBytes(postData); // 转化
-            var webRequest = (HttpWebRequest) WebRequest.Create(url);
             //设置代理
             ProxySetting(webRequest);
 
@@ -197,24 +186,6 @@ namespace Loamen.Net
             newStream.Write(paramByte, 0, paramByte.Length); //写入参数
             newStream.Close();
             return webRequest.GetResponse();
-        }
-
-        /// <summary>
-        /// 发送Post类型请求(会根据所设置的次数进行重试)
-        /// </summary>
-        /// <param name="url"></param>
-        /// <param name="postData"></param>
-        /// <param name="retry"></param>
-        /// <returns></returns>
-        public WebResponse DoPost(string url, string postData,int retry)
-        {
-            for (var i = 0; i < retry; i++)
-            {
-                var response = DoPost(url, postData);
-                if (response != null)
-                    return response;
-            }
-            return null;
         }
         #endregion
     }
