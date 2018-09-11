@@ -66,7 +66,7 @@ namespace ProxyHero.TabPages
             PortLabel.Text = PortLabel.Text + @":";
             AnonymityLabel.Text = AnonymityLabel.Text + @":";
 
-            _timerCheckAllTested.Interval = 1000;
+            _timerCheckAllTested.Interval = 10000;
             _timerCheckAllTested.Enabled = false;
             _timerCheckAllTested.Elapsed += timerCheckAllTested_Elapsed;
             CheckForIllegalCrossThreadCalls = false;

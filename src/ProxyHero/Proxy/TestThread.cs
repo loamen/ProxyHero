@@ -212,7 +212,7 @@ namespace ProxyHero.Proxy
 
             var testResult = result.IsAlive;
 
-            testThread.Description = proxy.IpAndPort + (testResult ? " Alive " : " Timeout ") + sw.ElapsedMilliseconds +
+            testThread.Description = proxy.IpAndPort + (testResult ? " Working " : " Timeout ") + sw.ElapsedMilliseconds +
                                      "ms";
 
             var model = ProxyData.GetCopy(proxy.Ip, proxy.Port);

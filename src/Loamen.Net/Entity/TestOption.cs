@@ -5,7 +5,7 @@ namespace Loamen.Net.Entity
     [Serializable]
     public class TestOption
     {
-        private string _testUrl = "https://www.baidu.com/robots.txt";
+        private string _testUrl = "http://180.97.33.107/robots.txt";
         private string _testWebEncoding = "UTF-8";
 
         private string _testWebTitle = "Baiduspider";

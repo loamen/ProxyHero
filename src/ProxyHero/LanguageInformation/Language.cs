@@ -1156,8 +1156,7 @@ namespace ProxyHero.LanguageInformation
         private string _swithing = "自动切换中";
         private string _testWebsiteEncodeToolTip = "网页的编码格式，如：GB2312或者UTF-8";
         private string _testWebsiteTitleToolTip = "验证网址中的任意一段文字\n如百度的为：百度一下，你就知道\n你输入“百度”或“百度一下”都行";
-        private string _testWebsiteUrlToolTip = "用来验证的网址，如：http://www.baidu.com。\r\n必须加http://";
-        private string _testAreaToolTip = "验证代理地理位置";
+        private string _testWebsiteUrlToolTip = "用来验证的网址，使用IP网址会更快，如百度：http://180.97.33.107/robots.txt\r\n必须加http://";
         private string _testing = "正在验证";
         private string _testingHaveBeenTerminated = "已经终止验证";
         private string _timeConsuming = "耗时：{0}毫秒";
@@ -1517,7 +1516,7 @@ namespace ProxyHero.LanguageInformation
         }
 
         /// <summary>
-        ///     用来验证的网址，如：http://www.baidu.com。\r\n必须加http://
+        /// 用来验证的网址，必须加http://
         /// </summary>
         public string TestWebsiteUrlToolTip
         {
