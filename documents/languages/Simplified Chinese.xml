@@ -2,8 +2,8 @@
 <Language xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <LanguageName>简体中文</LanguageName>
   <LanguageFileAuthor>龙门信息网（www.loamen.com）</LanguageFileAuthor>
-  <LanguageFileVersion>V 1.0</LanguageFileVersion>
-  <LanguageFileForLPHVersion>V 1.7.0</LanguageFileForLPHVersion>
+  <LanguageFileVersion>v1.7</LanguageFileVersion>
+  <LanguageFileForLPHVersion>v1.7.1</LanguageFileForLPHVersion>
   <MainPage>
     <File>文件</File>
     <Exit>退出</Exit>
@@ -11,7 +11,7 @@
     <MenuBar>菜单栏</MenuBar>
     <ToolBar>工具栏</ToolBar>
     <StatusBar>状态栏</StatusBar>
-    <InfomationWindow>信息窗口</InfomationWindow>
+    <InfomationWindow>输出窗口</InfomationWindow>
     <ProxyWindow>代理窗口</ProxyWindow>
     <ResetView>重置视图</ResetView>
     <Plugin>插件</Plugin>
@@ -75,7 +75,8 @@
     <LanguageFileAuthor>语言文件作者</LanguageFileAuthor>
     <LanguageFileVersion>语言文件版本</LanguageFileVersion>
     <LanguageFileOriginallyIntendedForLPHVersion>对本软件以下版本有效</LanguageFileOriginallyIntendedForLPHVersion>
-    <ProgramRestartRequired>需要重启才能完全生效</ProgramRestartRequired>
+    <ProgramRestartRequired>LPH needs to be restarted for the language change to take effect.
+需要重启才能完全生效</ProgramRestartRequired>
     <UseSystemProxySetting>使用系统代理设置访问网络</UseSystemProxySetting>
     <DefaultTestWebsite>默认网址</DefaultTestWebsite>
     <TestWebsite>验证网址</TestWebsite>
@@ -87,8 +88,8 @@
     <ClickForSystemTesting>点击进行系统检测</ClickForSystemTesting>
     <GeneralPanelCategoryPath>选项\基本选项</GeneralPanelCategoryPath>
     <GeneralPanelDisplayName>基本选项</GeneralPanelDisplayName>
-    <LanguagePanelCategoryPath>选项\语言</LanguagePanelCategoryPath>
-    <LanguagePanelDisplayName>语言</LanguagePanelDisplayName>
+    <LanguagePanelCategoryPath>选项\Language</LanguagePanelCategoryPath>
+    <LanguagePanelDisplayName>Language</LanguagePanelDisplayName>
     <TestPanelCategoryPath>选项\验证选项</TestPanelCategoryPath>
     <TestPanelDisplayName>验证选项</TestPanelDisplayName>
     <UserAgentPanelCategoryPath>选项\User-Agent</UserAgentPanelCategoryPath>
@@ -166,7 +167,7 @@
     <GoogleCloudServer>谷歌云服务器</GoogleCloudServer>
     <SinaCloudServer>新浪云服务器</SinaCloudServer>
     <SelectDefaultTestWebSiteToolTip>选择用来验证的默认网址</SelectDefaultTestWebSiteToolTip>
-    <TestWebsiteUrlToolTip>用来验证的网址，如：http://www.baidu.com。
+    <TestWebsiteUrlToolTip>用来验证的网址，使用IP网址会更快，如百度：http://180.97.33.107/robots.txt
 必须加http://</TestWebsiteUrlToolTip>
     <TestWebsiteTitleToolTip>验证网址中的任意一段文字
 如百度的为：百度一下，你就知道
@@ -180,7 +181,7 @@
 点击“是”应用于Internet Explorer。
 点击“否”应用于内置浏览器。</SwitchToIEOrBuiltinBrowser>
     <AreYouSureClearThis>确定要清空列表中数据吗？</AreYouSureClearThis>
-    <InformationWindow>信息窗口</InformationWindow>
+    <InformationWindow>输出窗口</InformationWindow>
     <HighAnonymous>高匿名代理</HighAnonymous>
     <Anonymous>普通匿名代理</Anonymous>
     <Transparent>透明代理</Transparent>

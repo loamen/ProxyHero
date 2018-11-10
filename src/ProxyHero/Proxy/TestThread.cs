@@ -166,12 +166,13 @@ namespace ProxyHero.Proxy
                     {
                         Testing(testThread, proxy);
                     }
-                    catch (ThreadAbortException)
+                    catch (ThreadAbortException e)
                     {
+                        Config.ConsoleEx.Debug(e);
                     }
                     catch (Exception ex)
                     {
-                        LogHelper.WriteException(ex);
+                        Config.ConsoleEx.Debug(ex);
                     }
                     finally
                     {
@@ -186,7 +187,7 @@ namespace ProxyHero.Proxy
             {
                 // 线程被放弃
                 testThread.Status = "Completed";
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
             }
             finally
             {
@@ -211,7 +212,7 @@ namespace ProxyHero.Proxy
 
             var testResult = result.IsAlive;
 
-            testThread.Description = proxy.IpAndPort + (testResult ? " Alive " : " Dead ") + sw.ElapsedMilliseconds +
+            testThread.Description = proxy.IpAndPort + (testResult ? " Working " : " Timeout ") + sw.ElapsedMilliseconds +
                                      "ms";
 
             var model = ProxyData.GetCopy(proxy.Ip, proxy.Port);

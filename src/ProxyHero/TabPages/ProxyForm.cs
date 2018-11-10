@@ -44,11 +44,13 @@ namespace ProxyHero.TabPages
 
         private string _strIp;
         private string _strPort;
+        private string _strType = "HTTP";
 
         public Tester Tester;
         private int _testingNumber; //验证中的代理数量
 
         private delegate void DelegateVoid();
+        private delegate void DelegateUpdateLabelInfo(string text);
 
         #endregion
 
@@ -65,7 +67,7 @@ namespace ProxyHero.TabPages
             PortLabel.Text = PortLabel.Text + @":";
             AnonymityLabel.Text = AnonymityLabel.Text + @":";
 
-            _timerCheckAllTested.Interval = 1000;
+            _timerCheckAllTested.Interval = 10000;
             _timerCheckAllTested.Enabled = false;
             _timerCheckAllTested.Elapsed += timerCheckAllTested_Elapsed;
             CheckForIllegalCrossThreadCalls = false;
@@ -124,7 +126,8 @@ namespace ProxyHero.TabPages
                     }
                     else if (DownloadProxy.Text == Config.LocalLanguage.Messages.StopDownload)
                     {
-                        Config.MainForm.Status.Text = Config.LocalLanguage.Messages.Stopping + @"...";
+                        Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Stopping);
+                        Config.ConsoleEx.Debug(Config.LocalLanguage.Messages.Stopping);
                         DownloadProxy.Enabled = false;
                         _downloader.Stop();
                     }
@@ -157,7 +160,7 @@ namespace ProxyHero.TabPages
         {
             try
             {
-                if (Config.MainForm.Status.Text.Contains(Config.LocalLanguage.Messages.Testing))
+                if (Config.MainForm.StatusContains(Config.LocalLanguage.Messages.Testing))
                 {
                     StopTest.Enabled = false;
                     Tester.Stop();
@@ -197,7 +200,7 @@ namespace ProxyHero.TabPages
         {
             try
             {
-                if (!Config.MainForm.Status.Text.Contains(Config.LocalLanguage.Messages.Testing))
+                if (!Config.MainForm.StatusContains(Config.LocalLanguage.Messages.Testing))
                 {
                     List<ProxyServer> list = (from row in ProxyData.ProxyList
                                               where row.status != 0
@@ -220,7 +223,7 @@ namespace ProxyHero.TabPages
         {
             try
             {
-                if (!Config.MainForm.Status.Text.Contains(Config.LocalLanguage.Messages.Testing))
+                if (!Config.MainForm.StatusContains(Config.LocalLanguage.Messages.Testing))
                 {
                     DeleteProxy();
                     Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Total + ":" + ProxyData.ProxyList.Count);
@@ -262,7 +265,7 @@ namespace ProxyHero.TabPages
                     {
                         BindDgv(ProxyData.ProxyList);
                     }
-                    Config.MainForm.Status.Text = Config.LocalLanguage.Messages.Total + @":" + dgvProxyList.RowCount;
+                    Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Total + @":" + dgvProxyList.RowCount);
                 }
             }
             catch (Exception ex)
@@ -284,8 +287,10 @@ namespace ProxyHero.TabPages
                     string ipAndPort = GetProxyInfo(false);
                     if (!string.IsNullOrEmpty(ipAndPort))
                     {
-                        _strIp = ipAndPort.Split(':')[0];
-                        _strPort = ipAndPort.Split(':')[1];
+                        var datas = ipAndPort.Split(':');
+                        _strIp = datas[0];
+                        _strPort = datas[1];
+                        _strType = datas[2];
                     }
 
                     if (string.IsNullOrEmpty(_strIp) ||
@@ -325,7 +330,7 @@ namespace ProxyHero.TabPages
             }
             catch (ExternalException eex)
             {
-                LogHelper.WriteException(eex);
+                Config.ConsoleEx.Debug(eex);
                 MsgBox.ShowErrorMessage(Config.LocalLanguage.Messages.CopyFailed);
             }
             catch (Exception ex)
@@ -355,15 +360,19 @@ namespace ProxyHero.TabPages
             if (StopTest.Enabled)
             {
                 sbInfo.Append(string.Format(Config.LocalLanguage.Messages.NumOfProxiesTested, _testingNumber));
-                Config.MainForm.SetToolTipText(Config.LocalLanguage.Messages.AllTestingCompleted + "," + sb);
+                var message = Config.LocalLanguage.Messages.AllTestingCompleted + "," + sb;
+                Config.MainForm.SetToolTipText(message);
+                Config.ConsoleEx.Debug(message);
             }
             else
             {
                 sbInfo.Append(Config.LocalLanguage.Messages.TestingHaveBeenTerminated);
-                Config.MainForm.SetToolTipText(Config.LocalLanguage.Messages.TestingHaveBeenTerminated + "," + sb);
+                var message = Config.LocalLanguage.Messages.TestingHaveBeenTerminated + "," + sb;
+                Config.MainForm.SetToolTipText(message);
+                Config.ConsoleEx.Debug(message);
             }
             sbInfo.Append("," + sb);
-            UpdateLabelInfo();
+            SetLabelInfo();
 
             try
             {
@@ -418,7 +427,10 @@ namespace ProxyHero.TabPages
                     strInfo.Append("...");
 
                     if (Config.LocalSetting.NeedDebug && null != Config.MainForm)
-                        Config.MainForm.InfoPage.UpdateDataGrid();
+                    {
+                        Config.MainForm.OutputPage.UpdateDataGrid();
+                        SetLabelInfo();
+                    }
 
                     if (Config.MainForm != null) Config.MainForm.SetStatusText(strInfo.ToString());
                     Thread.Sleep(1000);
@@ -481,8 +493,12 @@ namespace ProxyHero.TabPages
                 var updateList = new List<ProxyServer>();
                 foreach (var item in from item in list let cloudModel = CloudProxyData.Get(item.proxy, item.port) where null != cloudModel where updateList.FirstOrDefault(p => p.proxy == item.proxy && p.port == item.port) == null select item)
                 {
-                    updateList.Add(item);
+                    updateList.Add(item); //云端存在且无法连接的数据
                 }
+
+                updateList = (from p in ProxyData.ProxyList
+                        where p.status == 1
+                        select p).Union(updateList).Distinct().ToList();
 
                 cloudHelper.UploadProxyList(updateList);
                 Config.MainForm.ConnectCloud();
@@ -519,6 +535,7 @@ namespace ProxyHero.TabPages
                 dgvProxyList.DataSource = listEx;
             }
             dgvProxyList.Refresh();
+            SetLabelInfo();
         }
 
         public void BindData()
@@ -534,7 +551,7 @@ namespace ProxyHero.TabPages
                 dgvProxyList.DataSource = list;
             }
             dgvProxyList.Refresh();
-            DelegateUpdateLabelInfo();
+            SetLabelInfo();
         }
 
         /// <summary>
@@ -550,13 +567,16 @@ namespace ProxyHero.TabPages
                     if (dgvProxyList.CurrentRow != null)
                     {
                         int rowIndex = dgvProxyList.CurrentRow.Index;
-                        return dgvProxyList.Rows[rowIndex].Cells[1].Value + ":" + dgvProxyList.Rows[rowIndex].Cells[2].Value;
+                        return string.Format("{0}:{1}:{2}",
+                            dgvProxyList.Rows[rowIndex].Cells[1].Value,
+                            dgvProxyList.Rows[rowIndex].Cells[2].Value,
+                            dgvProxyList.Rows[rowIndex].Cells[3].Value);
                     }
                 }
                 var sb = new StringBuilder();
                 foreach (DataGridViewRow dgvr in dgvProxyList.SelectedRows)
                 {
-                    sb.AppendFormat("{0}:{1}\n", dgvr.Cells[1].Value, dgvr.Cells[2].Value);
+                    sb.AppendFormat("{0}:{1}:{2}\n", dgvr.Cells[1].Value, dgvr.Cells[2].Value, dgvr.Cells[3].Value);
                 }
 
                 return sb.ToString();
@@ -653,7 +673,7 @@ namespace ProxyHero.TabPages
                 setting.Port = int.Parse(_strPort);
             }
 
-            setting.Type = 2;
+            setting.Type = _strType;
             setting.UserName = string.Empty;
             setting.Password = string.Empty;
             return setting;
@@ -671,7 +691,9 @@ namespace ProxyHero.TabPages
                 {
                     _testingNumber = list.Count;
                     TestingAllEnable(false);
-                    Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Testing + "...");
+                    var message = Config.LocalLanguage.Messages.Testing + "...";
+                    Config.MainForm.SetStatusText(message);
+                    Config.ConsoleEx.Debug(message);
                     Test.Enabled = Cut.Enabled = Clear.Enabled = DeleteThis.Enabled = false;
                     _timerCheckAllTested.Enabled = true;
                     _timerCheckAllTested.Start();
@@ -680,84 +702,6 @@ namespace ProxyHero.TabPages
                     Tester.TesterCompleted += tester_Completed;
                     Tester.Start();
                 }
-
-                #region Test
-
-                //if (dataTable.Rows.Count > 0)
-                //{
-                //    this.testingNumber = dataTable.Rows.Count;
-                //    this.TestingAllEnable(false);
-
-                //    swTestAll = new Stopwatch();
-                //    swTestAll.Start();
-                //    int threadsCount = Config.LocalSetting.TestThreadsCount; 
-
-                //    Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Testing + "...");
-                //    this.Test.Enabled = this.Cut.Enabled = this.Clear.Enabled = this.DeleteThis.Enabled = false;
-
-                //    Queue<ProxyEntity> ProxiesQueue = new Queue<ProxyEntity>();
-                //    int index = 0;
-                //    foreach (DataRow dr in dataTable.Rows)
-                //    {
-                //        ProxyEntity pe = new ProxyEntity();
-                //        pe.Ip = dr["Proxy"] + "";
-                //        pe.Id = index;
-                //        index++;
-                //        try
-                //        {
-                //            pe.Port = int.Parse(dr["Port"] + "");
-                //        }
-                //        catch
-                //        {
-                //            continue;
-                //        }
-                //        ProxiesQueue.Enqueue(pe);
-                //    }
-
-                //    int intEvery = ProxiesQueue.Count / threadsCount; //得到每组个数
-                //    int intRemainder = ProxiesQueue.Count % threadsCount; //得到余数
-                //    threadsCount = intEvery == 0 ? ProxiesQueue.Count : threadsCount; //如果验证数量小于线程数,则每个代理一个线程
-                //    TestingThreads = new List<TestThread>(); //定义所有验证线程
-
-                //    for (int i = 0; i < threadsCount; i++)
-                //    {
-                //        List<ProxyEntity> pList = new List<ProxyEntity>();
-
-                //        if (intEvery == 0 && intRemainder == threadsCount)//如果是每组只有一个代理
-                //            pList.Add(ProxiesQueue.Dequeue());
-
-                //        if (intEvery > 0 && intRemainder == 0) //如果每组不止一个，并且刚好除尽
-                //        {
-                //            for (int k = 0; k < intEvery; k++)
-                //            {
-                //                pList.Add(ProxiesQueue.Dequeue()); //每次加入每组的个数
-                //            }
-                //        }
-
-                //        if (intEvery > 0 && intRemainder > 0) //如果每组不止一个，而且还有剩余则分配到前面每个线程中
-                //        {
-                //            for (int k = 0; k < intEvery; k++)
-                //            {
-                //                pList.Add(ProxiesQueue.Dequeue()); //每次加入每组的个数
-                //            }
-                //            if (i < intRemainder)
-                //                pList.Add(ProxiesQueue.Dequeue()); //把剩余的分配到前几个线程中
-                //        }
-
-                //        if (pList.Count > 0)
-                //        {
-                //            TestThread testThread = new TestThread(pList);
-                //            testThread.Completed += new TestThread.CompletedEventHandler(this.tester_Completed);
-                //            TestingThreads.Add(testThread);
-                //            testThread.Start();
-                //        }
-                //    }
-
-                //    this.timerCheckAllTested.Enabled = true;
-                //    this.timerCheckAllTested.Start();
-                //}
-
-                #endregion
             }
             catch (Exception)
             {
@@ -780,6 +724,7 @@ namespace ProxyHero.TabPages
             BindData();
             _strIp = "";
             _strPort = "";
+            _strType = "HTTP";
         }
 
         #endregion
@@ -817,7 +762,7 @@ namespace ProxyHero.TabPages
             }
             catch (Exception ex)
             {
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
             }
         }
 
@@ -856,7 +801,6 @@ namespace ProxyHero.TabPages
                 {
                     DelegateVoid dv = BindData;
                     Invoke(dv);
-                    DelegateUpdateLabelInfo();
                     Config.MainForm.SetToolTipText(string.Format(Config.LocalLanguage.Messages.NumOfProxiesDownloaded,
                                                                  ProxyData.TotalNum));
                     dv = ReadDataOk;
@@ -867,7 +811,7 @@ namespace ProxyHero.TabPages
             }
             catch (Exception ex)
             {
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
             }
             finally
             {
@@ -879,31 +823,45 @@ namespace ProxyHero.TabPages
         /// <summary>
         ///     更新显示板数据信息
         /// </summary>
-        public void DelegateUpdateLabelInfo()
+        public void SetLabelInfo()
         {
-            DelegateVoid dv = UpdateLabelInfo;
-            Invoke(dv);
+            #region 统计数据
+            var sb = new StringBuilder();
+            ListEx<ProxyServer> list = new ListEx<ProxyServer>();
+            if (dgvProxyList.DataSource != null && dgvProxyList.DataSource is ListEx<ProxyServer>)
+            {
+                list = (ListEx<ProxyServer>)dgvProxyList.DataSource;
+            }
+
+            int aliveCount = list.Count(p => p.status == 1);
+            int deadCount = list.Count(p => p.status == 0);
+            int notTestCount = list.Count(p => p.status != 1 && p.status != 0);
+
+            sb.Append(Config.LocalLanguage.Messages.Alive + ":" + aliveCount);
+            sb.Append(Config.LocalLanguage.Messages.Dead + ":" + deadCount);
+            sb.Append(Config.LocalLanguage.Messages.NotTest + ":" + notTestCount); 
+            sb.Append(Config.LocalLanguage.Messages.Total + ":" + list.Count);
+            #endregion
+
+            if (tsslCountInfo.GetCurrentParent().InvokeRequired)
+            {
+                DelegateUpdateLabelInfo set = UpdateLabelInfo;
+                Invoke(set, new object[] { sb.ToString() });
+            }
+            else
+            {
+                UpdateLabelInfo(sb.ToString());
+            }
         }
 
         /// <summary>
-        ///     更新显示板信息
+        /// 更新显示板信息
         /// </summary>
-        private void UpdateLabelInfo()
+        private void UpdateLabelInfo(string text)
         {
             try
             {
-                var sb = new StringBuilder();
-                var list = (ListEx<ProxyServer>) dgvProxyList.DataSource;
-
-                int aliveCount = list.Count(p => p.status == 1);
-                int deadCount = list.Count(p => p.status == 0);
-                int notTestCount = list.Count(p => p.status != 1 && p.status != 0);
-
-                sb.Append(Config.LocalLanguage.Messages.Alive + ":" + aliveCount + "/" + dgvProxyList.Rows.Count);
-                sb.Append(Config.LocalLanguage.Messages.Dead + ":" + deadCount);
-                sb.Append(Config.LocalLanguage.Messages.NotTest + ":" + notTestCount);
-                tsslCountInfo.Text = sb.ToString();
-                Config.MainForm.SetStatusText(Config.LocalLanguage.Messages.Total + ":" + list.Count);
+                tsslCountInfo.Text = text;
                 if (dgvProxyList.Rows.Count > 0)
                 {
                     if (DownloadProxy.Text == Config.LocalLanguage.ProxyPage.DownloadProxy &&
@@ -917,8 +875,9 @@ namespace ProxyHero.TabPages
                     Delete.Enabled = false;
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Config.ConsoleEx.Debug(ex);
             }
         }
 
@@ -1030,7 +989,7 @@ namespace ProxyHero.TabPages
         /// </summary>
         private void Import()
         {
-            if (Config.MainForm.Status.Text.Contains(Config.LocalLanguage.Messages.Testing)) return;
+            if (Config.MainForm.StatusContains(Config.LocalLanguage.Messages.Testing)) return;
             var objOpen = new OpenFileDialog {Filter = @"(*.txt)|*.txt|" + @"(*.*)|*.*"};
 
             if (objOpen.ShowDialog() == DialogResult.OK)

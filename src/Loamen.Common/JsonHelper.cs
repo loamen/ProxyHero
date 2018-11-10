@@ -7,7 +7,6 @@ using System.Text;
 /// 实体转换辅助类
 /// </summary>
 /// Copyright (c) 2011
-/// 创 建 人：杨栋(dong_yang1)
 /// 创建日期：2012-02-23
 /// 修 改 人：
 /// 修改日期：

@@ -1,8 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using ProxyHero.Option;
+using Loamen.Common;
 
 namespace ProxyHero
 {
@@ -27,6 +28,8 @@ namespace ProxyHero
                 run.ReleaseMutex();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+
+                LogHelper.Init(Path.Combine(Application.StartupPath, "Configs", "log4net.config"));
 
                 var formMain = new MainForm();
                 int hdc = formMain.Handle.ToInt32();

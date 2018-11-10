@@ -30,7 +30,6 @@ namespace ProxyHero.Common
             }
             catch (Exception ex)
             {
-                LogHelper.WriteException(ex);
                 Config.ConsoleEx.Debug(ex);
                 throw ex;
             }
@@ -146,7 +145,7 @@ namespace ProxyHero.Common
             }
             catch (Exception ex)
             {
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
                 Thread.Sleep(3000);
                 SwitchingProxy();
             }

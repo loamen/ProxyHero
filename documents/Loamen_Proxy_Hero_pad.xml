@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>AppVisor 1.0.43</MASTER_PAD_EDITOR>
+    <MASTER_PAD_EDITOR_URL>http://publisher.appvisor.com</MASTER_PAD_EDITOR_URL>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD(TM) 2004 Association of Software Professionals (ASP)http://www.asp-shareware.org/pad is a data set standard and specification that is commercialsoftware publishers to disseminate certified information about their software application. The PAD format is copyright of the ASP and cannot be used without the formal licensing and permission of both the Association of Software Professionals and its agent AppVisor.com.</MASTER_PAD_INFO>
+    <CERTIFIED>N</CERTIFIED>
+    <CERTIFICATE_ID></CERTIFICATE_ID>
+    <CERTIFICATE_LICENSE></CERTIFICATE_LICENSE>
+  </MASTER_PAD_VERSION_INFO>
+  <RoboSoft>
+    <Company_UIN>CMP-2200FEB0BFB3</Company_UIN>
+    <Product_UIN>APP-32001139EFB3</Product_UIN>
+    <Publish_on_CD>FALSE</Publish_on_CD>
+    <NewsFeed_Search_String></NewsFeed_Search_String>
+    <Search_String>Loamen Proxy Hero</Search_String>
+    <Press_Release_Search_String></Press_Release_Search_String>
+    <Backlink></Backlink>
+    <Comments_For_Reviewer></Comments_For_Reviewer>
+    <Search_String_Unique>Loamen Proxy Hero</Search_String_Unique>
+    <Search_Engine_Search_String></Search_Engine_Search_String>
+    <Web_Directories_Search_String></Web_Directories_Search_String>
+    <Company_Description></Company_Description>
+  </RoboSoft>
+  <Company_Info>
+    <PublisherID>pid-02000ce08fb3</PublisherID>
+    <BrandID>bid-2200feb0bfb3</BrandID>
+    <Company_Name>Loamen</Company_Name>
+    <Country>China</Country>
+    <State_Province>Sichuan</State_Province>
+    <City_Town>Chengdu</City_Town>
+    <Zip_Postal_Code>624200</Zip_Postal_Code>
+    <Address_1>Gao Xin Xi Qu Xin Ye Lu 4#</Address_1>
+    <Address_2>Hui Du Zong Bu Yuan 2 Qi 1#</Address_2>
+    <Company_WebSite_URL>http://www.loamen.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Contact_First_Name>Don</Contact_First_Name>
+      <Contact_Last_Name>Yang</Contact_Last_Name>
+      <Contact_Email>loamen.com@gmail.com</Contact_Email>
+      <Author_First_Name>Don</Author_First_Name>
+      <Author_Last_Name>Yang</Author_Last_Name>
+      <Author_Email>loamen.com@gmail.com</Author_Email>
+      <Contact_Phone></Contact_Phone>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>loamen.com@gmail.com</Sales_Email>
+      <Support_Email>loamen.com@gmail.com</Support_Email>
+      <General_Email>loamen.com@gmail.com</General_Email>
+      <Sales_Phone></Sales_Phone>
+      <Support_Phone></Support_Phone>
+      <General_Phone></General_Phone>
+      <Fax_Phone></Fax_Phone>
+    </Support_Info>
+    <GooglePlusPage></GooglePlusPage>
+    <LinkedinPage></LinkedinPage>
+    <TwitterCompanyPage></TwitterCompanyPage>
+    <FacebookCompanyPage></FacebookCompanyPage>
+  </Company_Info>
+  <ASP>
+    <ASP_FORM>Y</ASP_FORM>
+    <ASP_Member>N</ASP_Member>
+    <ASP_Member_Number></ASP_Member_Number>
+  </ASP>
+  <Program_Info>
+    <AppID>app-32001139efb3</AppID>
+    <Program_Name>Loamen Proxy Hero</Program_Name>
+    <Program_Version>1.7.1</Program_Version>
+    <Program_Release_Month>09</Program_Release_Month>
+    <Program_Release_Day>11</Program_Release_Day>
+    <Program_Release_Year>2018</Program_Release_Year>
+    <Program_Cost_Dollars>0</Program_Cost_Dollars>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Category_Class>Network &amp; Internet::Other</Program_Category_Class>
+    <Program_Specific_Category></Program_Specific_Category>
+    <Program_Categories>IP tools</Program_Categories>
+    <Program_Release_Status>New Release</Program_Release_Status>
+    <Program_Install_Support>No Install Support</Program_Install_Support>
+    <Program_Target_Platform>Windows</Program_Target_Platform>
+    <Program_OS_Support>Win2000,WinXP,Win7 x32,Win7 x64,Windows 8,Windows 10,WinServer,WinOther,WinVista,WinVista x64</Program_OS_Support>
+    <Program_Language>English,Chinese,ChineseSimplified,ChineseTraditional</Program_Language>
+    <Program_Change_Info>update language setting and settings form 
+optimize  test speed
+Fix UAC permissions issue</Program_Change_Info>
+    <Program_System_Requirements>.Net framework 4.6.1</Program_System_Requirements>
+    <Limitations>No limitations</Limitations>
+    <Awards></Awards>
+    <File_Info>
+      <File_Size_Bytes>1036288</File_Size_Bytes>
+      <File_Size_K>1012</File_Size_K>
+      <File_Size_MB>0.99</File_Size_MB>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Count></Expire_Count>
+      <Expire_Based_On></Expire_Based_On>
+      <Expire_Year></Expire_Year>
+      <Expire_Other_Info></Expire_Other_Info>
+      <Expire_Month></Expire_Month>
+      <Expire_Day></Expire_Day>
+    </Expire_Info>
+    <Includes_JAVA_VM></Includes_JAVA_VM>
+    <Includes_DirectX></Includes_DirectX>
+    <Includes_VB_Runtime></Includes_VB_Runtime>
+  </Program_Info>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://github.com/loamen/ProxyHero/</Application_Info_URL>
+      <Application_Order_URL></Application_Order_URL>
+      <Application_Screenshot_URL>https://github.com/loamen/ProxyHero/raw/master/documents/images/en_main.png</Application_Screenshot_URL>
+      <Application_Icon_URL>https://raw.githubusercontent.com/loamen/ProxyHero/master/documents/images/logo_32.png</Application_Icon_URL>
+      <Application_XML_File_URL>http://repository.appvisor.com/info/app-32001139efb3/Loamen_Proxy_Hero_pad.xml</Application_XML_File_URL>
+      <Video_Link_1_URL>https://v.youku.com/v_show/id_XMzc3MjkzMTY0MA==.html?spm=a2hzp.8244740.0.0</Video_Link_1_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://github.com/loamen/ProxyHero/releases/download/v1.7.1/ProxyHero1.7.1.zip</Primary_Download_URL>
+      <Secondary_Download_URL></Secondary_Download_URL>
+      <Additional_Download_URL_1></Additional_Download_URL_1>
+      <Additional_Download_URL_2></Additional_Download_URL_2>
+    </Download_URLs>
+  </Web_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>loamen proxy hero, proxy software, hide ip, proxy switcher, test proxy, checker proxy</Keywords>
+      <Char_Desc_45>A professional proxy software.</Char_Desc_45>
+      <Char_Desc_80>A professional proxy software to test, use and manange proxy list.</Char_Desc_80>
+      <Char_Desc_250>Loamen Proxy Hero is a professional proxy software to test, use and manange proxy list.</Char_Desc_250>
+      <Char_Desc_450>a professional proxy software to test, use and manange proxy list.You can use Loamen Proxy Hero to protect your Internet privacy or access the blocked sites by hiding your real IP using a proxy. Loamen Proxy Hero (LPH) is a professional proxy checker and proxy switcher for your browsers. It can test the details (speed, anonymity, country, city, distance, smtp) of the proxy and automatically change the proxy settings of your browsers.</Char_Desc_450>
+      <Char_Desc_2000>Loamen Proxy Hero is a professional proxy software to test, use and manange proxy list.You can use Loamen Proxy Hero to protect your Internet privacy or access the blocked sites by hiding your real IP using a proxy. Loamen Proxy Hero (LPH) is a professional proxy checker and proxy switcher for your browsers. It can test the details (speed, anonymity, country, city, distance, smtp, ssl) of the proxy and automatically change the proxy settings of your browsers. Moreover, LPH is the client program of Loamen proxy list service. You can easily and quickly get daily fresh proxy list from LPH by just one click.
+Features
+* Proxy Checker: professionally test the details of the proxies.
+* Proxy Switcher: quickly change the proxy settings of the browsers.
+* Proxy Downloader: get daily fresh proxy lists by just one click.
+* Proxy Manager: easily maintain your personal proxy list.</Char_Desc_2000>
+    </English>
+    <ChineseSimplified>
+      <Keywords>&#x514D;&#x8D39;HTTP&#x4EE3;&#x7406;,&#x514D;&#x8D39;&#x9AD8;&#x533F;&#x4EE3;&#x7406;,&#x514D;&#x8D39;&#x533F;&#x540D;&#x4EE3;&#x7406;,&#x9690;&#x85CF;IP,IP&#x5DE5;&#x5177;,&#x4EE3;&#x7406;IP&#x5DE5;&#x5177;</Keywords>
+      <Char_Desc_45>&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;</Char_Desc_45>
+      <Char_Desc_80>&#x9F99;&#x95E8;&#x4EE3;&#x7406;&#x516C;&#x5E03;&#x5668;&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;&#x8BBE;&#x7F6E;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x3001;&#x6240;&#x5728;&#x5730;&#x533A;&#x548C;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;</Char_Desc_80>
+      <Char_Desc_250>&#x9F99;&#x95E8;&#x4EE3;&#x7406;&#x516C;&#x5E03;&#x5668;&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;&#x8BBE;&#x7F6E;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x3001;&#x6240;&#x5728;&#x5730;&#x533A;&#x548C;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;&#x8F6F;&#x4EF6;&#x72EC;&#x7279;&#x7684;&#x667A;&#x80FD;&#x4EE3;&#x7406;&#x66F4;&#x662F;&#x7701;&#x53BB;&#x4E86;N&#x591A;&#x64CD;&#x4F5C;&#xFF0C;&#x5B8C;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x7684;&#x53D6;&#x5F97;&#x548C;&#x4F7F;&#x7528;&#x3002;&#x72EC;&#x7279;&#x7684;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x5E94;&#x7528;&#x4E8E;IE&#x548C;&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x3002;</Char_Desc_250>
+      <Char_Desc_450>&#x9F99;&#x95E8;&#x4EE3;&#x7406;&#x516C;&#x5E03;&#x5668;&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;&#x8BBE;&#x7F6E;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x3001;&#x6240;&#x5728;&#x5730;&#x533A;&#x548C;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;&#x8F6F;&#x4EF6;&#x72EC;&#x7279;&#x7684;&#x667A;&#x80FD;&#x4EE3;&#x7406;&#x66F4;&#x662F;&#x7701;&#x53BB;&#x4E86;N&#x591A;&#x64CD;&#x4F5C;&#xFF0C;&#x5B8C;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x7684;&#x53D6;&#x5F97;&#x548C;&#x4F7F;&#x7528;&#x3002;&#x72EC;&#x7279;&#x7684;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x5E94;&#x7528;&#x4E8E;IE&#x548C;&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x3002;</Char_Desc_450>
+      <Char_Desc_2000>&#x9F99;&#x95E8;&#x4EE3;&#x7406;&#x516C;&#x5E03;&#x5668;&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;&#x8BBE;&#x7F6E;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x3001;&#x6240;&#x5728;&#x5730;&#x533A;&#x548C;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;&#x8F6F;&#x4EF6;&#x72EC;&#x7279;&#x7684;&#x667A;&#x80FD;&#x4EE3;&#x7406;&#x66F4;&#x662F;&#x7701;&#x53BB;&#x4E86;N&#x591A;&#x64CD;&#x4F5C;&#xFF0C;&#x5B8C;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x7684;&#x53D6;&#x5F97;&#x548C;&#x4F7F;&#x7528;&#x3002;&#x72EC;&#x7279;&#x7684;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x5E94;&#x7528;&#x4E8E;IE&#x548C;&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x3002;
+&#x3010;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x3011;&#xFF1A;
+1. &#x81EA;&#x52A8;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x8BFB;&#x53D6;&#x6700;&#x65B0;&#x4EE3;&#x7406;&#x52A0;&#x72EC;&#x7279;&#x4E91;&#x8BA1;&#x7B97;&#xFF0C;&#x8BA9;&#x4F60;&#x66F4;&#x5FEB;&#x7684;&#x627E;&#x5230;&#x5FEB;&#x901F;&#x7684;&#x4EE3;&#x7406;&#x3002;&#x7701;&#x53BB;&#x81EA;&#x5DF1;&#x627E;&#x4EE3;&#x7406;&#x7684;&#x9EBB;&#x70E6;&#x3002;
+2. &#x81EA;&#x52A8;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#xFF08;&#x8D85;&#x7EA7;&#x533F;&#x540D;&#x3001;&#x666E;&#x901A;&#x533F;&#x540D;&#x3001;&#x900F;&#x660E;&#x4EE3;&#x7406;&#xFF09;&#xFF0C;&#x53EF;&#x5728;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x5B9A;&#x9A8C;&#x8BC1;&#x7F51;&#x5740;&#x4EE5;&#x4FBF;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x5BF9;&#x8BE5;&#x7F51;&#x5740;&#x662F;&#x5426;&#x6709;&#x6548;&#x3002;
+3. &#x81EA;&#x52A8;&#x8BC6;&#x522B;&#x4EE3;&#x7406;&#x6240;&#x5728;&#x56FD;&#x5BB6;&#x6216;&#x5730;&#x533A;&#xFF0C;&#x53EF;&#x67E5;&#x8BE2;&#x54EA;&#x4E9B;&#x56FD;&#x5BB6;&#x548C;&#x5730;&#x533A;&#x548C;&#x7AEF;&#x53E3;&#x7684;&#x4EE3;&#x7406;&#x3002;
+4. &#x7279;&#x6709;&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x5438;&#x9644;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x4ECE;&#x6D4F;&#x89C8;&#x7684;&#x7F51;&#x9875;&#x4E2D;&#x83B7;&#x53D6;&#x4EE3;&#x7406;&#x3002;
+5. &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x542F;&#x7528;&#x4EE3;&#x7406;&#x548C;&#x505C;&#x6B62;&#x4EE3;&#x7406;&#xFF08;&#x65E0;&#x987B;&#x91CD;&#x542F;IE&#xFF0C;&#x5373;&#x65F6;&#x751F;&#x6548;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x590D;&#x5236;&#x4EE3;&#x7406;&#x6307;&#x5B9A;&#x683C;&#x5F0F;&#x5230;&#x526A;&#x8D34;&#x677F;&#xFF0C;&#x65B9;&#x4FBF;&#x522B;&#x5904;&#x8BBE;&#x7F6E;&#x3002;
+6. &#x53EF;&#x4EE5;&#x5BF9;&#x4EE3;&#x7406;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF1A;&#x590D;&#x5236;&#x3001;&#x7C98;&#x8D34;&#x3001;&#x526A;&#x5207;&#x3001;&#x5220;&#x9664;&#x3001;&#x6E05;&#x7A7A;&#x3001;&#x5BFC;&#x5165;&#x3001;&#x5BFC;&#x51FA;&#x3002;
+7. &#x81EA;&#x5B9A;&#x4E49;User-Agent,&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x6D4F;&#x89C8;WAP&#x7AD9;&#x70B9;&#x6216;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x662F;&#x5426;&#x80FD;&#x591F;&#x8BBF;&#x95EE;WAP&#x7F51;&#x7AD9;&#x3002;
+8. &#x7279;&#x6709;&#x7684;&#x63D2;&#x4EF6;&#x6269;&#x5C55;&#xFF0C;&#x53EF;&#x6DFB;&#x52A0;&#x5982;&#x5237;&#x6D41;&#x91CF;&#x7B49;&#x6269;&#x5C55;&#x63D2;&#x4EF6;&#x3002;
+9. &#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EA;&#x9700;&#x4E00;&#x4E2A;&#x952E;&#x53D8;&#x80FD;&#x6309;&#x4EE3;&#x7406;&#x901F;&#x5EA6;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x3002;
+10.&#x7B80;&#x5355;&#x76F4;&#x89C2;&#x7684;&#x64CD;&#x4F5C;&#x72B6;&#x6001;&#x663E;&#x793A;&#xFF1A;&#x7A0B;&#x5E8F;&#x4E3B;&#x754C;&#x9762;&#x7684;&#x72B6;&#x6001;&#x680F;&#x56FE;&#x6807;&#x63D0;&#x793A;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x548C;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x72B6;&#x6001;&#x63D0;&#x793A;&#x3002;
+11.&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x4FDD;&#x5B58;&#x548C;&#x8F7D;&#x5165;&#x4E0A;&#x6B21;&#x53EF;&#x7528;&#x4EE3;&#x7406;&#x5217;&#x8868;&#xFF0C;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x3002;
+12.&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;Ctrl+T&#x4E00;&#x952E;&#x91C7;&#x96C6;&#x7F51;&#x9875;&#x4E2D;&#x4EE3;&#x7406;&#x5185;&#x5BB9;&#x3002;</Char_Desc_2000>
+    </ChineseSimplified>
+    <ChineseTraditional>
+      <Keywords>&#x514D;&#x8D39;HTTP&#x4EE3;&#x7406;,&#x514D;&#x8D39;&#x9AD8;&#x533F;&#x4EE3;&#x7406;,&#x514D;&#x8D39;&#x533F;&#x540D;&#x4EE3;&#x7406;,&#x9690;&#x85CF;IP,IP&#x5DE5;&#x5177;,&#x4EE3;&#x7406;IP&#x5DE5;&#x5177;</Keywords>
+      <Char_Desc_45>&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;</Char_Desc_45>
+      <Char_Desc_80>&#x9F99;&#x95E8;&#x4EE3;&#x7406;&#x516C;&#x5E03;&#x5668;&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;&#x8BBE;&#x7F6E;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x3001;&#x6240;&#x5728;&#x5730;&#x533A;&#x548C;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;</Char_Desc_80>
+      <Char_Desc_250>&#x9F99;&#x95E8;&#x4EE3;&#x7406;&#x516C;&#x5E03;&#x5668;&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;&#x8BBE;&#x7F6E;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x3001;&#x6240;&#x5728;&#x5730;&#x533A;&#x548C;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;&#x8F6F;&#x4EF6;&#x72EC;&#x7279;&#x7684;&#x667A;&#x80FD;&#x4EE3;&#x7406;&#x66F4;&#x662F;&#x7701;&#x53BB;&#x4E86;N&#x591A;&#x64CD;&#x4F5C;&#xFF0C;&#x5B8C;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x7684;&#x53D6;&#x5F97;&#x548C;&#x4F7F;&#x7528;&#x3002;&#x72EC;&#x7279;&#x7684;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x5E94;&#x7528;&#x4E8E;IE&#x548C;&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x3002;</Char_Desc_250>
+      <Char_Desc_450>&#x9F99;&#x95E8;&#x4EE3;&#x7406;&#x516C;&#x5E03;&#x5668;&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;&#x8BBE;&#x7F6E;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x3001;&#x6240;&#x5728;&#x5730;&#x533A;&#x548C;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;&#x8F6F;&#x4EF6;&#x72EC;&#x7279;&#x7684;&#x667A;&#x80FD;&#x4EE3;&#x7406;&#x66F4;&#x662F;&#x7701;&#x53BB;&#x4E86;N&#x591A;&#x64CD;&#x4F5C;&#xFF0C;&#x5B8C;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x7684;&#x53D6;&#x5F97;&#x548C;&#x4F7F;&#x7528;&#x3002;&#x72EC;&#x7279;&#x7684;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x5E94;&#x7528;&#x4E8E;IE&#x548C;&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x3002;</Char_Desc_450>
+      <Char_Desc_2000>&#x9F99;&#x95E8;&#x4EE3;&#x7406;&#x516C;&#x5E03;&#x5668;&#x662F;&#x4E00;&#x6B3E;&#x5168;&#x529F;&#x80FD;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x641C;&#x7D22;&#x3001;&#x9A8C;&#x8BC1;&#x3001;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x3002;&#x8BBE;&#x7F6E;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x3001;&#x6240;&#x5728;&#x5730;&#x533A;&#x548C;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;&#x8F6F;&#x4EF6;&#x72EC;&#x7279;&#x7684;&#x667A;&#x80FD;&#x4EE3;&#x7406;&#x66F4;&#x662F;&#x7701;&#x53BB;&#x4E86;N&#x591A;&#x64CD;&#x4F5C;&#xFF0C;&#x5B8C;&#x5168;&#x81EA;&#x52A8;&#x7684;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x7684;&#x53D6;&#x5F97;&#x548C;&#x4F7F;&#x7528;&#x3002;&#x72EC;&#x7279;&#x7684;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x5E94;&#x7528;&#x4E8E;IE&#x548C;&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x3002;
+&#x3010;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x3011;&#xFF1A;
+1. &#x81EA;&#x52A8;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x8BFB;&#x53D6;&#x6700;&#x65B0;&#x4EE3;&#x7406;&#x52A0;&#x72EC;&#x7279;&#x4E91;&#x8BA1;&#x7B97;&#xFF0C;&#x8BA9;&#x4F60;&#x66F4;&#x5FEB;&#x7684;&#x627E;&#x5230;&#x5FEB;&#x901F;&#x7684;&#x4EE3;&#x7406;&#x3002;&#x7701;&#x53BB;&#x81EA;&#x5DF1;&#x627E;&#x4EE3;&#x7406;&#x7684;&#x9EBB;&#x70E6;&#x3002;
+2. &#x81EA;&#x52A8;&#x591A;&#x7EBF;&#x7A0B;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x7684;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#xFF08;&#x8D85;&#x7EA7;&#x533F;&#x540D;&#x3001;&#x666E;&#x901A;&#x533F;&#x540D;&#x3001;&#x900F;&#x660E;&#x4EE3;&#x7406;&#xFF09;&#xFF0C;&#x53EF;&#x5728;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x533F;&#x540D;&#x7A0B;&#x5EA6;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x5B9A;&#x9A8C;&#x8BC1;&#x7F51;&#x5740;&#x4EE5;&#x4FBF;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x5BF9;&#x8BE5;&#x7F51;&#x5740;&#x662F;&#x5426;&#x6709;&#x6548;&#x3002;
+3. &#x81EA;&#x52A8;&#x8BC6;&#x522B;&#x4EE3;&#x7406;&#x6240;&#x5728;&#x56FD;&#x5BB6;&#x6216;&#x5730;&#x533A;&#xFF0C;&#x53EF;&#x67E5;&#x8BE2;&#x54EA;&#x4E9B;&#x56FD;&#x5BB6;&#x548C;&#x5730;&#x533A;&#x548C;&#x7AEF;&#x53E3;&#x7684;&#x4EE3;&#x7406;&#x3002;
+4. &#x7279;&#x6709;&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x5438;&#x9644;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x4ECE;&#x6D4F;&#x89C8;&#x7684;&#x7F51;&#x9875;&#x4E2D;&#x83B7;&#x53D6;&#x4EE3;&#x7406;&#x3002;
+5. &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x542F;&#x7528;&#x4EE3;&#x7406;&#x548C;&#x505C;&#x6B62;&#x4EE3;&#x7406;&#xFF08;&#x65E0;&#x987B;&#x91CD;&#x542F;IE&#xFF0C;&#x5373;&#x65F6;&#x751F;&#x6548;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x590D;&#x5236;&#x4EE3;&#x7406;&#x6307;&#x5B9A;&#x683C;&#x5F0F;&#x5230;&#x526A;&#x8D34;&#x677F;&#xFF0C;&#x65B9;&#x4FBF;&#x522B;&#x5904;&#x8BBE;&#x7F6E;&#x3002;
+6. &#x53EF;&#x4EE5;&#x5BF9;&#x4EE3;&#x7406;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF1A;&#x590D;&#x5236;&#x3001;&#x7C98;&#x8D34;&#x3001;&#x526A;&#x5207;&#x3001;&#x5220;&#x9664;&#x3001;&#x6E05;&#x7A7A;&#x3001;&#x5BFC;&#x5165;&#x3001;&#x5BFC;&#x51FA;&#x3002;
+7. &#x81EA;&#x5B9A;&#x4E49;User-Agent,&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x6D4F;&#x89C8;WAP&#x7AD9;&#x70B9;&#x6216;&#x9A8C;&#x8BC1;&#x4EE3;&#x7406;&#x662F;&#x5426;&#x80FD;&#x591F;&#x8BBF;&#x95EE;WAP&#x7F51;&#x7AD9;&#x3002;
+8. &#x7279;&#x6709;&#x7684;&#x63D2;&#x4EF6;&#x6269;&#x5C55;&#xFF0C;&#x53EF;&#x6DFB;&#x52A0;&#x5982;&#x5237;&#x6D41;&#x91CF;&#x7B49;&#x6269;&#x5C55;&#x63D2;&#x4EF6;&#x3002;
+9. &#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x53EA;&#x9700;&#x4E00;&#x4E2A;&#x952E;&#x53D8;&#x80FD;&#x6309;&#x4EE3;&#x7406;&#x901F;&#x5EA6;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x4EE3;&#x7406;&#x3002;
+10.&#x7B80;&#x5355;&#x76F4;&#x89C2;&#x7684;&#x64CD;&#x4F5C;&#x72B6;&#x6001;&#x663E;&#x793A;&#xFF1A;&#x7A0B;&#x5E8F;&#x4E3B;&#x754C;&#x9762;&#x7684;&#x72B6;&#x6001;&#x680F;&#x56FE;&#x6807;&#x63D0;&#x793A;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x548C;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x72B6;&#x6001;&#x63D0;&#x793A;&#x3002;
+11.&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x4FDD;&#x5B58;&#x548C;&#x8F7D;&#x5165;&#x4E0A;&#x6B21;&#x53EF;&#x7528;&#x4EE3;&#x7406;&#x5217;&#x8868;&#xFF0C;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x3002;
+12.&#x5185;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;Ctrl+T&#x4E00;&#x952E;&#x91C7;&#x96C6;&#x7F51;&#x9875;&#x4E2D;&#x4EE3;&#x7406;&#x5185;&#x5BB9;&#x3002;</Char_Desc_2000>
+    </ChineseTraditional>
+  </Program_Descriptions>
+  <Permissions>
+    <Distribution_Permissions></Distribution_Permissions>
+    <EULA></EULA>
+  </Permissions>
+  <Affiliates>
+    <Affiliates_Regsoft_Order_Page></Affiliates_Regsoft_Order_Page>
+    <Affiliates_Regnow_Order_Page></Affiliates_Regnow_Order_Page>
+    <Affiliates_Regsoft_Vendor_ID></Affiliates_Regsoft_Vendor_ID>
+    <Affiliates_Regnow_Vendor_ID></Affiliates_Regnow_Vendor_ID>
+    <Affiliates_Regsoft_Product_ID></Affiliates_Regsoft_Product_ID>
+    <Affiliates_Regnow_Product_ID></Affiliates_Regnow_Product_ID>
+    <Affiliates_FORM></Affiliates_FORM>
+    <Affiliates_FORM_VER></Affiliates_FORM_VER>
+    <Affiliates_VERSION></Affiliates_VERSION>
+    <Affiliates_URL></Affiliates_URL>
+    <Affiliates_Information_Page></Affiliates_Information_Page>
+    <Affiliates_Avangate_Order_Page></Affiliates_Avangate_Order_Page>
+    <Affiliates_Avangate_Vendor_ID></Affiliates_Avangate_Vendor_ID>
+    <Affiliates_Avangate_Product_ID></Affiliates_Avangate_Product_ID>
+    <Affiliates_Avangate_Maximum_Commission_Rate></Affiliates_Avangate_Maximum_Commission_Rate>
+    <Affiliates_BMTMicro_Order_Page></Affiliates_BMTMicro_Order_Page>
+    <Affiliates_BMTMicro_Vendor_ID></Affiliates_BMTMicro_Vendor_ID>
+    <Affiliates_BMTMicro_Product_ID></Affiliates_BMTMicro_Product_ID>
+    <Affiliates_BMTMicro_Maximum_Commission_Rate></Affiliates_BMTMicro_Maximum_Commission_Rate>
+    <Affiliates_eSellerate_Order_Page></Affiliates_eSellerate_Order_Page>
+    <Affiliates_eSellerate_Vendor_ID></Affiliates_eSellerate_Vendor_ID>
+    <Affiliates_eSellerate_Product_ID></Affiliates_eSellerate_Product_ID>
+    <Affiliates_eSellerate_Maximum_Commission_Rate></Affiliates_eSellerate_Maximum_Commission_Rate>
+    <Affiliates_Kagi_Order_Page></Affiliates_Kagi_Order_Page>
+    <Affiliates_Kagi_Vendor_ID></Affiliates_Kagi_Vendor_ID>
+    <Affiliates_Kagi_Product_ID></Affiliates_Kagi_Product_ID>
+    <Affiliates_Kagi_Maximum_Commission_Rate></Affiliates_Kagi_Maximum_Commission_Rate>
+    <Affiliates_Order1_Order_Page></Affiliates_Order1_Order_Page>
+    <Affiliates_Order1_Vendor_ID></Affiliates_Order1_Vendor_ID>
+    <Affiliates_Order1_Product_ID></Affiliates_Order1_Product_ID>
+    <Affiliates_Order1_Maximum_Commission_Rate></Affiliates_Order1_Maximum_Commission_Rate>
+    <Affiliates_Regnet_Order_Page></Affiliates_Regnet_Order_Page>
+    <Affiliates_Regnet_Vendor_ID></Affiliates_Regnet_Vendor_ID>
+    <Affiliates_Regnet_Product_ID></Affiliates_Regnet_Product_ID>
+    <Affiliates_Regnet_Maximum_Commission_Rate></Affiliates_Regnet_Maximum_Commission_Rate>
+    <Affiliates_Regnow_Maximum_Commission_Rate></Affiliates_Regnow_Maximum_Commission_Rate>
+    <Affiliates_Regsoft_Maximum_Commission_Rate></Affiliates_Regsoft_Maximum_Commission_Rate>
+    <Affiliates_ShareIt_Order_Page></Affiliates_ShareIt_Order_Page>
+    <Affiliates_ShareIt_Vendor_ID></Affiliates_ShareIt_Vendor_ID>
+    <Affiliates_ShareIt_Product_ID></Affiliates_ShareIt_Product_ID>
+    <Affiliates_ShareIt_Maximum_Commission_Rate></Affiliates_ShareIt_Maximum_Commission_Rate>
+    <Affiliates_SWReg_Order_Page></Affiliates_SWReg_Order_Page>
+    <Affiliates_SWReg_Vendor_ID></Affiliates_SWReg_Vendor_ID>
+    <Affiliates_SWReg_Product_ID></Affiliates_SWReg_Product_ID>
+    <Affiliates_SWReg_Maximum_Commission_Rate></Affiliates_SWReg_Maximum_Commission_Rate>
+  </Affiliates>
+  <NewsFeed>
+    <NewsFeed_FORM></NewsFeed_FORM>
+    <NewsFeed_VERSION></NewsFeed_VERSION>
+    <NewsFeed_URL></NewsFeed_URL>
+    <NewsFeed_DESCRIPTION></NewsFeed_DESCRIPTION>
+    <NewsFeed_Feed_URL></NewsFeed_Feed_URL>
+    <NewsFeed_Type></NewsFeed_Type>
+    <NewsFeed_Site_URL></NewsFeed_Site_URL>
+    <NewsFeed_Author_First_Name>Don</NewsFeed_Author_First_Name>
+    <NewsFeed_Author_Last_Name>Yang</NewsFeed_Author_Last_Name>
+    <NewsFeed_Author_Email>loamen.com@gmail.com</NewsFeed_Author_Email>
+    <NewsFeed_Language></NewsFeed_Language>
+    <NewsFeed_Title></NewsFeed_Title>
+    <NewsFeed_Description_70></NewsFeed_Description_70>
+    <NewsFeed_Description_250></NewsFeed_Description_250>
+    <NewsFeed_Purpose></NewsFeed_Purpose>
+    <NewsFeed_Site_Name></NewsFeed_Site_Name>
+  </NewsFeed>
+  <Press_Release>
+    <Press_Release></Press_Release>
+    <Headline></Headline>
+    <Summary></Summary>
+    <Press_Release_Plain></Press_Release_Plain>
+  </Press_Release>
+  <Site>
+    <Site_FORM></Site_FORM>
+    <Site_VERSION></Site_VERSION>
+    <Site_DESCRIPTION></Site_DESCRIPTION>
+    <Site_Site_Title>Loamen Proxy Hero Homepage</Site_Site_Title>
+    <Site_Site_URL>https://github.com/loamen/ProxyHero</Site_Site_URL>
+    <Site_Keywords></Site_Keywords>
+    <Site_Description_100></Site_Description_100>
+    <Site_Description_250></Site_Description_250>
+    <Site_Description_450></Site_Description_450>
+    <Site_Contact_First_Name>Don</Site_Contact_First_Name>
+    <Site_Contact_Last_Name>Yang</Site_Contact_Last_Name>
+    <Site_Contact_Email>loamen.com@gmail.com</Site_Contact_Email>
+  </Site>
+  <Dynamic_PAD>
+    <Dynamic_Distributive>N</Dynamic_Distributive>
+    <General>
+      <DP_Pad_Enabled>TRUE</DP_Pad_Enabled>
+      <DP_AtFormFill_Enabled>TRUE</DP_AtFormFill_Enabled>
+      <DP_Distributive_Enabled>FALSE</DP_Distributive_Enabled>
+      <DP_Script_Base_URL>http://repository.appvisor.com/</DP_Script_Base_URL>
+      <DP_Pad_Mask>Loamen_Proxy_Hero_pad.xml</DP_Pad_Mask>
+      <DP_Distributive_Primary_URL>https://github.com/loamen/ProxyHero/releases/download/v1.7.1/ProxyHero1.7.1.zip</DP_Distributive_Primary_URL>
+      <DP_Distributive_Mask>ProxyHero1.7.1.zip</DP_Distributive_Mask>
+    </General>
+  </Dynamic_PAD>
+</XML_DIZ_INFO>

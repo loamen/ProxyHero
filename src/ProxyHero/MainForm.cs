@@ -34,9 +34,6 @@ namespace ProxyHero
     public partial class MainForm : Form
     {
         #region Variable
-
-        public delegate void DelegateSetCloudStatus(string text, Image image);
-
         private readonly HttpHelper _httpHelper = new HttpHelper();
         private readonly ServiceContainer _serviceContainer = new ServiceContainer();
         private bool _hasDockSettingExceptioin;
@@ -59,7 +56,7 @@ namespace ProxyHero
 
         #region
 
-        private InfomationForm _infoPage;
+        private OutputForm _outputPage;
         private ProxyForm _proxyPage;
         private StartForm _startPage;
 
@@ -74,10 +71,10 @@ namespace ProxyHero
         /// <summary>
         ///     信息页
         /// </summary>
-        public InfomationForm InfoPage
+        public OutputForm OutputPage
         {
-            get { return _infoPage ?? (_infoPage = new InfomationForm()); }
-            set { _infoPage = value; }
+            get { return _outputPage ?? (_outputPage = new OutputForm()); }
+            set { _outputPage = value; }
         }
 
         /// <summary>
@@ -202,9 +199,7 @@ namespace ProxyHero
                 }
                 catch
                 {
-                    if (Config.LocalLanguage != null)
-                        CloudStatus.Text = Config.LocalLanguage.Messages.ConnectCloudEngineFailed;
-                    CloudStatus.Image = Resources.cloudno;
+                    SetCloudStatus(Config.LocalLanguage.Messages.ConnectCloudEngineFailed, Resources.cloudno);
                 }
 
                 #endregion
@@ -234,8 +229,8 @@ namespace ProxyHero
                 SetProxyStatusLabel();
                 if (Config.LocalLanguage != null)
                     AutoSwitchProxyStatus.Text = Config.LocalLanguage.Messages.AutomaticSwitchingOff;
-                Status.Text = Config.InitErrorInfo;
-                Status.Spring = true;
+                StatusLabel.Spring = true;
+                SetStatusText(Config.InitErrorInfo);
 
                 #endregion
 
@@ -279,8 +274,8 @@ namespace ProxyHero
                         #region dock
 
                         StartPage.Show(MainDockPanel, DockState.Document);
-                        InfoPage.Show(MainDockPanel, DockState.DockBottomAutoHide);
-                        InfoPage.Hide();
+                        OutputPage.Show(MainDockPanel, DockState.DockBottomAutoHide);
+                        OutputPage.Hide();
                         ProxyPage.Show(MainDockPanel, DockState.Document);
 
                         #endregion
@@ -480,8 +475,8 @@ namespace ProxyHero
         {
             if (persistString == typeof (StartForm).ToString())
                 return StartPage;
-            if (persistString == typeof (InfomationForm).ToString())
-                return InfoPage;
+            if (persistString == typeof (OutputForm).ToString())
+                return OutputPage;
             return persistString == typeof (ProxyForm).ToString() ? ProxyPage : null;
         }
 
@@ -529,19 +524,6 @@ namespace ProxyHero
         }
 
         /// <summary>
-        ///     设置云引擎连接状态
-        /// </summary>
-        /// <param name="text"></param>
-        /// <param name="image"></param>
-        public void SetCloudStatus(string text, Image image)
-        {
-            if (!string.IsNullOrEmpty(text))
-                CloudStatus.Text = text;
-            if (image != null)
-                CloudStatus.Image = image;
-        }
-
-        /// <summary>
         ///     连接云引擎,下载数据
         /// </summary>
         public void ConnectCloud()
@@ -549,15 +531,18 @@ namespace ProxyHero
             TimeSpan ts = DateTime.Now - Config.LateUpdateProxyListTime;
             if (ts.TotalSeconds > 30)
             {
-                DelegateSetCloudStatus dv = SetCloudStatus;
-                Invoke(dv, new object[] {Config.LocalLanguage.Messages.ConnectingCloudEngine + "...", Resources.loading});
+                SetCloudStatus(Config.LocalLanguage.Messages.ConnectingCloudEngine + "...", Resources.loading);
 
                 var cloudHelper = new CloudHelper();
                 bool isConnected = cloudHelper.DownloadProxyList();
-                Invoke(dv,
-                       isConnected
-                           ? new object[] {Config.LocalLanguage.Messages.ConnectCloudEngineSuccess, Resources.cloud}
-                           : new object[] {Config.LocalLanguage.Messages.ConnectCloudEngineFailed, Resources.cloudno});
+                if (isConnected)
+                {
+                    SetCloudStatus(Config.LocalLanguage.Messages.ConnectCloudEngineSuccess, Resources.cloud);
+                }
+                else
+                {
+                    SetCloudStatus(Config.LocalLanguage.Messages.ConnectCloudEngineFailed, Resources.cloudno);
+                }
             }
         }
 
@@ -607,7 +592,6 @@ namespace ProxyHero
                 catch (Exception ex)
                 {
                     Config.ConsoleEx.Debug(ex);
-                    LogHelper.WriteException(ex);
                 }
                 ProxyStatus.Text = Config.LocalLanguage.Messages.CurrentProxy + @":" + res[1] + location;
                 ProxyStatus.Image = Resources.aused;
@@ -731,10 +715,7 @@ namespace ProxyHero
                     Config.LocalSetting.NeedDebug = Debug.Checked = setting.EnableDebug;
 
                     InfomationWindow.Checked = setting.InformationWindow;
-                    if (InfomationWindow.Checked)
-                        InfoPage.Show();
-                    else
-                        InfoPage.Hide();
+                    ShowOutput();
 
                     ProxyWindow.Checked = setting.ProxyWindow;
                     if (ProxyWindow.Checked)
@@ -913,15 +894,7 @@ namespace ProxyHero
 
         private void InfomationWindowVisible_Click(object sender, EventArgs e)
         {
-            if (InfomationWindow.Checked)
-            {
-                InfoPage.Hide();
-            }
-            else
-            {
-                InfoPage.Show(MainDockPanel, DockState.DockBottomAutoHide);
-            }
-            InfomationWindow.Checked = !InfomationWindow.Checked;
+            ShowOutput();
         }
 
 
@@ -1178,7 +1151,7 @@ namespace ProxyHero
         private void Status_TextChanged(object sender, EventArgs e)
         {
             tsslLoading.Visible = !ProxyPage.IsNotDownloadingOrTesting;
-            Status.Spring = true;
+            StatusLabel.Spring = true;
         }
 
         private void CloseTab_Click(object sender, EventArgs e)
@@ -1254,7 +1227,9 @@ namespace ProxyHero
 
         private void Languages_Click(object sender, EventArgs e)
         {
-            OpenIE("https://github.com/loamen/ProxyHero/tree/master/documents/languages");
+            var of = new OptionForm();
+            of.Tag = "Language";
+            of.ShowDialog();
         }
 
         #endregion
@@ -1269,8 +1244,6 @@ namespace ProxyHero
         ///     显示状态栏提示信息委托
         /// </remarks>
         /// <param name="text"></param>
-        /// 创 建 人：杨栋
-        /// 创建日期：2013/05/29
         private void DelegateSetToolTipText(string text)
         {
             notifyIconMain.ShowBalloonTip(2000, Config.LocalLanguage.Messages.Information, text, ToolTipIcon.Info);
@@ -1286,13 +1259,25 @@ namespace ProxyHero
         /// <param name="text"></param>
         private void DelegateSetStatusText(string text)
         {
-            Status.Text = text;
+            StatusLabel.Text = text;
             if (WindowState == FormWindowState.Minimized)
             {
                 notifyIconMain.Text = text;
             }
         }
 
+        public void ShowOutput()
+        {
+            if (!InfomationWindow.Checked)
+            {
+                OutputPage.Show(MainDockPanel, DockState.DockBottomAutoHide);
+            }
+            else
+            {
+                OutputPage.Hide();
+            }
+            InfomationWindow.Checked = !InfomationWindow.Checked;
+        }
         #endregion
     }
 }

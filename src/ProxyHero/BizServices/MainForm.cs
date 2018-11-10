@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -18,6 +19,8 @@ namespace ProxyHero
 {
     public partial class MainForm :  IApp
     {
+        private delegate void DelegateSetCloudStatus(string text, Image image);
+
         #region Interface
 
         #region 属性
@@ -118,13 +121,47 @@ namespace ProxyHero
         }
 
         /// <summary>
+        ///     设置云引擎连接状态
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="image"></param>
+        public void SetCloudStatus(string text, Image image)
+        {
+            if (CloudStatus.GetCurrentParent().InvokeRequired)
+            {
+                DelegateSetCloudStatus dv = SetCloudStatus;
+                Invoke(dv, new object[] { text, image });
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(text))
+                    CloudStatus.Text = text;
+                if (image != null)
+                    CloudStatus.Image = image;
+            }
+        }
+
+        /// <summary>
         ///     设置状态
         /// </summary>
         /// <param name="text"></param>
         public void SetStatusText(string text)
         {
-            DelegateSet set = DelegateSetStatusText;
-            Invoke(set, new object[] { text });
+            if (StatusLabel.GetCurrentParent().InvokeRequired)
+            {
+                DelegateSet set = DelegateSetStatusText;
+                Invoke(set, new object[] { text });
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(text)) return;
+                DelegateSetStatusText(text);
+            }
+        }
+
+        public bool StatusContains(string text)
+        {
+            return StatusLabel.Text.Contains(text);
         }
 
         /// <summary>
@@ -133,7 +170,8 @@ namespace ProxyHero
         /// <param name="text"></param>
         public void WriteLog(object text)
         {
-            LogHelper.WriteLog(text + "");
+            var message = text + "";
+            Config.ConsoleEx.Debug(message);
         }
 
         /// <summary>
@@ -142,7 +180,7 @@ namespace ProxyHero
         /// <param name="ex"></param>
         public void WriteExceptionLog(Exception ex)
         {
-            LogHelper.WriteException(ex);
+            Config.ConsoleEx.Debug(ex);
         }
 
         /// <summary>

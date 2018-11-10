@@ -5,10 +5,10 @@ namespace Loamen.Net.Entity
     [Serializable]
     public class TestOption
     {
-        private string _testUrl = "http://www.baidu.com";
+        private string _testUrl = "http://180.97.33.107/robots.txt";
         private string _testWebEncoding = "UTF-8";
 
-        private string _testWebTitle = "百度";
+        private string _testWebTitle = "Baiduspider";
 
         /// <summary>
         ///     验证网站地址

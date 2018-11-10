@@ -49,7 +49,6 @@ namespace Loamen.WinControls.UI
 
         #endregion
 
-
         #region Properties
 
         public override Size MinimumSize
@@ -70,7 +69,7 @@ namespace Loamen.WinControls.UI
             {
                 base.MinimumSize = value;
             }
-        }        
+        }
 
         [Browsable(false)]
         [Category("Options Form")]
@@ -223,7 +222,7 @@ namespace Loamen.WinControls.UI
         {
             get
             {
-               return _boxBackgroundColor;
+                return _boxBackgroundColor;
             }
             set
             {
@@ -235,7 +234,7 @@ namespace Loamen.WinControls.UI
                     CatDescr.BackColor = _boxBackgroundColor;
                     OptionsPanelPath.BackColor = _boxBackgroundColor;
                     OptionDescrLabel.BackColor = _boxBackgroundColor;
-                  
+
                 }
             }
         }
@@ -565,13 +564,11 @@ namespace Loamen.WinControls.UI
 
         #endregion
 
-
         #region Construction
 
         public OptionsForm()
             : this(new PropertyDictionary<string, object>())
         {
-           
         }
 
         public OptionsForm(PropertyDictionary<string, object> settings)
@@ -589,15 +586,14 @@ namespace Loamen.WinControls.UI
             OldSettings = settings;
             _changedSettings = new PropertyDictionary<string, object>();
 
-           // AppSettings.PropertyChanged += new PropertyChangedEventHandler(this._AppSettings_SettingChanging);
+            // AppSettings.PropertyChanged += new PropertyChangedEventHandler(this._AppSettings_SettingChanging);
         }
 
         #endregion
 
-
         #region Methods
 
-      
+
         protected override void OnCreateControl()
         {
             base.OnCreateControl();
@@ -847,7 +843,18 @@ namespace Loamen.WinControls.UI
             }
         }
 
-       public void _AppSettings_SettingChanging(object sender, PropertyChangedEventArgs e)
+        public void GoToPanel(string optionCategory)
+        {
+            var search = CatTree.Nodes.Find(optionCategory, true);
+
+            if (search.Length > 0)
+            {
+                TreeNode node = search[0];
+                CatTree.SelectedNode = node;
+            }
+        }
+
+        public void _AppSettings_SettingChanging(object sender, PropertyChangedEventArgs e)
         {
             if (!_saving)
             {
@@ -997,9 +1004,5 @@ namespace Loamen.WinControls.UI
         }
 
         #endregion
-    }
-
-    internal sealed class Settings : ApplicationSettingsBase
-    {
     }
 }

@@ -8,8 +8,8 @@ namespace ProxyHero.LanguageInformation
         private IEBrowserPage _ieBrowserPage = new IEBrowserPage();
         private InfomationPage _informationPage = new InfomationPage();
         private string _languageFileAuthor = "龙门信息网（www.loamen.com）";
-        private string _languageFileOForLphVersion = "V " + Application.ProductVersion;
-        private string _languageFileVersion = "V 1.0";
+        private string _languageFileOForLphVersion = "v" + Application.ProductVersion;
+        private string _languageFileVersion = "v1.7";
         private string _languageName = "简体中文";
         private MainPage _mainPage = new MainPage();
         private Messages _messages = new Messages();
@@ -112,7 +112,7 @@ namespace ProxyHero.LanguageInformation
         private string _forum = "论坛";
         private string _help = "帮助";
         private string _homepage = "官网主页";
-        private string _infomationWindow = "信息窗口";
+        private string _infomationWindow = "输出窗口";
         private string _menuBar = "菜单栏";
         private string _newTab = "新建标签";
         private string _onlineHelp = "帮助文档";
@@ -561,7 +561,6 @@ namespace ProxyHero.LanguageInformation
         private string _clickForSystemTesting = "点击进行系统检测";
         private string _resetAllSetting = "初始化所有设置";
         private string _cloudServer = "云服务器";
-        private string _country = "验证地理位置";
         private string _defaultTestWebsite = "默认网址";
         private string _exportTxtFormat = "导出TXT文件格式";
         private string _languageFile = "语言文件路径";
@@ -572,7 +571,7 @@ namespace ProxyHero.LanguageInformation
         private string _languageOptions = "Language";
         private string _ok = "确定";
         private string _pleaseSelectOrFill = "请选择默认验证网址或者在下面填写";
-        private string _programRestartRequired = "需要重启才能完全生效";
+        private string _programRestartRequired = "LPH needs to be restarted for the language change to take effect.\n需要重启才能完全生效";
         private string _systemCheck = "系统检测";
 
         private string _testOptions = "验证配置";
@@ -588,8 +587,8 @@ namespace ProxyHero.LanguageInformation
 
         private string _generalPanelCategoryPath = @"选项\基本选项";
         private string _generalPanelDisplayName = "基本选项";
-        private string _languagePanelCategoryPath = @"选项\语言";
-        private string _languagePanelDisplayName = "语言";
+        private string _languagePanelCategoryPath = @"选项\Language";
+        private string _languagePanelDisplayName = "Language";
         private string _testPanelCategoryPath = @"选项\验证选项";
         private string _testPanelDisplayName = "验证选项";
         private string _userAgentPanelCategoryPath = @"选项\User-Agent";
@@ -1124,7 +1123,7 @@ namespace ProxyHero.LanguageInformation
         private string _googleCloudServer = "谷歌云服务器";
         private string _highAnonymous = "高匿名代理";
         private string _information = "提示";
-        private string _informationWindow = "信息窗口";
+        private string _informationWindow = "输出窗口";
         private string _initializeComponent = "初始化组件";
         private string _initializeDatabase = "初始化数据库";
         private string _initializeDockPanel = "初始化停靠窗体";
@@ -1157,8 +1156,7 @@ namespace ProxyHero.LanguageInformation
         private string _swithing = "自动切换中";
         private string _testWebsiteEncodeToolTip = "网页的编码格式，如：GB2312或者UTF-8";
         private string _testWebsiteTitleToolTip = "验证网址中的任意一段文字\n如百度的为：百度一下，你就知道\n你输入“百度”或“百度一下”都行";
-        private string _testWebsiteUrlToolTip = "用来验证的网址，如：http://www.baidu.com。\r\n必须加http://";
-        private string _testAreaToolTip = "验证代理地理位置";
+        private string _testWebsiteUrlToolTip = "用来验证的网址，使用IP网址会更快，如百度：http://180.97.33.107/robots.txt\r\n必须加http://";
         private string _testing = "正在验证";
         private string _testingHaveBeenTerminated = "已经终止验证";
         private string _timeConsuming = "耗时：{0}毫秒";
@@ -1518,7 +1516,7 @@ namespace ProxyHero.LanguageInformation
         }
 
         /// <summary>
-        ///     用来验证的网址，如：http://www.baidu.com。\r\n必须加http://
+        /// 用来验证的网址，必须加http://
         /// </summary>
         public string TestWebsiteUrlToolTip
         {

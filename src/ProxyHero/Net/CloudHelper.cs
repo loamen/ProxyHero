@@ -53,7 +53,7 @@ namespace ProxyHero.Net
             }
             catch (Exception ex)
             {
-                LogHelper.WriteException(ex);
+                Config.ConsoleEx.Debug(ex);
                 return false;
             }
             finally
@@ -122,11 +122,7 @@ namespace ProxyHero.Net
             }
             catch (Exception ex)
             {
-#if DEBUG
-                LogHelper.WriteException(ex);
-#else
-                LogHelper.WriteLog(ex.Message);
-#endif
+                Config.ConsoleEx.Debug(ex);
                 return false;
             }
         }
@@ -166,11 +162,7 @@ namespace ProxyHero.Net
             }
             catch (Exception ex)
             {
-#if DEBUG
-                LogHelper.WriteException(ex);
-#else
-                LogHelper.WriteLog(ex.Message);
-#endif
+                Config.ConsoleEx.Debug(ex);
                 return true;
             }
             finally
