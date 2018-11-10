@@ -9,4 +9,4 @@ We're looking for people fluent in English or your own language, to help transla
 > * The file you translate should be translated completely by you - no Google Translate or anything like that.
 > * Send a Pull Request.
 
-If you translate an entire article, you can even get a link to your own website on it!
+If you translate an entire file, you can even get a link to your own website on it!
