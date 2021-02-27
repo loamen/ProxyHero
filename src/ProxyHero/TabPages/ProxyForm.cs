@@ -825,32 +825,39 @@ namespace ProxyHero.TabPages
         /// </summary>
         public void SetLabelInfo()
         {
-            #region 统计数据
-            var sb = new StringBuilder();
-            ListEx<ProxyServer> list = new ListEx<ProxyServer>();
-            if (dgvProxyList.DataSource != null && dgvProxyList.DataSource is ListEx<ProxyServer>)
+            try
             {
-                list = (ListEx<ProxyServer>)dgvProxyList.DataSource;
+                #region 统计数据
+                var sb = new StringBuilder();
+                ListEx<ProxyServer> list = new ListEx<ProxyServer>();
+                if (dgvProxyList.DataSource != null && dgvProxyList.DataSource is ListEx<ProxyServer>)
+                {
+                    list = (ListEx<ProxyServer>)dgvProxyList.DataSource;
+                }
+
+                int aliveCount = list.Count(p => p.status == 1);
+                int deadCount = list.Count(p => p.status == 0);
+                int notTestCount = list.Count(p => p.status != 1 && p.status != 0);
+
+                sb.Append(Config.LocalLanguage.Messages.Alive + ":" + aliveCount);
+                sb.Append(Config.LocalLanguage.Messages.Dead + ":" + deadCount);
+                sb.Append(Config.LocalLanguage.Messages.NotTest + ":" + notTestCount);
+                sb.Append(Config.LocalLanguage.Messages.Total + ":" + list.Count);
+                #endregion
+
+                if (tsslCountInfo.GetCurrentParent().InvokeRequired)
+                {
+                    DelegateUpdateLabelInfo set = UpdateLabelInfo;
+                    Invoke(set, new object[] { sb.ToString() });
+                }
+                else
+                {
+                    UpdateLabelInfo(sb.ToString());
+                }
             }
-
-            int aliveCount = list.Count(p => p.status == 1);
-            int deadCount = list.Count(p => p.status == 0);
-            int notTestCount = list.Count(p => p.status != 1 && p.status != 0);
-
-            sb.Append(Config.LocalLanguage.Messages.Alive + ":" + aliveCount);
-            sb.Append(Config.LocalLanguage.Messages.Dead + ":" + deadCount);
-            sb.Append(Config.LocalLanguage.Messages.NotTest + ":" + notTestCount); 
-            sb.Append(Config.LocalLanguage.Messages.Total + ":" + list.Count);
-            #endregion
-
-            if (tsslCountInfo.GetCurrentParent().InvokeRequired)
+            catch (Exception ex)
             {
-                DelegateUpdateLabelInfo set = UpdateLabelInfo;
-                Invoke(set, new object[] { sb.ToString() });
-            }
-            else
-            {
-                UpdateLabelInfo(sb.ToString());
+                LogHelper.Error(ex, "更新显示板数据信息错误");
             }
         }
 
