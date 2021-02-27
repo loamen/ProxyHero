@@ -172,13 +172,13 @@ namespace ProxyHero.Net
         }
 
 
-        private static string[] GetConfig(string url)
+        private static ProxyHeroEntity GetConfig(string url)
         {
-            var result = new[] {"", ""};
+            var result = new ProxyHeroEntity();
             try
             {
                 var httpHelper = new HttpHelper();
-                string htmlSites;
+   
                 string html;
 
                 if (Config.LocalSetting.IsUseSystemProxy)
@@ -192,17 +192,13 @@ namespace ProxyHero.Net
                     html = httpHelper.GetHtml(url, Encoding.GetEncoding("UTF-8"));
                 }
 
-                string xmlSetting = StringHelper.GetMidString(html, "[Config]", "[/Config]");
-                xmlSetting = SecurityHelper.DecryptDES(xmlSetting, "Don.Yang");
+                ProxyHeroEntity proxyHeroEntity = JsonHelper.JsonToModel<ProxyHeroEntity>(html);
 
-                htmlSites = StringHelper.GetMidString(html, "[Sites]", "[/Sites]");
-                htmlSites = SecurityHelper.DecryptDES(htmlSites, "Don.Yang");
-
-                result[0] = xmlSetting;
-                result[1] = htmlSites;
+                result=proxyHeroEntity;
             }
-            catch
+            catch(Exception ex)
             {
+                LogHelper.Error(ex, "初始化配置异常");
             }
 
             return result;
@@ -215,20 +211,17 @@ namespace ProxyHero.Net
         {
             #region Config
 
-            string url = "http://www.cnblogs.com/mops/articles/2377951.html";
-            string[] result = GetConfig(url);
-           
-            string xmlSetting = result[0];
-            string htmlSites = result[1];
+            string url = "https://gitee.com/yangd4/ph/raw/master/Config.json";
+            ProxyHeroEntity result = GetConfig(url);
 
-            if (string.IsNullOrEmpty(xmlSetting))
+
+            if (result.Sites == null || result.Sites.Length == 0)
             {
                 Config.InitErrorInfo = Config.LocalLanguage.Messages.InitializeFailed;
                 throw new Exception(Config.InitErrorInfo);
             }
 
-            Config.ProxyHeroCloudSetting =
-                XmlHelper.DeserializeXml(xmlSetting, typeof (ProxyHeroEntity)) as ProxyHeroEntity;
+            Config.ProxyHeroCloudSetting = result;
 
             if (Config.ProxyHeroCloudSetting == null)
             {
@@ -240,13 +233,10 @@ namespace ProxyHero.Net
 
             #region get proxyPageList
 
-            string proxyPageListText = htmlSites;
-
-            var regexList = new Regex(@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?");
-            MatchCollection matchesProxyList = regexList.Matches(proxyPageListText);
-            for (int i = 0; i < matchesProxyList.Count; i++)
+     
+            for (int i = 0; i < result.Sites.Length; i++)
             {
-                Config.ProxySiteUrlList.Add(matchesProxyList[i].Value);
+                Config.ProxySiteUrlList.Add(result.Sites[i]);
             }
 
             #endregion

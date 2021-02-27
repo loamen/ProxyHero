@@ -50,7 +50,7 @@ namespace Loamen.Net
             string html = "";
             WebResponse response = null;
 
-            GC.Collect();
+            // GC.Collect();
             ServicePointManager.DefaultConnectionLimit = 200;
 
             var webRequest = (HttpWebRequest)WebRequest.Create(url);

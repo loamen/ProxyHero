@@ -37,6 +37,7 @@ namespace ProxyHero.Entity
         private string updateUrl = "http://www.loamen.com";
         private string updatedEnableUse = "1";
         private string version = "";
+        private string[] sites;
 
         /// <summary>
         ///     弹出广告网站
@@ -167,5 +168,10 @@ namespace ProxyHero.Entity
             }
             set { about = value; }
         }
+
+        /// <summary>
+        /// 地址列表
+        /// </summary>
+        public string[] Sites { get => sites; set => sites = value; }
     }
 }
